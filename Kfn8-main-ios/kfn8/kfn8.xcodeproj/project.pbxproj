@@ -26,6 +26,7 @@
 		4BA378D22669308200374BDA /* wateringcan.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4BA378C62669308100374BDA /* wateringcan.usdz */; };
 		4BA378D32669308200374BDA /* tv_retro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4BA378C72669308100374BDA /* tv_retro.usdz */; };
 		4BC336F4266948E700AF7AE1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336F3266948E600AF7AE1 /* LoginView.swift */; };
+		4BC336F626696A9900AF7AE1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336F526696A9900AF7AE1 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		4BA378C62669308100374BDA /* wateringcan.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = wateringcan.usdz; path = "../../../../assets-usdz/wateringcan.usdz"; sourceTree = "<group>"; };
 		4BA378C72669308100374BDA /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = tv_retro.usdz; path = "../../../../assets-usdz/tv_retro.usdz"; sourceTree = "<group>"; };
 		4BC336F3266948E600AF7AE1 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4BC336F526696A9900AF7AE1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			children = (
 				4BA378BB26692FC100374BDA /* 3dmodels */,
 				4BA3788E26689DDA00374BDA /* AppDelegate.swift */,
+				4BC336F526696A9900AF7AE1 /* Model.swift */,
 				4BA3789026689DDA00374BDA /* ContentView.swift */,
 				4BC336F3266948E600AF7AE1 /* LoginView.swift */,
 				4BA3789426689DDC00374BDA /* Assets.xcassets */,
@@ -321,6 +324,7 @@
 				4BC336F4266948E700AF7AE1 /* LoginView.swift in Sources */,
 				4BA3789126689DDA00374BDA /* ContentView.swift in Sources */,
 				4BA3788F26689DDA00374BDA /* AppDelegate.swift in Sources */,
+				4BC336F626696A9900AF7AE1 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -462,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

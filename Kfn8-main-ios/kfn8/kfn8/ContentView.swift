@@ -7,8 +7,13 @@
 
 import SwiftUI
 import RealityKit
+import ARKit
 
 struct ContentView : View {
+    @State private var isControlPanelEnabled = false
+    @State private var selectedModel: String?
+    @State private var modelConfirmedForPlacement: String?
+    
     private var models: [String] = {
         // Dynamically get filenames
         let filemanager = FileManager.default
@@ -26,9 +31,13 @@ struct ContentView : View {
     }()
     var body: some View {
         ZStack(alignment: .bottom) {
-            ARViewContainer().edgesIgnoringSafeArea(.all)
-            ModelPickerView(models: models)
-            ControlButtonsView()
+            ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
+            if self.isControlPanelEnabled {
+                ControlPanelView(isControlPanelEnabled: $isControlPanelEnabled, selectedModel: $selectedModel, modelConfirmedForPlacement: $modelConfirmedForPlacement)
+            } else {
+                ModelPickerView(isControlPanelEnabled: $isControlPanelEnabled, selectedModel: $selectedModel, models: models)
+            }
+            
 
         }
         .navigationBarBackButtonHidden(true)
@@ -37,21 +46,52 @@ struct ContentView : View {
 }
 
 struct ARViewContainer: UIViewRepresentable {
-    
+    @Binding var modelConfirmedForPlacement: String?
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
-    
+        let config = ARWorldTrackingConfiguration()
+        config.planeDetection = [.horizontal, .vertical]
+        config.environmentTexturing = .automatic
+        
+        // Lidar support
+        if ARWorldTrackingConfiguration
+            .supportsSceneReconstruction(.mesh) {
+            config.sceneReconstruction = .mesh
+        }
+        
+        arView.session.run(config)
         
         return arView
         
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {}
+    func updateUIView(_ uiView: ARView, context: Context) {
+        if let modelName = self.modelConfirmedForPlacement {
+            print("DEBUG: adding model to scene \(modelName)")
+            
+            let filename = modelName + ".usdz"
+            
+            let modelEntity = try! ModelEntity.loadModel(named: filename)
+            
+            let anchorEntity = AnchorEntity(plane: .any)
+            /*
+            anchorEntity.addChild(modelEntity)
+            uiView.scene.addAnchor(anchorEntity)
+            */
+            
+            DispatchQueue.main.async {
+                self.modelConfirmedForPlacement = nil
+            }
+            
+        }
+    }
     
 }
 
 struct ModelPickerView: View {
+    @Binding var isControlPanelEnabled: Bool
+    @Binding var selectedModel: String?
     var models: [String]
     var body: some View {
         ScrollView(.horizontal, showsIndicators:false) {
@@ -61,6 +101,9 @@ struct ModelPickerView: View {
                     // Text(self.models[index])
                     Button(action: {
                         print("Selected model with name: \(self.models[index])")
+                        self.selectedModel = self.models[index]
+                        self.isControlPanelEnabled = true
+                        
                     }) {
                         if let uiImage = UIImage(named: self.models[index]) {
                             Image(uiImage: uiImage)
@@ -81,12 +124,17 @@ struct ModelPickerView: View {
     }
 }
 
-struct ControlButtonsView: View {
+struct ControlPanelView: View {
+    @Binding var isControlPanelEnabled: Bool
+    @Binding var selectedModel: String?
+    @Binding var modelConfirmedForPlacement: String?
+    
     var body: some View {
         HStack {
             // Cancel Button
             Button(action: {
                 print("Model placement cancel")
+                self.resetControlParameters()
             }) {
                 Image(systemName: "xmark")
                     .frame(width: 60, height: 60)
@@ -98,6 +146,8 @@ struct ControlButtonsView: View {
             // Confirm Button
             Button(action: {
                 print("Model placement confirm")
+                self.modelConfirmedForPlacement = self.selectedModel
+                self.resetControlParameters()
             }) {
                 Image(systemName: "checkmark")
                     .frame(width: 60, height: 60)
@@ -108,7 +158,13 @@ struct ControlButtonsView: View {
             }
         }
     }
+    func resetControlParameters() {
+        self.isControlPanelEnabled = false
+        self.selectedModel = nil
+    }
 }
+
+
 
 #if DEBUG
 
