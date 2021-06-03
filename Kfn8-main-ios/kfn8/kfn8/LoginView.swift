@@ -26,7 +26,7 @@ struct LoginView: View {
                     CardView()
                 }
                 
-                Text("The App for Creators")
+                Text("Ready Player Zero")
                     .font(.title)
                     .foregroundColor(.secondary)
                     .padding()
@@ -34,7 +34,7 @@ struct LoginView: View {
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Text("Launch")
+                        Text("Teleport")
                             .bold()
                             .frame(width: 280, height: 50, alignment: .center)
                             .background(Color.blue)

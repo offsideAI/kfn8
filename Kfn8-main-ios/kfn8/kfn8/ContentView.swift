@@ -11,21 +11,23 @@ import ARKit
 
 struct ContentView : View {
     @State private var isControlPanelEnabled = false
-    @State private var selectedModel: String?
-    @State private var modelConfirmedForPlacement: String?
+    @State private var selectedModel: Model?
+    @State private var modelConfirmedForPlacement: Model?
     
-    private var models: [String] = {
+    private var models: [Model] = {
         // Dynamically get filenames
         let filemanager = FileManager.default
         guard let path = Bundle.main.resourcePath,
               let files = try? filemanager.contentsOfDirectory(atPath: path) else {
             return []
         }
-        var availableModels: [String] = []
+        var availableModels: [Model] = []
         for filename in files where
             filename.hasSuffix("usdz") {
             let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
-            availableModels.append(modelName)
+            print("DEBUG:\(modelName)")
+            let model = Model(modelName: modelName)
+            availableModels.append(model)
         }
         return availableModels
     }()
@@ -46,7 +48,7 @@ struct ContentView : View {
 }
 
 struct ARViewContainer: UIViewRepresentable {
-    @Binding var modelConfirmedForPlacement: String?
+    @Binding var modelConfirmedForPlacement: Model?
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
@@ -67,18 +69,18 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        if let modelName = self.modelConfirmedForPlacement {
-            print("DEBUG: adding model to scene \(modelName)")
+        if let model = self.modelConfirmedForPlacement {
+            if let modelEntity = model.modelEntity {
+                print("DEBUG: adding model to scene \(model.modelName)")
+                
+                let anchorEntity = AnchorEntity(plane: .any)
+                anchorEntity.addChild(modelEntity.clone(recursive: true))
+                uiView.scene.addAnchor(anchorEntity)
+                
+            } else {
+                print("DEBUG: Unable to load modelEntity for \(model.modelName)")
+            }
             
-            let filename = modelName + ".usdz"
-            
-            let modelEntity = try! ModelEntity.loadModel(named: filename)
-            
-            let anchorEntity = AnchorEntity(plane: .any)
-            /*
-            anchorEntity.addChild(modelEntity)
-            uiView.scene.addAnchor(anchorEntity)
-            */
             
             DispatchQueue.main.async {
                 self.modelConfirmedForPlacement = nil
@@ -91,8 +93,8 @@ struct ARViewContainer: UIViewRepresentable {
 
 struct ModelPickerView: View {
     @Binding var isControlPanelEnabled: Bool
-    @Binding var selectedModel: String?
-    var models: [String]
+    @Binding var selectedModel: Model?
+    var models: [Model]
     var body: some View {
         ScrollView(.horizontal, showsIndicators:false) {
             HStack(spacing: 30) {
@@ -100,19 +102,18 @@ struct ModelPickerView: View {
                     index in
                     // Text(self.models[index])
                     Button(action: {
-                        print("Selected model with name: \(self.models[index])")
+                        print("Selected model with name: \(self.models[index].modelName)")
                         self.selectedModel = self.models[index]
                         self.isControlPanelEnabled = true
                         
                     }) {
-                        if let uiImage = UIImage(named: self.models[index]) {
-                            Image(uiImage: uiImage)
+                        Image(uiImage: self.models[index].image)
                                 .resizable()
                                 .frame(height:80)
                                 .aspectRatio(1/1, contentMode: .fit)
                                 .background(Color.white)
                                 .cornerRadius(12)
-                        }
+                        
                         
                     }
                     .buttonStyle(PlainButtonStyle())
@@ -126,8 +127,8 @@ struct ModelPickerView: View {
 
 struct ControlPanelView: View {
     @Binding var isControlPanelEnabled: Bool
-    @Binding var selectedModel: String?
-    @Binding var modelConfirmedForPlacement: String?
+    @Binding var selectedModel: Model?
+    @Binding var modelConfirmedForPlacement: Model?
     
     var body: some View {
         HStack {
