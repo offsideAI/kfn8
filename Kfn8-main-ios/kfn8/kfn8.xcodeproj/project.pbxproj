@@ -25,6 +25,7 @@
 		4BA378D12669308200374BDA /* toy_biplane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4BA378C52669308100374BDA /* toy_biplane.usdz */; };
 		4BA378D22669308200374BDA /* wateringcan.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4BA378C62669308100374BDA /* wateringcan.usdz */; };
 		4BA378D32669308200374BDA /* tv_retro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4BA378C72669308100374BDA /* tv_retro.usdz */; };
+		4BC336F4266948E700AF7AE1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336F3266948E600AF7AE1 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		4BA378C52669308100374BDA /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = toy_biplane.usdz; path = "../../../../assets-usdz/toy_biplane.usdz"; sourceTree = "<group>"; };
 		4BA378C62669308100374BDA /* wateringcan.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = wateringcan.usdz; path = "../../../../assets-usdz/wateringcan.usdz"; sourceTree = "<group>"; };
 		4BA378C72669308100374BDA /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = tv_retro.usdz; path = "../../../../assets-usdz/tv_retro.usdz"; sourceTree = "<group>"; };
+		4BC336F3266948E600AF7AE1 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				4BA378BB26692FC100374BDA /* 3dmodels */,
 				4BA3788E26689DDA00374BDA /* AppDelegate.swift */,
 				4BA3789026689DDA00374BDA /* ContentView.swift */,
+				4BC336F3266948E600AF7AE1 /* LoginView.swift */,
 				4BA3789426689DDC00374BDA /* Assets.xcassets */,
 				4BA3789926689DDC00374BDA /* Info.plist */,
 				4BA3789626689DDC00374BDA /* Preview Content */,
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC336F4266948E700AF7AE1 /* LoginView.swift in Sources */,
 				4BA3789126689DDA00374BDA /* ContentView.swift in Sources */,
 				4BA3788F26689DDA00374BDA /* AppDelegate.swift in Sources */,
 			);
