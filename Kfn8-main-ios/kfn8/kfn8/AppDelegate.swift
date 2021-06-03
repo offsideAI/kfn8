@@ -17,12 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // Create the SwiftUI view that provides the window contents.
-        // let contentView = ContentView()
+        // TODO-FIXME  let contentView = ContentView()
         let loginView = LoginView(choice: "ContentView")
 
         // Use a UIHostingController as window root view controller.
         let window = UIWindow(frame: UIScreen.main.bounds)
-        // window.rootViewController = UIHostingController(rootView: contentView)
+        // TODO-FIXME window.rootViewController = UIHostingController(rootView: contentView)
         window.rootViewController = UIHostingController(rootView: loginView)
         self.window = window
         window.makeKeyAndVisible()

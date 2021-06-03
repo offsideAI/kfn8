@@ -79,7 +79,7 @@ struct CardView: View {
                 .frame(width: 300, height: 110, alignment: .top)
         }
         .frame(width: 340.0, height: 220)
-        .background(Color.black)
+        .background(Color("Kfn8"))
         .cornerRadius(20)
         .shadow(radius: 20)
     }
