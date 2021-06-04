@@ -45,16 +45,26 @@ struct ControlVisibilityToggleButton: View {
 struct ControlButtonBar: View {
     var body: some View {
         HStack {
-            Button(action: {
-                print("MostrecentlyPlaced button pressed")
-            }) {
-                Image(systemName: "clock.fill")
-                    .font(.system(size: 35))
-                    .foregroundColor(.white)
-                    .buttonStyle(PlainButtonStyle())
-            }
-            .frame(width: 50, height: 50)
             
+            ControlButton(systemIconName: "clock.fill") {
+                print("MostrecentlyPlaced button pressed")
+            }
+            
+            Spacer()
+            
+            ControlButton(systemIconName: "square.grid.2x2") {
+                print("Browse button pressed")
+            }
+            
+            Spacer()
+            
+            
+            ControlButton(systemIconName: "slider.horizontal.3") {
+                print("Settings button pressed")
+            }
+            
+            
+            /*
             Button(action: {
                 print("Browse button pressed")
             }) {
@@ -64,19 +74,27 @@ struct ControlButtonBar: View {
                     .buttonStyle(PlainButtonStyle())
             }
             .frame(width: 50, height: 50)
-            
-            Button(action: {
-                print("Settings button pressed")
-            }) {
-                Image(systemName: "slider.horizontal.3")
-                    .font(.system(size: 35))
-                    .foregroundColor(.white)
-                    .buttonStyle(PlainButtonStyle())
-            }
-            .frame(width: 50, height: 50)
+            */
+
         }
         .frame(maxWidth: 500)
         .padding(30)
         .background(Color.black .opacity(0.25))
+    }
+}
+
+struct ControlButton: View {
+    let systemIconName: String
+    let action: () -> Void
+    var body: some View {
+        Button(action: {
+            self.action()
+        }) {
+            Image(systemName: systemIconName)
+                .font(.system(size: 35))
+                .foregroundColor(.white)
+                .buttonStyle(PlainButtonStyle())
+        }
+        .frame(width: 50, height: 50)
     }
 }
