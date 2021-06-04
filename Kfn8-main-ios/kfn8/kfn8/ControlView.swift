@@ -46,9 +46,29 @@ struct ControlButtonBar: View {
     var body: some View {
         HStack {
             Button(action: {
+                print("MostrecentlyPlaced button pressed")
+            }) {
+                Image(systemName: "clock.fill")
+                    .font(.system(size: 35))
+                    .foregroundColor(.white)
+                    .buttonStyle(PlainButtonStyle())
+            }
+            .frame(width: 50, height: 50)
+            
+            Button(action: {
                 print("Browse button pressed")
             }) {
                 Image(systemName: "square.grid.2x2")
+                    .font(.system(size: 35))
+                    .foregroundColor(.white)
+                    .buttonStyle(PlainButtonStyle())
+            }
+            .frame(width: 50, height: 50)
+            
+            Button(action: {
+                print("Settings button pressed")
+            }) {
+                Image(systemName: "slider.horizontal.3")
                     .font(.system(size: 35))
                     .foregroundColor(.white)
                     .buttonStyle(PlainButtonStyle())

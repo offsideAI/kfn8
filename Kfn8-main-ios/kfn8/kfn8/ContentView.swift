@@ -125,7 +125,11 @@ struct ModelPickerView: View {
                 }
             }
         }
-        .padding(60)
+        // .padding(20)
+        .padding(.top, 20)
+        .padding(.leading, 20)
+        .padding(.trailing, 20)
+        .padding(.bottom, 130)
         .background(Color.black.opacity(0.5))
     }
 }
