@@ -41,6 +41,18 @@ struct LoginView: View {
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     })
+                
+                NavigationLink(
+                    destination: ContentView(),
+                    label: {
+                        Text("My Portfolio")
+                            .bold()
+                            .frame(width: 280, height: 50, alignment: .center)
+                            .background(Color.blue)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(10)
+                            .padding(10)
+                    })
             }
         }
         .accentColor(Color(.label))

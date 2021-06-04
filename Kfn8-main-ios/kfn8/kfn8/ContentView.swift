@@ -41,6 +41,7 @@ struct ContentView : View {
                 ModelPickerView(isControlPanelEnabled: $isControlPanelEnabled, selectedModel: $selectedModel, models: models)
             }
             
+            ControlView()
 
         }
         .navigationBarBackButtonHidden(true)
@@ -124,7 +125,7 @@ struct ModelPickerView: View {
                 }
             }
         }
-        .padding(20)
+        .padding(60)
         .background(Color.black.opacity(0.5))
     }
 }
