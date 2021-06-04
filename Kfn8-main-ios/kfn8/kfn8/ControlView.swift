@@ -37,7 +37,25 @@ struct ControlVisibilityToggleButton: View {
     var body: some View {
         HStack {
             
+            Spacer()
+            
+            ZStack {
+                Color.black.opacity(0.25)
+                
+                Button(action: {
+                    print("ControlVisibility Toggle button pressed")
+                }) {
+                    Image(systemName: "rectangle")
+                        .font(.system(size: 35))
+                        .foregroundColor(.white)
+                        .buttonStyle(PlainButtonStyle())
+                }
+            }
+            .frame(width: 50, height: 50)
+            .cornerRadius(8.0)
         }
+        .padding(.top, 0)
+        .padding(.trailing, 20)
     }
 }
 

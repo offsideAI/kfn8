@@ -36,7 +36,7 @@ struct ContentView : View {
         ZStack(alignment: .bottom) {
             ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
             if self.isControlPanelEnabled {
-                ControlPanelView(isControlPanelEnabled: $isControlPanelEnabled, selectedModel: $selectedModel, modelConfirmedForPlacement: $modelConfirmedForPlacement)
+                PlacementPanelView(isControlPanelEnabled: $isControlPanelEnabled, selectedModel: $selectedModel, modelConfirmedForPlacement: $modelConfirmedForPlacement)
             } else {
                 ModelPickerView(isControlPanelEnabled: $isControlPanelEnabled, selectedModel: $selectedModel, models: models)
             }
@@ -134,7 +134,7 @@ struct ModelPickerView: View {
     }
 }
 
-struct ControlPanelView: View {
+struct PlacementPanelView: View {
     @Binding var isControlPanelEnabled: Bool
     @Binding var selectedModel: Model?
     @Binding var modelConfirmedForPlacement: Model?
@@ -167,6 +167,10 @@ struct ControlPanelView: View {
                     .padding(20)
             }
         }
+        .padding(.top, 20)
+        .padding(.leading, 20)
+        .padding(.trailing, 20)
+        .padding(.bottom, 130)
     }
     func resetControlParameters() {
         self.isControlPanelEnabled = false
