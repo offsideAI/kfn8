@@ -15,7 +15,7 @@ struct ContentView : View {
     @State private var selectedModel: Model?
     @State private var modelConfirmedForPlacement: Model?
     @State private var isControlsVisible: Bool = true
-    
+    @State private var isBrowseVisible: Bool = false
     
     private var models: [Model] = {
         // Dynamically get filenames
@@ -43,7 +43,7 @@ struct ContentView : View {
                 ModelPickerView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, models: models)
             }
             
-            ControlView(isControlsVisible: $isControlsVisible)
+            ControlView(isControlsVisible: $isControlsVisible, isBrowseVisible: $isBrowseVisible)
 
         }
         .navigationBarBackButtonHidden(true)

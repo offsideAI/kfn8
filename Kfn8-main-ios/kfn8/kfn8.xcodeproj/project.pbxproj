@@ -29,6 +29,7 @@
 		4BC336F92669A2F200AF7AE1 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 4BC336F82669A2F200AF7AE1 /* FocusEntity */; };
 		4BC336FB266A9BE200AF7AE1 /* FocusARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336FA266A9BE100AF7AE1 /* FocusARView.swift */; };
 		4BC336FF266AB35900AF7AE1 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336FE266AB35900AF7AE1 /* ControlView.swift */; };
+		4BC33701266AC9CA00AF7AE1 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		4BC336F526696A9900AF7AE1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4BC336FA266A9BE100AF7AE1 /* FocusARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusARView.swift; sourceTree = "<group>"; };
 		4BC336FE266AB35900AF7AE1 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
+		4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				4BA3789426689DDC00374BDA /* Assets.xcassets */,
 				4BA3789926689DDC00374BDA /* Info.plist */,
 				4BA3789626689DDC00374BDA /* Preview Content */,
+				4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */,
 			);
 			path = kfn8;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			files = (
 				4BC336F4266948E700AF7AE1 /* LoginView.swift in Sources */,
 				4BC336FB266A9BE200AF7AE1 /* FocusARView.swift in Sources */,
+				4BC33701266AC9CA00AF7AE1 /* BrowseView.swift in Sources */,
 				4BA3789126689DDA00374BDA /* ContentView.swift in Sources */,
 				4BA3788F26689DDA00374BDA /* AppDelegate.swift in Sources */,
 				4BC336FF266AB35900AF7AE1 /* ControlView.swift in Sources */,
