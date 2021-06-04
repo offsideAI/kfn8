@@ -10,30 +10,24 @@ import SwiftUI
 
 
 struct ControlView: View {
+    @Binding var isControlsVisible: Bool
     var body: some View {
         VStack {
-            ControlVisibilityToggleButton()
+            ControlVisibilityToggleButton(isControlsVisible: $isControlsVisible)
             
             Spacer()
             
-            ControlButtonBar()
+            if isControlsVisible {
+                ControlButtonBar()
+            }
         }
     }
     
 }
 
-#if DEBUG
-
-struct ControlView_Previews: PreviewProvider {
-    static var previews: some View {
-        ControlView()
-    }
-}
-
-#endif
-
 
 struct ControlVisibilityToggleButton: View {
+    @Binding var isControlsVisible: Bool
     var body: some View {
         HStack {
             
@@ -44,8 +38,9 @@ struct ControlVisibilityToggleButton: View {
                 
                 Button(action: {
                     print("ControlVisibility Toggle button pressed")
+                    self.isControlsVisible.toggle()
                 }) {
-                    Image(systemName: "rectangle")
+                    Image(systemName: self.isControlsVisible ? "rectangle" : "slider.horizontal.below.rectangle")
                         .font(.system(size: 35))
                         .foregroundColor(.white)
                         .buttonStyle(PlainButtonStyle())
@@ -64,13 +59,13 @@ struct ControlButtonBar: View {
     var body: some View {
         HStack {
             
-            ControlButton(systemIconName: "clock.fill") {
+            ControlButton(systemIconName: "line.horizontal.3") {
                 print("MostrecentlyPlaced button pressed")
             }
             
             Spacer()
             
-            ControlButton(systemIconName: "square.grid.2x2") {
+            ControlButton(systemIconName: "square.stack.3d.forward.dottedline") {
                 print("Browse button pressed")
             }
             

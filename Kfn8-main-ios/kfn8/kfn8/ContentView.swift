@@ -11,9 +11,11 @@ import ARKit
 import FocusEntity
 
 struct ContentView : View {
-    @State private var isControlPanelEnabled = false
+    @State private var isPlacementPanelEnabled = false
     @State private var selectedModel: Model?
     @State private var modelConfirmedForPlacement: Model?
+    @State private var isControlsVisible: Bool = true
+    
     
     private var models: [Model] = {
         // Dynamically get filenames
@@ -35,13 +37,13 @@ struct ContentView : View {
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
-            if self.isControlPanelEnabled {
-                PlacementPanelView(isControlPanelEnabled: $isControlPanelEnabled, selectedModel: $selectedModel, modelConfirmedForPlacement: $modelConfirmedForPlacement)
+            if self.isPlacementPanelEnabled {
+                PlacementPanelView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, modelConfirmedForPlacement: $modelConfirmedForPlacement)
             } else {
-                ModelPickerView(isControlPanelEnabled: $isControlPanelEnabled, selectedModel: $selectedModel, models: models)
+                ModelPickerView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, models: models)
             }
             
-            ControlView()
+            ControlView(isControlsVisible: $isControlsVisible)
 
         }
         .navigationBarBackButtonHidden(true)
@@ -97,7 +99,7 @@ struct ARViewContainer: UIViewRepresentable {
 
 
 struct ModelPickerView: View {
-    @Binding var isControlPanelEnabled: Bool
+    @Binding var isPlacementPanelEnabled: Bool
     @Binding var selectedModel: Model?
     var models: [Model]
     var body: some View {
@@ -109,7 +111,7 @@ struct ModelPickerView: View {
                     Button(action: {
                         print("Selected model with name: \(self.models[index].modelName)")
                         self.selectedModel = self.models[index]
-                        self.isControlPanelEnabled = true
+                        self.isPlacementPanelEnabled = true
                         
                     }) {
                         Image(uiImage: self.models[index].image)
@@ -135,7 +137,7 @@ struct ModelPickerView: View {
 }
 
 struct PlacementPanelView: View {
-    @Binding var isControlPanelEnabled: Bool
+    @Binding var isPlacementPanelEnabled: Bool
     @Binding var selectedModel: Model?
     @Binding var modelConfirmedForPlacement: Model?
     
@@ -173,7 +175,7 @@ struct PlacementPanelView: View {
         .padding(.bottom, 130)
     }
     func resetControlParameters() {
-        self.isControlPanelEnabled = false
+        self.isPlacementPanelEnabled = false
         self.selectedModel = nil
     }
 }
