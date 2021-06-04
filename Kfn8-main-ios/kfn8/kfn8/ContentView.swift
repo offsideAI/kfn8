@@ -8,6 +8,7 @@
 import SwiftUI
 import RealityKit
 import ARKit
+import FocusEntity
 
 struct ContentView : View {
     @State private var isControlPanelEnabled = false
@@ -51,7 +52,8 @@ struct ARViewContainer: UIViewRepresentable {
     @Binding var modelConfirmedForPlacement: Model?
     func makeUIView(context: Context) -> ARView {
         
-        let arView = ARView(frame: .zero)
+        // let arView = ARView(frame: .zero)
+        let arView = FocusARView(frame: .zero)
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal, .vertical]
         config.environmentTexturing = .automatic
@@ -90,6 +92,8 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
 }
+
+
 
 struct ModelPickerView: View {
     @Binding var isControlPanelEnabled: Bool

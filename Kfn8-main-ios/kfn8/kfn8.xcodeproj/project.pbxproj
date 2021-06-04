@@ -27,6 +27,7 @@
 		4BC336F4266948E700AF7AE1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336F3266948E600AF7AE1 /* LoginView.swift */; };
 		4BC336F626696A9900AF7AE1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336F526696A9900AF7AE1 /* Model.swift */; };
 		4BC336F92669A2F200AF7AE1 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 4BC336F82669A2F200AF7AE1 /* FocusEntity */; };
+		4BC336FB266A9BE200AF7AE1 /* FocusARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336FA266A9BE100AF7AE1 /* FocusARView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		4BA378C72669308100374BDA /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = tv_retro.usdz; path = "../../../../assets-usdz/tv_retro.usdz"; sourceTree = "<group>"; };
 		4BC336F3266948E600AF7AE1 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4BC336F526696A9900AF7AE1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4BC336FA266A9BE100AF7AE1 /* FocusARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusARView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				4BA3788E26689DDA00374BDA /* AppDelegate.swift */,
 				4BC336F526696A9900AF7AE1 /* Model.swift */,
 				4BA3789026689DDA00374BDA /* ContentView.swift */,
+				4BC336FA266A9BE100AF7AE1 /* FocusARView.swift */,
 				4BC336F3266948E600AF7AE1 /* LoginView.swift */,
 				4BA3789426689DDC00374BDA /* Assets.xcassets */,
 				4BA3789926689DDC00374BDA /* Info.plist */,
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC336F4266948E700AF7AE1 /* LoginView.swift in Sources */,
+				4BC336FB266A9BE200AF7AE1 /* FocusARView.swift in Sources */,
 				4BA3789126689DDA00374BDA /* ContentView.swift in Sources */,
 				4BA3788F26689DDA00374BDA /* AppDelegate.swift in Sources */,
 				4BC336F626696A9900AF7AE1 /* Model.swift in Sources */,
