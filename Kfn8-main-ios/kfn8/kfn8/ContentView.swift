@@ -16,6 +16,7 @@ struct ContentView : View {
     @State private var modelConfirmedForPlacement: Model?
     @State private var isControlsVisible: Bool = true
     @State private var isBrowseShown: Bool = false
+    @State private var isMyCollectionShown: Bool = false
 
     /*
     private var models: [Model] = {
@@ -46,7 +47,7 @@ struct ContentView : View {
                 ModelPickerView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, items: Models().all)
             }
             
-            ControlView(isControlsVisible: $isControlsVisible, isBrowseShown: $isBrowseShown)
+            ControlView(isControlsVisible: $isControlsVisible, isBrowseShown: $isBrowseShown, isMyCollectionShown: $isMyCollectionShown)
 
         }
         .navigationBarBackButtonHidden(true)

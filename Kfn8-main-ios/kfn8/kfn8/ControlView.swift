@@ -12,6 +12,7 @@ import SwiftUI
 struct ControlView: View {
     @Binding var isControlsVisible: Bool
     @Binding var isBrowseShown: Bool
+    @Binding var isMyCollectionShown: Bool
     var body: some View {
         VStack {
             ControlVisibilityToggleButton(isControlsVisible: $isControlsVisible)
@@ -19,7 +20,7 @@ struct ControlView: View {
             Spacer()
             
             if isControlsVisible {
-                ControlButtonBar(isBrowseShown: $isBrowseShown)
+                ControlButtonBar(isBrowseShown: $isBrowseShown, isMyCollectionShown: $isMyCollectionShown)
             }
         }
     }
@@ -58,12 +59,17 @@ struct ControlVisibilityToggleButton: View {
 
 struct ControlButtonBar: View {
     @Binding var isBrowseShown: Bool
+    @Binding var isMyCollectionShown: Bool
     var body: some View {
         HStack {
-            // MostRecentlyPlacedButton
+            // MyCollection
             ControlButton(systemIconName: "line.horizontal.3") {
                 print("MostrecentlyPlaced button pressed")
-            }
+                self.isMyCollectionShown.toggle()
+            }.sheet(isPresented: $isMyCollectionShown, content: {
+                //MyColectionView
+                MyCollectionView(isMyCollectionShown: $isMyCollectionShown)
+            })
             
             Spacer()
             
