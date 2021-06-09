@@ -62,7 +62,7 @@ class Model {
             })
         
     }
-    // TODO-FIXME-DEBUG : Create a method to async load modelEntity
+    // Create a method to async load modelEntity
     func asyncLoadModelEntity() {
         let filename = self.modelName + ".usdz"
         

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ControlView: View {
     @Binding var isControlsVisible: Bool
-    @Binding var isBrowseVisible: Bool
+    @Binding var isBrowseShown: Bool
     var body: some View {
         VStack {
             ControlVisibilityToggleButton(isControlsVisible: $isControlsVisible)
@@ -19,7 +19,7 @@ struct ControlView: View {
             Spacer()
             
             if isControlsVisible {
-                ControlButtonBar(isBrowseShown: $isBrowseVisible)
+                ControlButtonBar(isBrowseShown: $isBrowseShown)
             }
         }
     }
