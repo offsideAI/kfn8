@@ -13,7 +13,7 @@ struct BrowseView: View {
         NavigationView {
             ScrollView(showsIndicators: false) {
                  // Gridviews for thumbnails
-                ModelsByCategoryGrid()
+                ModelsByCategoryGrid(isBrowseShown: $isBrowseShown)
             }
             .navigationBarTitle(Text("Browse"), displayMode: .large)
             .navigationBarItems(trailing:
@@ -28,6 +28,7 @@ struct BrowseView: View {
 }
 
 struct ModelsByCategoryGrid: View {
+    @Binding var isBrowseShown: Bool
     let models = Models()
     
     var body: some View {
@@ -36,7 +37,7 @@ struct ModelsByCategoryGrid: View {
                 
                 // Only display grid if category contains items
                 if let modelsByCategory = models.get(category: category) {
-                    HorizontalGrid(title: category.label, items: modelsByCategory)
+                    HorizontalGrid(isBrowseShown: $isBrowseShown, title: category.label, items: modelsByCategory)
                 }
                 
             }
@@ -45,6 +46,7 @@ struct ModelsByCategoryGrid: View {
 }
 
 struct HorizontalGrid: View {
+    @Binding var isBrowseShown: Bool
     var title: String
     var items: [Model]
     private let gridItemLayout = [GridItem(.fixed(150))]
@@ -59,15 +61,45 @@ struct HorizontalGrid: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: gridItemLayout, spacing: 30) {
                     ForEach(0..<items.count) { index in
+                        
+                        let model = items[index]
+                        
+                        ItemButton(model: model) {
+                            // TODO-FIXME-DEBUG : call model method to async load modelEntity
+                            
+                            // TODO-FIXME-DEBUG : select model for placement
+                            
+                            print("BrowserView | HorizontalGrid : selected \(model.modelName). for placement.")
+                            self.isBrowseShown = false
+                        }
+                        /*
                         Color(UIColor.secondarySystemFill)
                             .frame(width: 150, height: 150)
                             .cornerRadius(8)
+                        */
                     }
                 }
                 .padding(.horizontal, 22)
                 .padding(.vertical, 10)
                 
             }
+        }
+    }
+}
+
+struct ItemButton: View {
+    let model: Model
+    let action: () -> Void
+    var body: some View {
+        Button(action: {
+            self.action()
+        }) {
+            Image(uiImage: self.model.image)
+                .resizable()
+                .frame(height: 150)
+                .aspectRatio(1/1, contentMode: .fit)
+                .background(Color(UIColor.secondarySystemFill))
+                .cornerRadius(8.0)
         }
     }
 }
