@@ -16,9 +16,9 @@ struct ContentView : View {
     @State private var modelConfirmedForPlacement: Model?
     @State private var isControlsVisible: Bool = true
     @State private var isBrowseVisible: Bool = false
-    
+
+    /*
     private var models: [Model] = {
-        // Dynamically get filenames
         let filemanager = FileManager.default
         guard let path = Bundle.main.resourcePath,
               let files = try? filemanager.contentsOfDirectory(atPath: path) else {
@@ -30,20 +30,20 @@ struct ContentView : View {
             let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
             print("DEBUG:\(modelName)")
             let model = Model(modelName: modelName, category: ModelCategory.uno)
-            // let category = selectedModel?.category ?? ModelCategory.uno
-            // let model = Model(modelName: modelName, category: category)
             availableModels.append(model)
 
         }
         return availableModels
     }()
+    */
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
             if self.isPlacementPanelEnabled {
                 PlacementPanelView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, modelConfirmedForPlacement: $modelConfirmedForPlacement)
             } else {
-                ModelPickerView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, models: models)
+                ModelPickerView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, items: Models().all)
             }
             
             ControlView(isControlsVisible: $isControlsVisible, isBrowseVisible: $isBrowseVisible)
@@ -104,21 +104,21 @@ struct ARViewContainer: UIViewRepresentable {
 struct ModelPickerView: View {
     @Binding var isPlacementPanelEnabled: Bool
     @Binding var selectedModel: Model?
-    var models: [Model]
+    var items: [Model]
     var body: some View {
         ScrollView(.horizontal, showsIndicators:false) {
             HStack(spacing: 30) {
-                ForEach(0 ..< self.models.count) {
+                ForEach(0 ..< self.items.count) {
                     index in
                     // Text(self.models[index].modelName)
                     
                     Button(action: {
-                        print("Selected model with name: \(self.models[index].modelName)")
-                        self.selectedModel = self.models[index]
+                        print("Selected model with name: \(self.items[index].modelName)")
+                        self.selectedModel = self.items[index]
                         self.isPlacementPanelEnabled = true
                         
                     }) {
-                        Image(uiImage: self.models[index].image)
+                        Image(uiImage: self.items[index].image)
                                 .resizable()
                                 .frame(height:80)
                                 .aspectRatio(1/1, contentMode: .fit)
