@@ -41,12 +41,6 @@ class Model {
     
     private var cancellable: AnyCancellable? = nil
     
-    init(modelName: String) {
-        self.modelName = modelName
-        self.category = ModelCategory.uno
-        self.image = UIImage(named: modelName) ?? UIImage(systemName: "photo")!
-    }
-    
     init(modelName: String, category: ModelCategory, scaleCompensation: Float = 1.0) {
         self.modelName = modelName
         self.category = category

@@ -109,8 +109,8 @@ struct ModelPickerView: View {
             HStack(spacing: 30) {
                 ForEach(0 ..< self.models.count) {
                     index in
-                    Text(self.models[index])
-                    /*
+                    // Text(self.models[index].modelName)
+                    
                     Button(action: {
                         print("Selected model with name: \(self.models[index].modelName)")
                         self.selectedModel = self.models[index]
@@ -127,7 +127,7 @@ struct ModelPickerView: View {
                         
                     }
                     .buttonStyle(PlainButtonStyle())
-                    */
+                    
                 }
             }
         }
