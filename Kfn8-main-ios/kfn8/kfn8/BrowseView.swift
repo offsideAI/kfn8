@@ -66,6 +66,7 @@ struct HorizontalGrid: View {
                         
                         ItemButton(model: model) {
                             // TODO-FIXME-DEBUG : call model method to async load modelEntity
+                            model.asyncLoadModelEntity()
                             
                             // TODO-FIXME-DEBUG : select model for placement
                             

@@ -39,7 +39,7 @@ class Model {
     var category: ModelCategory
     var scaleCompensation: Float
     
-    private var cancellable: AnyCancellable? = nil
+    private var cancellable: AnyCancellable?
     
     init(modelName: String, category: ModelCategory, scaleCompensation: Float = 1.0) {
         self.modelName = modelName
@@ -63,6 +63,25 @@ class Model {
         
     }
     // TODO-FIXME-DEBUG : Create a method to async load modelEntity
+    func asyncLoadModelEntity() {
+        let filename = self.modelName + ".usdz"
+        
+        self.cancellable = ModelEntity.loadModelAsync(named: filename)
+            .sink(receiveCompletion: { loadCompletion in
+                switch loadCompletion {
+                case .failure(let error): print("Unable to load modelEntity for \(filename) Error: \(error.localizedDescription)")
+                    
+                case .finished:
+                    break
+                }
+            }, receiveValue: { modelEntity in
+                self.modelEntity = modelEntity
+                self.modelEntity?.scale *= self.scaleCompensation
+                
+                print("modelEntity for \(self.modelName) has been loaded")
+    
+            })
+    }
     
 }
 
