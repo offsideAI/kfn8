@@ -33,6 +33,7 @@ struct ContentView : View {
             // let category = selectedModel?.category ?? ModelCategory.uno
             // let model = Model(modelName: modelName, category: category)
             availableModels.append(model)
+
         }
         return availableModels
     }()

@@ -98,5 +98,9 @@ struct Models {
     func get(category: ModelCategory) -> [Model] {
         return all.filter( {$0.category == category})
     }
+    
+    func getAll() -> [Model] {
+        return all
+    }
 }
 
