@@ -40,7 +40,10 @@ struct ControlVisibilityToggleButton: View {
                 
                 Button(action: {
                     print("ControlVisibility Toggle button pressed")
-                    self.isControlsVisible.toggle()
+                    // TODO-FIXME-DEBUG
+                    // Don't show/hide the ControlView
+                    // self.isControlsVisible.toggle()
+                    
                 }) {
                     Image(systemName: self.isControlsVisible ? "rectangle" : "slider.horizontal.below.rectangle")
                         .font(.system(size: 35))
