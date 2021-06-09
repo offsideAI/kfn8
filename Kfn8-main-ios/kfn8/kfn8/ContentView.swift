@@ -29,7 +29,9 @@ struct ContentView : View {
             filename.hasSuffix("usdz") {
             let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
             print("DEBUG:\(modelName)")
-            let model = Model(modelName: modelName)
+            let model = Model(modelName: modelName, category: ModelCategory.uno)
+            // let category = selectedModel?.category ?? ModelCategory.uno
+            // let model = Model(modelName: modelName, category: category)
             availableModels.append(model)
         }
         return availableModels
@@ -107,7 +109,8 @@ struct ModelPickerView: View {
             HStack(spacing: 30) {
                 ForEach(0 ..< self.models.count) {
                     index in
-                    // Text(self.models[index])
+                    Text(self.models[index])
+                    /*
                     Button(action: {
                         print("Selected model with name: \(self.models[index].modelName)")
                         self.selectedModel = self.models[index]
@@ -124,6 +127,7 @@ struct ModelPickerView: View {
                         
                     }
                     .buttonStyle(PlainButtonStyle())
+                    */
                 }
             }
         }

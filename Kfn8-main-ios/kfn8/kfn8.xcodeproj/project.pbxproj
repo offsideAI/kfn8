@@ -136,10 +136,10 @@
 				4BC336FE266AB35900AF7AE1 /* ControlView.swift */,
 				4BC336FA266A9BE100AF7AE1 /* FocusARView.swift */,
 				4BC336F3266948E600AF7AE1 /* LoginView.swift */,
+				4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */,
 				4BA3789426689DDC00374BDA /* Assets.xcassets */,
 				4BA3789926689DDC00374BDA /* Info.plist */,
 				4BA3789626689DDC00374BDA /* Preview Content */,
-				4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */,
 			);
 			path = kfn8;
 			sourceTree = "<group>";
