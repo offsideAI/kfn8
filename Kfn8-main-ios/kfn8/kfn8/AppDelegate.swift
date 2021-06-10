@@ -8,7 +8,8 @@
 import UIKit
 import SwiftUI
 
-@main
+// TODO-FIXME-DBUG
+// @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -18,14 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         // TODO-FIXME  let contentView = ContentView()
-        let loginView = LoginView(choice: "ContentView")
-
         // Use a UIHostingController as window root view controller.
+        /*
+        let loginView = LoginView(choice: "ContentView")
         let window = UIWindow(frame: UIScreen.main.bounds)
-        // TODO-FIXME window.rootViewController = UIHostingController(rootView: contentView)
         window.rootViewController = UIHostingController(rootView: loginView)
         self.window = window
         window.makeKeyAndVisible()
+        */
+        print("AppDelegate didFinishLaunchingWithOptions called")
         return true
     }
 

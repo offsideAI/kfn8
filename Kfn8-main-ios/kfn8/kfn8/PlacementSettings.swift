@@ -10,14 +10,15 @@ import RealityKit
 import Combine
 
 class PlacementSettings: ObservableObject {
-    
+    // When the user selects a model in BrowseView, currentSelectedModel property is set
     @Published var currentSelectedModel: Model? {
         willSet(newValue) {
             print("Setting currentSelectedModel to \(String(describing: newValue?.modelName))")
         }
     }
     
-    @Published var confirmedCurrentModel: Model? {
+    // When the user taps confirm in PlacementView, the value of currentSelectedModel is assigned to currentConfirmedModel
+    @Published var currentConfirmedModel: Model? {
         willSet(newValue) {
             guard let model = newValue else {
                 print("Clearing confirmedModel")
