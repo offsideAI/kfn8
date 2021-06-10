@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct Kfn8App: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+    @StateObject var placementSettings = PlacementSettings()
     init() {
         // perform any task on app launch
         print("Kfn8App init called")
@@ -18,6 +18,7 @@ struct Kfn8App: App {
     var body: some Scene {
         WindowGroup {
             LoginView(choice: "ContentView")
+                .environmentObject(placementSettings)
         }
     }
 }
