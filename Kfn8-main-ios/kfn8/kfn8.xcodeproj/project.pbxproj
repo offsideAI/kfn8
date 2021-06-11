@@ -31,7 +31,7 @@
 		4BC336F4266948E700AF7AE1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336F3266948E600AF7AE1 /* LoginView.swift */; };
 		4BC336F626696A9900AF7AE1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336F526696A9900AF7AE1 /* Model.swift */; };
 		4BC336F92669A2F200AF7AE1 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 4BC336F82669A2F200AF7AE1 /* FocusEntity */; };
-		4BC336FB266A9BE200AF7AE1 /* FocusARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336FA266A9BE100AF7AE1 /* FocusARView.swift */; };
+		4BC336FB266A9BE200AF7AE1 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336FA266A9BE100AF7AE1 /* CustomARView.swift */; };
 		4BC336FF266AB35900AF7AE1 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC336FE266AB35900AF7AE1 /* ControlView.swift */; };
 		4BC33701266AC9CA00AF7AE1 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */; };
 /* End PBXBuildFile section */
@@ -83,7 +83,7 @@
 		4BA378C72669308100374BDA /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = tv_retro.usdz; path = "../../../../assets-usdz/tv_retro.usdz"; sourceTree = "<group>"; };
 		4BC336F3266948E600AF7AE1 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4BC336F526696A9900AF7AE1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		4BC336FA266A9BE100AF7AE1 /* FocusARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusARView.swift; sourceTree = "<group>"; };
+		4BC336FA266A9BE100AF7AE1 /* CustomARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 		4BC336FE266AB35900AF7AE1 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,7 +144,7 @@
 				4BA3789026689DDA00374BDA /* ContentView.swift */,
 				4BC336FE266AB35900AF7AE1 /* ControlView.swift */,
 				4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */,
-				4BC336FA266A9BE100AF7AE1 /* FocusARView.swift */,
+				4BC336FA266A9BE100AF7AE1 /* CustomARView.swift */,
 				4BC336F3266948E600AF7AE1 /* LoginView.swift */,
 				4B333C1E26715A82000C78D9 /* MyCollectionView.swift */,
 				4B333C202671661E000C78D9 /* PlacementSettings.swift */,
@@ -347,7 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC336F4266948E700AF7AE1 /* LoginView.swift in Sources */,
-				4BC336FB266A9BE200AF7AE1 /* FocusARView.swift in Sources */,
+				4BC336FB266A9BE200AF7AE1 /* CustomARView.swift in Sources */,
 				4B333C23267263CF000C78D9 /* Kfn8App.swift in Sources */,
 				4BC33701266AC9CA00AF7AE1 /* BrowseView.swift in Sources */,
 				4B333C212671661E000C78D9 /* PlacementSettings.swift in Sources */,

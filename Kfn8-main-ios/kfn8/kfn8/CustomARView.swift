@@ -1,5 +1,5 @@
 //
-//  FocusARView.swift
+//  CustomARView.swift
 //  FocusEntity-Example
 //
 //
@@ -9,7 +9,7 @@ import FocusEntity
 import Combine
 import ARKit
 
-class FocusARView: ARView {
+class CustomARView: ARView {
   enum FocusStyleChoices {
     case classic
     case material
@@ -58,7 +58,7 @@ class FocusARView: ARView {
   }
 }
 
-extension FocusARView: FocusEntityDelegate {
+extension CustomARView: FocusEntityDelegate {
   func toTrackingState() {
     print("tracking")
   }

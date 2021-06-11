@@ -69,7 +69,7 @@ struct ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
         
         // let arView = ARView(frame: .zero)
-        let arView = FocusARView(frame: .zero)
+        let arView = CustomARView(frame: .zero)
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal, .vertical]
         config.environmentTexturing = .automatic
