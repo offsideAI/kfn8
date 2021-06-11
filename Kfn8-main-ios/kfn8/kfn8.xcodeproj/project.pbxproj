@@ -10,6 +10,7 @@
 		4B333C1F26715A82000C78D9 /* MyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C1E26715A82000C78D9 /* MyCollectionView.swift */; };
 		4B333C212671661E000C78D9 /* PlacementSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C202671661E000C78D9 /* PlacementSettings.swift */; };
 		4B333C23267263CF000C78D9 /* Kfn8App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C22267263CF000C78D9 /* Kfn8App.swift */; };
+		4B333C2526727683000C78D9 /* PlacementPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C2426727683000C78D9 /* PlacementPanelView.swift */; };
 		4BA3788F26689DDA00374BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3788E26689DDA00374BDA /* AppDelegate.swift */; };
 		4BA3789126689DDA00374BDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3789026689DDA00374BDA /* ContentView.swift */; };
 		4BA3789526689DDC00374BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BA3789426689DDC00374BDA /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		4B333C1E26715A82000C78D9 /* MyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionView.swift; sourceTree = "<group>"; };
 		4B333C202671661E000C78D9 /* PlacementSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementSettings.swift; sourceTree = "<group>"; };
 		4B333C22267263CF000C78D9 /* Kfn8App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kfn8App.swift; sourceTree = "<group>"; };
+		4B333C2426727683000C78D9 /* PlacementPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementPanelView.swift; sourceTree = "<group>"; };
 		4BA3788B26689DDA00374BDA /* kfn8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kfn8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA3788E26689DDA00374BDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BA3789026689DDA00374BDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,14 +143,15 @@
 				4BC336F526696A9900AF7AE1 /* Model.swift */,
 				4BA3789026689DDA00374BDA /* ContentView.swift */,
 				4BC336FE266AB35900AF7AE1 /* ControlView.swift */,
+				4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */,
 				4BC336FA266A9BE100AF7AE1 /* FocusARView.swift */,
 				4BC336F3266948E600AF7AE1 /* LoginView.swift */,
 				4B333C1E26715A82000C78D9 /* MyCollectionView.swift */,
-				4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */,
+				4B333C202671661E000C78D9 /* PlacementSettings.swift */,
+				4B333C2426727683000C78D9 /* PlacementPanelView.swift */,
 				4BA3789426689DDC00374BDA /* Assets.xcassets */,
 				4BA3789926689DDC00374BDA /* Info.plist */,
 				4BA3789626689DDC00374BDA /* Preview Content */,
-				4B333C202671661E000C78D9 /* PlacementSettings.swift */,
 			);
 			path = kfn8;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				4B333C212671661E000C78D9 /* PlacementSettings.swift in Sources */,
 				4BA3789126689DDA00374BDA /* ContentView.swift in Sources */,
 				4BA3788F26689DDA00374BDA /* AppDelegate.swift in Sources */,
+				4B333C2526727683000C78D9 /* PlacementPanelView.swift in Sources */,
 				4BC336FF266AB35900AF7AE1 /* ControlView.swift in Sources */,
 				4B333C1F26715A82000C78D9 /* MyCollectionView.swift in Sources */,
 				4BC336F626696A9900AF7AE1 /* Model.swift in Sources */,

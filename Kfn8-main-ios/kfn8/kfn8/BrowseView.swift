@@ -47,6 +47,8 @@ struct ModelsByCategoryGrid: View {
 
 struct HorizontalGrid: View {
     @Binding var isBrowseShown: Bool
+    @EnvironmentObject var placementSettings: PlacementSettings
+    
     var title: String
     var items: [Model]
     private let gridItemLayout = [GridItem(.fixed(150))]
@@ -65,11 +67,10 @@ struct HorizontalGrid: View {
                         let model = items[index]
                         
                         ItemButton(model: model) {
-                            // TODO-FIXME-DEBUG : call model method to async load modelEntity
+                            // call model method to async load modelEntity
                             model.asyncLoadModelEntity()
-                            
-                            // TODO-FIXME-DEBUG : select model for placement
-                            
+                            // select model for placement
+                            self.placementSettings.currentSelectedModel = model
                             print("BrowserView | HorizontalGrid : selected \(model.modelName). for placement.")
                             self.isBrowseShown = false
                         }
