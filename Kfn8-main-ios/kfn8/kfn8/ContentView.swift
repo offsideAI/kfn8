@@ -66,7 +66,7 @@ struct ContentView : View {
 
 struct ARViewContainer: UIViewRepresentable {
     @Binding var modelConfirmedForPlacement: Model?
-    func makeUIView(context: Context) -> ARView {
+    func makeUIView(context: Context) -> CustomARView {
         
         // let arView = ARView(frame: .zero)
         let arView = CustomARView(frame: .zero)
@@ -86,7 +86,7 @@ struct ARViewContainer: UIViewRepresentable {
         
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {
+    func updateUIView(_ uiView: CustomARView, context: Context) {
         if let model = self.modelConfirmedForPlacement {
             if let modelEntity = model.modelEntity {
                 print("DEBUG: adding model to scene \(model.modelName)")
