@@ -158,7 +158,6 @@ struct ModelPickerView: View {
                     
                     Button(action: {
                         print("Selected model with name: \(self.items[index].modelName)")
-                        // TODO-FIXME-DEBUG-DPRECATE self.selectedModel = self.items[index]
                         self.placementSettings.currentSelectedModel = self.items[index]
                         self.isPlacementPanelEnabled = true
                         
