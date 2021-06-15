@@ -95,7 +95,8 @@ struct HorizontalGrid: View {
                             model.asyncLoadModelEntity()
                             // select model for placement
                             self.placementSettings.currentSelectedModel = model
-                            print("BrowserView | HorizontalGrid : selected \(model.modelName). for placement.")
+                            print("BrowseView | HorizontalGrid : selected \(model.modelName). for placement.")
+                            print("BrowseView | HorizontalGrid : selected model with name: \(model.modelName)")
                             self.isBrowseShown = false
                         }
                         /*

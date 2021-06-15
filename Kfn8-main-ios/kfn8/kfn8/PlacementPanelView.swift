@@ -12,7 +12,6 @@ import SwiftUI
 struct PlacementPanelView: View {
     @EnvironmentObject var placementSettings: PlacementSettings
     @Binding var isPlacementPanelEnabled: Bool
-    @Binding var selectedModel: Model?
     @Binding var modelConfirmedForPlacement: Model?
     
     var body: some View {
@@ -65,7 +64,6 @@ struct PlacementPanelView: View {
     }
     func resetControlParameters() {
         self.isPlacementPanelEnabled = false
-        self.selectedModel = nil
     }
 }
 

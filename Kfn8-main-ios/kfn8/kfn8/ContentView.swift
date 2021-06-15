@@ -13,7 +13,6 @@ import FocusEntity
 struct ContentView : View {
     @EnvironmentObject var placementSettings: PlacementSettings
     @State private var isPlacementPanelEnabled = false
-    @State private var selectedModel: Model?
     @State private var modelConfirmedForPlacement: Model?
     @State private var isControlsVisible: Bool = true
     @State private var isBrowseShown: Bool = false
@@ -42,7 +41,8 @@ struct ContentView : View {
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
-            ModelPickerView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, items: Models().all)
+
+            ModelPickerView(isPlacementPanelEnabled: $isPlacementPanelEnabled, items: Models().all)
             /*
             if self.isPlacementPanelEnabled {
                 PlacementPanelView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, modelConfirmedForPlacement: $modelConfirmedForPlacement)
@@ -54,7 +54,7 @@ struct ContentView : View {
             if self.placementSettings.currentSelectedModel == nil {
                 ControlView(isControlsVisible: $isControlsVisible, isBrowseShown: $isBrowseShown, isMyCollectionShown: $isMyCollectionShown)
             } else {
-                PlacementPanelView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, modelConfirmedForPlacement: $modelConfirmedForPlacement)
+                PlacementPanelView(isPlacementPanelEnabled: $isPlacementPanelEnabled, modelConfirmedForPlacement: $modelConfirmedForPlacement)
             }
             
 
@@ -146,8 +146,8 @@ struct ARViewContainer: UIViewRepresentable {
 
 
 struct ModelPickerView: View {
+    @EnvironmentObject var placementSettings: PlacementSettings
     @Binding var isPlacementPanelEnabled: Bool
-    @Binding var selectedModel: Model?
     var items: [Model]
     var body: some View {
         ScrollView(.horizontal, showsIndicators:false) {
@@ -158,7 +158,8 @@ struct ModelPickerView: View {
                     
                     Button(action: {
                         print("Selected model with name: \(self.items[index].modelName)")
-                        self.selectedModel = self.items[index]
+                        // TODO-FIXME-DEBUG-DPRECATE self.selectedModel = self.items[index]
+                        self.placementSettings.currentSelectedModel = self.items[index]
                         self.isPlacementPanelEnabled = true
                         
                     }) {
