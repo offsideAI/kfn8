@@ -89,7 +89,7 @@ struct ControlButtonBar: View {
                 print("MostrecentlyPlaced button pressed")
                 self.isMyCollectionShown.toggle()
             }.sheet(isPresented: $isMyCollectionShown, content: {
-                HistoryView(isMyCollectionShown: $isMyCollectionShown)
+                MoreView(isMyCollectionShown: $isMyCollectionShown)
             })
         
             

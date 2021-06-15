@@ -1,5 +1,5 @@
 //
-//  HistoryView.swift
+//  MoreView.swift
 //  kfn8
 //
 //  Created by coder on 6/9/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HistoryView: View {
+struct MoreView: View {
     @Binding var isMyCollectionShown: Bool
     var body: some View {
         NavigationView {

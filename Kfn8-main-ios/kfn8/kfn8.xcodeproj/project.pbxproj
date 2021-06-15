@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B333C1F26715A82000C78D9 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C1E26715A82000C78D9 /* HistoryView.swift */; };
+		4B333C1F26715A82000C78D9 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C1E26715A82000C78D9 /* MoreView.swift */; };
 		4B333C212671661E000C78D9 /* PlacementSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C202671661E000C78D9 /* PlacementSettings.swift */; };
 		4B333C23267263CF000C78D9 /* Kfn8App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C22267263CF000C78D9 /* Kfn8App.swift */; };
 		4B333C2526727683000C78D9 /* PlacementPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C2426727683000C78D9 /* PlacementPanelView.swift */; };
@@ -55,7 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4B333C1E26715A82000C78D9 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		4B333C1E26715A82000C78D9 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		4B333C202671661E000C78D9 /* PlacementSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementSettings.swift; sourceTree = "<group>"; };
 		4B333C22267263CF000C78D9 /* Kfn8App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kfn8App.swift; sourceTree = "<group>"; };
 		4B333C2426727683000C78D9 /* PlacementPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementPanelView.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 				4BC33700266AC9CA00AF7AE1 /* BrowseView.swift */,
 				4BC336FA266A9BE100AF7AE1 /* CustomARView.swift */,
 				4BC336F3266948E600AF7AE1 /* LoginView.swift */,
-				4B333C1E26715A82000C78D9 /* HistoryView.swift */,
+				4B333C1E26715A82000C78D9 /* MoreView.swift */,
 				4B333C202671661E000C78D9 /* PlacementSettings.swift */,
 				4B333C2426727683000C78D9 /* PlacementPanelView.swift */,
 				4BA3789426689DDC00374BDA /* Assets.xcassets */,
@@ -358,7 +358,7 @@
 				4BA3788F26689DDA00374BDA /* AppDelegate.swift in Sources */,
 				4B333C2526727683000C78D9 /* PlacementPanelView.swift in Sources */,
 				4BC336FF266AB35900AF7AE1 /* ControlView.swift in Sources */,
-				4B333C1F26715A82000C78D9 /* HistoryView.swift in Sources */,
+				4B333C1F26715A82000C78D9 /* MoreView.swift in Sources */,
 				4B333C272677E763000C78D9 /* View+Extensions.swift in Sources */,
 				4BC336F626696A9900AF7AE1 /* Model.swift in Sources */,
 			);
