@@ -52,9 +52,14 @@ class Model {
         
         
         self.cancellable = ModelEntity.loadModelAsync(named: filename)
-            .sink(receiveCompletion: { loadCompletion in
-                // Handle our error
-                print("Unable to load modelEntity for modelName: \(self.modelName)")
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure:
+                  print("ApiCall failed.")
+                    print("Unable to load modelEntity for modelName: \(self.modelName)")
+                case .finished:
+                  print("ApiCall finished.")
+                }
             }, receiveValue: { modelEntity in
                 // Get our modelEntity
                 self.modelEntity = modelEntity
@@ -91,26 +96,26 @@ struct Models {
     
     init() {
         // Uno
-        let uno1 = Model(modelName: "chair_swan", category: .uno, scaleCompensation: 0.32/100)
-        let uno2 = Model(modelName: "cup_saucer_set", category: .uno, scaleCompensation: 0.32/100)
-        let uno3 = Model(modelName: "fender_stratocaster", category: .uno, scaleCompensation: 0.32/100)
+        let uno1 = Model(modelName: "chair_swan", category: .uno, scaleCompensation: 50.0/100)
+        let uno2 = Model(modelName: "cup_saucer_set", category: .uno, scaleCompensation: 50.0/100)
+        let uno3 = Model(modelName: "fender_stratocaster", category: .uno, scaleCompensation: 50.0/100)
         self.all += [uno1, uno2, uno3]
         
         // Dos
-        let dos1 = Model(modelName: "flower_tulip", category: .dos, scaleCompensation: 0.32/100)
-        let dos2 = Model(modelName: "gramophone", category: .dos, scaleCompensation: 0.32/100)
-        let dos3 = Model(modelName: "pot_plant", category: .dos, scaleCompensation: 0.32/100)
-        let dos4 = Model(modelName: "teapot", category: .dos, scaleCompensation: 0.32/100)
+        let dos1 = Model(modelName: "flower_tulip", category: .dos, scaleCompensation: 50.0/100)
+        let dos2 = Model(modelName: "gramophone", category: .dos, scaleCompensation: 50.0/100)
+        let dos3 = Model(modelName: "pot_plant", category: .dos, scaleCompensation: 50.0/100)
+        let dos4 = Model(modelName: "teapot", category: .dos, scaleCompensation: 50.0/100)
         self.all += [dos1, dos2, dos3, dos4]
         
         // Tres
-        let tres1 = Model(modelName: "toy_biplane", category: .tres, scaleCompensation: 0.32/100)
-        let tres2 = Model(modelName: "tv_retro", category: .tres, scaleCompensation: 0.32/100)
+        let tres1 = Model(modelName: "toy_biplane", category: .tres, scaleCompensation: 50.0/100)
+        let tres2 = Model(modelName: "tv_retro", category: .tres, scaleCompensation: 50.0/100)
         self.all += [tres1, tres2]
         
         // Quatros
-        let quatros1 = Model(modelName: "wateringcan", category: .quatro, scaleCompensation: 0.32/100)
-        let quatros2 = Model(modelName: "wheelbarrow", category: .quatro, scaleCompensation: 0.32/100)
+        let quatros1 = Model(modelName: "wateringcan", category: .quatro, scaleCompensation: 50.0/100)
+        let quatros2 = Model(modelName: "wheelbarrow", category: .quatro, scaleCompensation: 50.0/100)
         self.all += [quatros1, quatros2]
     }
     

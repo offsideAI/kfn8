@@ -61,19 +61,13 @@ struct ControlVisibilityToggleButton: View {
 
 
 struct ControlButtonBar: View {
+    @EnvironmentObject var placementSettings: PlacementSettings
     @Binding var isBrowseShown: Bool
     @Binding var isMyCollectionShown: Bool
     var body: some View {
         HStack {
-            // MyCollection
-            ControlButton(systemIconName: "line.horizontal.3") {
-                print("MostrecentlyPlaced button pressed")
-                self.isMyCollectionShown.toggle()
-            }.sheet(isPresented: $isMyCollectionShown, content: {
-                //MyColectionView
-                HistoryView(isMyCollectionShown: $isMyCollectionShown)
-            })
-            
+            // MostRecentlyPlacedButton
+            MostRecentlyPlacedButton().hidden(self.placementSettings.recentlyPlaced.isEmpty)
             Spacer()
             
             // BrowseButton
@@ -89,10 +83,15 @@ struct ControlButtonBar: View {
             
             
             // SettingButton
-            ControlButton(systemIconName: "slider.horizontal.3") {
+
+            ControlButton(systemIconName: "line.horizontal.3") {
                 print("Settings button pressed")
-            }
-            
+                print("MostrecentlyPlaced button pressed")
+                self.isMyCollectionShown.toggle()
+            }.sheet(isPresented: $isMyCollectionShown, content: {
+                HistoryView(isMyCollectionShown: $isMyCollectionShown)
+            })
+        
             
             /*
             Button(action: {
