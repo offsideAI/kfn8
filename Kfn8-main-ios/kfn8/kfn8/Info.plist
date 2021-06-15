@@ -22,6 +22,10 @@
 	<string>1</string>
 	<key>UILaunchScreen</key>
 	<dict>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<true/>
+		<key>UIImageName</key>
+		<string>LogoIcon</string>
 		<key>UIColorName</key>
 		<string>Kfn8</string>
 	</dict>
