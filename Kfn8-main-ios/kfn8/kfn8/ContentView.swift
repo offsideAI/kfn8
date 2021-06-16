@@ -16,7 +16,7 @@ struct ContentView : View {
     @State private var modelConfirmedForPlacement: Model?
     @State private var isControlsVisible: Bool = true
     @State private var isBrowseShown: Bool = false
-    @State private var isMyCollectionShown: Bool = false
+    @State private var isSettingsShown: Bool = false
 
     /*
     private var models: [Model] = {
@@ -52,7 +52,7 @@ struct ContentView : View {
             ControlView(isControlsVisible: $isControlsVisible, isBrowseShown: $isBrowseShown, isMyCollectionShown: $isMyCollectionShown)
             */
             if self.placementSettings.currentSelectedModel == nil {
-                ControlView(isControlsVisible: $isControlsVisible, isBrowseShown: $isBrowseShown, isMyCollectionShown: $isMyCollectionShown)
+                ControlView(isControlsVisible: $isControlsVisible, isBrowseShown: $isBrowseShown, isSettingsShown: $isSettingsShown)
             } else {
                 PlacementPanelView(isPlacementPanelEnabled: $isPlacementPanelEnabled, modelConfirmedForPlacement: $modelConfirmedForPlacement)
             }
@@ -195,6 +195,7 @@ struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(PlacementSettings())
+            .environmentObject(SessionSettings())
     }
 }
 
