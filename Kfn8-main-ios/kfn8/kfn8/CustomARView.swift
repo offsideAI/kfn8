@@ -36,7 +36,7 @@ class CustomARView: ARView {
         self.sessionSettings = sessionSettings
         super.init(frame: frameRect)
         self.configure()
-        self.setupSubscribers()
+        // TODO-FIXME-DEBUG-REVERT ßself.setupSubscribers()
         
         switch self.focusStyle {
         case .color:

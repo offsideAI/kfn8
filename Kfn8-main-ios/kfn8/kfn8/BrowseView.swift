@@ -14,7 +14,7 @@ struct BrowseView: View {
     NavigationView {
       ScrollView(showsIndicators: false) {
         // Gridviews for thumbnails
-        RecentsGrid(isBrowseShown: $isBrowseShown)
+        // TODO-FIXME-DEBUG-DEPRECATE-TEMP RecentsGrid(isBrowseShown: $isBrowseShown)
         ModelsByCategoryGrid(isBrowseShown: $isBrowseShown)
       }
       .navigationBarTitle(Text("Browse"), displayMode: .large)

@@ -42,6 +42,7 @@ class Model {
     private var cancellable: AnyCancellable?
     
     init(modelName: String, category: ModelCategory, scaleCompensation: Float = 1.0) {
+        print("\(#file) - Model init called")
         self.modelName = modelName
         self.category = category
         self.image = UIImage(named: modelName) ?? UIImage(systemName: "photo")!
@@ -50,7 +51,7 @@ class Model {
         let filename = modelName + ".usdz"
         
         
-        
+        /* TODO-FIXME-DEBUG-DEPRECATE-REMOVE
         self.cancellable = ModelEntity.loadModelAsync(named: filename)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -61,11 +62,10 @@ class Model {
                   print("ApiCall finished.")
                 }
             }, receiveValue: { modelEntity in
-                // Get our modelEntity
                 self.modelEntity = modelEntity
                 print("Successfully loaded modelEntity for modelName: \(self.modelName)")
             })
-        
+        */
     }
     // Create a method to async load modelEntity
     func asyncLoadModelEntity() {
