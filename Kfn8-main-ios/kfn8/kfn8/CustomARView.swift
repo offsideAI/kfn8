@@ -26,7 +26,7 @@ class CustomARView: ARView {
   required init(frame frameRect: CGRect, sessionSettings: SessionSettings) {
     self.sessionSettings = sessionSettings
     super.init(frame: frameRect)
-    self.setupConfig()
+    self.configure()
 
     switch self.focusStyle {
     case .color:
@@ -56,7 +56,8 @@ class CustomARView: ARView {
     fatalError("init(frame:) has not been implemented")
   }
 
-  func setupConfig() {
+  func configure
+  () {
     let config = ARWorldTrackingConfiguration()
     config.planeDetection = [.horizontal, .vertical]
     session.run(config, options: [])
