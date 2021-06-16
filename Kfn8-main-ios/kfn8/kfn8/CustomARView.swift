@@ -23,10 +23,20 @@ class CustomARView: ARView {
   var focusEntity: FocusEntity?
   var sessionSettings: SessionSettings
   
+  // Create: setupSubscribers for publish properties
+  // setup cancellable objects for each published settings property
+  private var peopleOcclusionCancellable: AnyCancellable?
+  private var objectOcclusionCancellable: AnyCancellable?
+  private var lidarDebugCancellable: AnyCancellable?
+  private var multiuserCancellable: AnyCancellable?
+  
+  
+  
   required init(frame frameRect: CGRect, sessionSettings: SessionSettings) {
     self.sessionSettings = sessionSettings
     super.init(frame: frameRect)
     self.configure()
+    self.setupSubscribers()
 
     switch self.focusStyle {
     case .color:
@@ -60,12 +70,48 @@ class CustomARView: ARView {
   () {
     let config = ARWorldTrackingConfiguration()
     config.planeDetection = [.horizontal, .vertical]
+    
+    // Enable LiDAR functionality on a supported device
+    if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+      config.sceneReconstruction = .mesh
+    }
+    
     session.run(config, options: [])
   }
 
   @objc required dynamic init?(coder decoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  // setup Subscribers for each property
+  private func setupSubscribers() {
+    self.peopleOcclusionCancellable = sessionSettings.$isPeopleOcclusionEnabled.sink { [weak self] isEnabled in
+      
+      
+    }
+  }
+  
+  // peopleOcclusion
+  private func updatePeopleOcclusion(isEnabled: Bool) {
+    print("\(#file): isPeopleOcclusionEnabled is now \(isEnabled)")
+  }
+  
+  // objectOcclusion
+  private func updateObjectOcclusion(isEnabled: Bool) {
+    print("\(#file): isObjectOcclusionEnabled is now \(isEnabled)")
+  }
+  
+  // LiDARDebug
+  private func updateLidarDebug(isEnabled: Bool) {
+    print("\(#file): isLidarDebugEnabled is now \(isEnabled)")
+  }
+  
+  // Multiuser
+  private func updateMultiuser(isEnabled: Bool) {
+    print("\(#file): isMultiuserEnabled is now \(isEnabled)")
+  }
+  
+  
 }
 
 extension CustomARView: FocusEntityDelegate {
