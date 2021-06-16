@@ -12,6 +12,7 @@ struct Kfn8App: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var placementSettings = PlacementSettings()
     @StateObject var sessionSettings = SessionSettings()
+    
     init() {
         // perform any task on app launch
         print("Kfn8App init called")

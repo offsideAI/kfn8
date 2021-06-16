@@ -83,10 +83,8 @@ struct ControlButtonBar: View {
             
             
             // SettingButton
-
             ControlButton(systemIconName: "line.horizontal.3") {
                 print("Settings button pressed")
-                print("MostrecentlyPlaced button pressed")
                 self.isSettingsShown.toggle()
             }.sheet(isPresented: $isSettingsShown, content: {
                 SessionSettingsView(isSettingsShown: $isSettingsShown)

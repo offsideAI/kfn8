@@ -100,9 +100,9 @@ struct SessionSettingsView: View {
                     .navigationBarTitle(Text("Settings"), displayMode: .inline)
                     .navigationBarItems(trailing:
                                             Button(action: {
-                                                
+                                                self.isSettingsShown.toggle()
                                             }) {
-                                                
+                                                Text("Done").bold()
                                             }
                     )
             }

@@ -8,8 +8,10 @@ import RealityKit
 import FocusEntity
 import Combine
 import ARKit
+import SwiftUI
 
 class CustomARView: ARView {
+    
   enum FocusStyleChoices {
     case classic
     case material
@@ -19,7 +21,10 @@ class CustomARView: ARView {
   /// Style to be displayed in the example
   let focusStyle: FocusStyleChoices = .classic
   var focusEntity: FocusEntity?
-  required init(frame frameRect: CGRect) {
+  var sessionSettings: SessionSettings
+  
+  required init(frame frameRect: CGRect, sessionSettings: SessionSettings) {
+    self.sessionSettings = sessionSettings
     super.init(frame: frameRect)
     self.setupConfig()
 
@@ -45,6 +50,10 @@ class CustomARView: ARView {
     default:
       self.focusEntity = FocusEntity(on: self, focus: .classic)
     }
+    
+  }
+  required init(frame frameRect: CGRect) {
+    fatalError("init(frame:) has not been implemented")
   }
 
   func setupConfig() {
