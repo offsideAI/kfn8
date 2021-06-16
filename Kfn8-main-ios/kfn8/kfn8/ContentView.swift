@@ -19,39 +19,13 @@ struct ContentView : View {
     @State private var isBrowseShown: Bool = false
     @State private var isSettingsShown: Bool = false
 
-    /*
-    private var models: [Model] = {
-        let filemanager = FileManager.default
-        guard let path = Bundle.main.resourcePath,
-              let files = try? filemanager.contentsOfDirectory(atPath: path) else {
-            return []
-        }
-        var availableModels: [Model] = []
-        for filename in files where
-            filename.hasSuffix("usdz") {
-            let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
-            print("DEBUG:\(modelName)")
-            let model = Model(modelName: modelName, category: ModelCategory.uno)
-            availableModels.append(model)
 
-        }
-        return availableModels
-    }()
-    */
-    
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
 
             ModelPickerView(isPlacementPanelEnabled: $isPlacementPanelEnabled, items: Models().all)
-            /*
-            if self.isPlacementPanelEnabled {
-                PlacementPanelView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, modelConfirmedForPlacement: $modelConfirmedForPlacement)
-            } else {
-                ModelPickerView(isPlacementPanelEnabled: $isPlacementPanelEnabled, selectedModel: $selectedModel, items: Models().all)
-            }
-            ControlView(isControlsVisible: $isControlsVisible, isBrowseShown: $isBrowseShown, isMyCollectionShown: $isMyCollectionShown)
-            */
+
             if self.placementSettings.currentSelectedModel == nil {
                 ControlView(isControlsVisible: $isControlsVisible, isBrowseShown: $isBrowseShown, isSettingsShown: $isSettingsShown)
             } else {
@@ -78,17 +52,6 @@ struct ARViewContainer: UIViewRepresentable {
         // Call updateScene method
         self.updateScene(for: arView)
     })
-
-    /* TODO-FIXME-DEBUG-DEPRECATE
-    let config = ARWorldTrackingConfiguration()
-    config.planeDetection = [.horizontal, .vertical]
-    config.environmentTexturing = .automatic
-    if ARWorldTrackingConfiguration
-        .supportsSceneReconstruction(.mesh) {
-        config.sceneReconstruction = .mesh
-    }
-    arView.session.run(config)
-    */
 
     return arView
       
@@ -144,61 +107,6 @@ struct ARViewContainer: UIViewRepresentable {
       
   }
 }
-
-
-
-struct ModelPickerView: View {
-    @EnvironmentObject var placementSettings: PlacementSettings
-    @Binding var isPlacementPanelEnabled: Bool
-    var items: [Model]
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators:false) {
-            HStack(spacing: 30) {
-                ForEach(0 ..< self.items.count) { index in
-                    // Text(self.models[index].modelName)
-                    let model = items[index]
-                    ItemButton(model: model, height: 80) {
-                      // call model method to async load modelEntity
-                      model.asyncLoadModelEntity()
-                      // select model for placement
-                      self.placementSettings.currentSelectedModel = model
-                      print("BrowseView | HorizontalGrid : selected \(model.modelName). for placement.")
-                      print("BrowseView | HorizontalGrid : selected model with name: \(model.modelName)")
-                      self.isPlacementPanelEnabled = true
-                    }
-                    /* TODO-FIXME-DEBUG-DEPRECATE-REMOVE
-                    Button(action: {
-                        print("Selected model with name: \(self.items[index].modelName)")
-                        self.placementSettings.currentSelectedModel = self.items[index]
-                        self.isPlacementPanelEnabled = true
-                        
-                    }) {
-                        Image(uiImage: self.items[index].image)
-                                .resizable()
-                                .frame(height:80)
-                                .aspectRatio(1/1, contentMode: .fit)
-                                .background(Color.white)
-                                .cornerRadius(12)
-                        
-                        
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    */
-                    
-                }
-            }
-        }
-        // .padding(20)
-        .padding(.top, 20)
-        .padding(.leading, 20)
-        .padding(.trailing, 20)
-        .padding(.bottom, 130)
-        .background(Color.black.opacity(0.5))
-    }
-}
-
-
-
 
 
 #if DEBUG
