@@ -67,7 +67,9 @@ struct ControlButtonBar: View {
     var body: some View {
         HStack {
             // MostRecentlyPlacedButton
-            MostRecentlyPlacedButton().hidden(self.placementSettings.recentlyPlaced.isEmpty)
+            
+            // TODO-FIXME-DEBUG- MostRecentlyPlacedButton().hidden(self.placementSettings.recentlyPlaced.isEmpty)
+            MostRecentlyPlacedButton()
             Spacer()
             
             // BrowseButton
