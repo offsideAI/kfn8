@@ -36,7 +36,8 @@ class CustomARView: ARView {
         self.sessionSettings = sessionSettings
         super.init(frame: frameRect)
         self.configure()
-        // TODO-FIXME-DEBUG-REVERT ßself.setupSubscribers()
+        self.initializeSettings()
+        self.setupSubscribers()
         
         switch self.focusStyle {
         case .color:
@@ -83,11 +84,32 @@ class CustomARView: ARView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func initializeSettings() {
+        self.updatePeopleOcclusion(isEnabled: sessionSettings.isPeopleOcclusionEnabled)
+        
+        self.updateObjectOcclusion(isEnabled: sessionSettings.isObjectOcclusionEnabled)
+        
+        self.updateLidarDebug(isEnabled: sessionSettings.isLidarDebugEnabled)
+        
+        self.updateMultiuser(isEnabled: sessionSettings.isMultiuserEnabled)
+    }
+    
     // setup Subscribers for each property
     private func setupSubscribers() {
         self.peopleOcclusionCancellable = sessionSettings.$isPeopleOcclusionEnabled.sink { [weak self] isEnabled in
-            
-            
+            self?.updatePeopleOcclusion(isEnabled: isEnabled)
+        }
+        
+        self.objectOcclusionCancellable = sessionSettings.$isObjectOcclusionEnabled.sink { [weak self] isEnabled in
+            self?.updateObjectOcclusion(isEnabled: isEnabled)
+        }
+        
+        self.lidarDebugCancellable = sessionSettings.$isLidarDebugEnabled.sink { [weak self] isEnabled in
+            self?.updateLidarDebug(isEnabled: isEnabled)
+        }
+        
+        self.multiuserCancellable = sessionSettings.$isMultiuserEnabled.sink { [weak self] isEnabled in
+            self?.updateMultiuser(isEnabled: isEnabled)
         }
     }
     
@@ -118,11 +140,21 @@ class CustomARView: ARView {
     // objectOcclusion
     private func updateObjectOcclusion(isEnabled: Bool) {
         print("\(#file): isObjectOcclusionEnabled is now \(isEnabled)")
+        if self.environment.sceneUnderstanding.options.contains(.occlusion) {
+            self.environment.sceneUnderstanding.options.remove(.occlusion)
+        } else {
+            self.environment.sceneUnderstanding.options.insert(.occlusion)
+        }
     }
     
     // LiDARDebug
     private func updateLidarDebug(isEnabled: Bool) {
         print("\(#file): isLidarDebugEnabled is now \(isEnabled)")
+        if self.debugOptions.contains(.showSceneUnderstanding) {
+            self.debugOptions.remove(.showSceneUnderstanding)
+        } else {
+            self.debugOptions.insert(.showSceneUnderstanding)
+        }
     }
     
     // Multiuser
