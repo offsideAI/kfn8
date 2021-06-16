@@ -15,7 +15,7 @@ struct ControlView: View {
     @Binding var isSettingsShown: Bool
     var body: some View {
         VStack {
-            ControlVisibilityToggleButton(isControlsVisible: $isControlsVisible)
+            // TODO-FIXME-DEBUG-TEMP ControlVisibilityToggleButton(isControlsVisible: $isControlsVisible)
             
             Spacer()
             
