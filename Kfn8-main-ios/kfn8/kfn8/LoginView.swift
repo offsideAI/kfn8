@@ -45,7 +45,7 @@ struct LoginView: View {
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Text("Take a Tour")
+                        Text("Sign Up")
                             .bold()
                             .frame(width: 280, height: 50, alignment: .center)
                             .background(Color.blue)
