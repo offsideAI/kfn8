@@ -154,10 +154,19 @@ struct ModelPickerView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators:false) {
             HStack(spacing: 30) {
-                ForEach(0 ..< self.items.count) {
-                    index in
+                ForEach(0 ..< self.items.count) { index in
                     // Text(self.models[index].modelName)
-                    
+                    let model = items[index]
+                    ItemButton(model: model) {
+                      // call model method to async load modelEntity
+                      model.asyncLoadModelEntity()
+                      // select model for placement
+                      self.placementSettings.currentSelectedModel = model
+                      print("BrowseView | HorizontalGrid : selected \(model.modelName). for placement.")
+                      print("BrowseView | HorizontalGrid : selected model with name: \(model.modelName)")
+                      self.isPlacementPanelEnabled = true
+                    }
+                    /* TODO-FIXME-DEBUG-DEPRECATE-REMOVE
                     Button(action: {
                         print("Selected model with name: \(self.items[index].modelName)")
                         self.placementSettings.currentSelectedModel = self.items[index]
@@ -174,6 +183,7 @@ struct ModelPickerView: View {
                         
                     }
                     .buttonStyle(PlainButtonStyle())
+                    */
                     
                 }
             }
