@@ -76,7 +76,7 @@ struct CardView: View {
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
-                    Text("Augment Your Reality")
+                    Text("Kfn8 Reality")
                         .foregroundColor(Color("PawsomeOrange"))
                 }
                 Spacer()
