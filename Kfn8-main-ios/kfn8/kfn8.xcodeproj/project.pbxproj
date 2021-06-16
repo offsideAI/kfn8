@@ -13,7 +13,7 @@
 		4B333C2526727683000C78D9 /* PlacementPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C2426727683000C78D9 /* PlacementPanelView.swift */; };
 		4B333C272677E763000C78D9 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C262677E763000C78D9 /* View+Extensions.swift */; };
 		4B333C2926793CC4000C78D9 /* SessionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C2826793CC4000C78D9 /* SessionSettings.swift */; };
-		4B333C2B267A5172000C78D9 /* hipster.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4B333C2A267A5172000C78D9 /* hipster.usdz */; };
+		4B333C2F267A72FB000C78D9 /* hipster.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4B333C2E267A72FB000C78D9 /* hipster.usdz */; };
 		4BA3788F26689DDA00374BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3788E26689DDA00374BDA /* AppDelegate.swift */; };
 		4BA3789126689DDA00374BDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3789026689DDA00374BDA /* ContentView.swift */; };
 		4BA3789526689DDC00374BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BA3789426689DDC00374BDA /* Assets.xcassets */; };
@@ -63,7 +63,7 @@
 		4B333C2426727683000C78D9 /* PlacementPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementPanelView.swift; sourceTree = "<group>"; };
 		4B333C262677E763000C78D9 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		4B333C2826793CC4000C78D9 /* SessionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSettings.swift; sourceTree = "<group>"; };
-		4B333C2A267A5172000C78D9 /* hipster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = hipster.usdz; path = "../../../../assets-usdz/vectary-com-exports/hipster.usdz"; sourceTree = "<group>"; };
+		4B333C2E267A72FB000C78D9 /* hipster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = hipster.usdz; sourceTree = "<group>"; };
 		4BA3788B26689DDA00374BDA /* kfn8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kfn8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA3788E26689DDA00374BDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BA3789026689DDA00374BDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 		4BA378BB26692FC100374BDA /* 3dmodels */ = {
 			isa = PBXGroup;
 			children = (
-				4B333C2A267A5172000C78D9 /* hipster.usdz */,
+				4B333C2E267A72FB000C78D9 /* hipster.usdz */,
 				4BA378BF2669307E00374BDA /* chair_swan.usdz */,
 				4BA378C22669307F00374BDA /* cup_saucer_set.usdz */,
 				4BA378BC2669307D00374BDA /* fender_stratocaster.usdz */,
@@ -318,7 +318,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B333C2B267A5172000C78D9 /* hipster.usdz in Resources */,
 				4BA378CB2669308200374BDA /* chair_swan.usdz in Resources */,
 				4BA3789826689DDC00374BDA /* Preview Assets.xcassets in Resources */,
 				4BA378CE2669308200374BDA /* cup_saucer_set.usdz in Resources */,
@@ -331,6 +330,7 @@
 				4BA378CD2669308200374BDA /* wheelbarrow.usdz in Resources */,
 				4BA378D32669308200374BDA /* tv_retro.usdz in Resources */,
 				4BA378C92669308200374BDA /* pot_plant.usdz in Resources */,
+				4B333C2F267A72FB000C78D9 /* hipster.usdz in Resources */,
 				4BA378CF2669308200374BDA /* gramophone.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

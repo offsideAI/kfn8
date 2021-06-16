@@ -96,11 +96,12 @@ struct Models {
     
     init() {
         // Uno
+        let uno0 = Model(modelName: "hipster", category: .uno, scaleCompensation: 50.0/100)
         let uno1 = Model(modelName: "chair_swan", category: .uno, scaleCompensation: 50.0/100)
         let uno2 = Model(modelName: "cup_saucer_set", category: .uno, scaleCompensation: 50.0/100)
         let uno3 = Model(modelName: "fender_stratocaster", category: .uno, scaleCompensation: 50.0/100)
-        let uno4 = Model(modelName: "hipster", category: .uno, scaleCompensation: 50.0/100)
-        self.all += [uno1, uno2, uno3, uno4]
+        
+        self.all += [uno0, uno1, uno2, uno3]
         
         // Dos
         let dos1 = Model(modelName: "flower_tulip", category: .dos, scaleCompensation: 50.0/100)

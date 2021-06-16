@@ -26,7 +26,7 @@ struct LoginView: View {
                     CardView()
                 }
                 
-                Text("Caffeinate Augmented Reality")
+                Text("Kaffeinate Reality")
                     .font(.title)
                     .foregroundColor(.secondary)
                     .padding()
@@ -45,7 +45,7 @@ struct LoginView: View {
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Text("My Portfolio")
+                        Text("Take a Tour")
                             .bold()
                             .frame(width: 280, height: 50, alignment: .center)
                             .background(Color.blue)
