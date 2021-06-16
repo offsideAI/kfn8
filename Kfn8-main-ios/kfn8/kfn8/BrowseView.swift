@@ -91,7 +91,7 @@ struct HorizontalGrid: View {
             
             let model = items[index]
             
-            ItemButton(model: model) {
+            ItemButton(model: model, height: 150) {
               // call model method to async load modelEntity
               model.asyncLoadModelEntity()
               // select model for placement

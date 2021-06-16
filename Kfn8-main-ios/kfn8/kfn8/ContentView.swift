@@ -157,7 +157,7 @@ struct ModelPickerView: View {
                 ForEach(0 ..< self.items.count) { index in
                     // Text(self.models[index].modelName)
                     let model = items[index]
-                    ItemButton(model: model) {
+                    ItemButton(model: model, height: 80) {
                       // call model method to async load modelEntity
                       model.asyncLoadModelEntity()
                       // select model for placement
