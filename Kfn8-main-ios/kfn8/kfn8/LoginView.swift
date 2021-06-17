@@ -43,7 +43,7 @@ struct LoginView: View {
                     })
                 
                 NavigationLink(
-                    destination: ContentView(),
+                    destination: TabViewContentView(),
                     label: {
                         Text("Metaverse Finder")
                             .bold()

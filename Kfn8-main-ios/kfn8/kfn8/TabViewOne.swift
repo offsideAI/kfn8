@@ -11,7 +11,22 @@ import SwiftUI
 
 struct TabViewOne: View {
     var body: some View {
-        Text("Welcome")
+        
+        NavigationView {
+            Text("Welcome")
+            NavigationLink(destination:
+                            DetailViewOne(),
+                           label: {
+                            Text("Go to Detail")
+                                .bold()
+                                .frame(width: 280, height: 50, alignment: .center)
+                                .background(Color.blue)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(10)
+                                .padding(10)
+                           }
+            )
+        }
     }
     
 }

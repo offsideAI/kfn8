@@ -19,6 +19,7 @@
 		4B333C35267BF0FE000C78D9 /* TabViewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C34267BF0FE000C78D9 /* TabViewContentView.swift */; };
 		4B333C37267BF12F000C78D9 /* TabViewOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C36267BF12F000C78D9 /* TabViewOne.swift */; };
 		4B333C39267BF13F000C78D9 /* TabViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C38267BF13F000C78D9 /* TabViewTwo.swift */; };
+		4B333C3B267BF52C000C78D9 /* DetailViewOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B333C3A267BF52C000C78D9 /* DetailViewOne.swift */; };
 		4BA3788F26689DDA00374BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3788E26689DDA00374BDA /* AppDelegate.swift */; };
 		4BA3789126689DDA00374BDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3789026689DDA00374BDA /* ContentView.swift */; };
 		4BA3789526689DDC00374BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BA3789426689DDC00374BDA /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		4B333C34267BF0FE000C78D9 /* TabViewContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewContentView.swift; sourceTree = "<group>"; };
 		4B333C36267BF12F000C78D9 /* TabViewOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewOne.swift; sourceTree = "<group>"; };
 		4B333C38267BF13F000C78D9 /* TabViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewTwo.swift; sourceTree = "<group>"; };
+		4B333C3A267BF52C000C78D9 /* DetailViewOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewOne.swift; sourceTree = "<group>"; };
 		4BA3788B26689DDA00374BDA /* kfn8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kfn8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA3788E26689DDA00374BDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BA3789026689DDA00374BDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				4B333C34267BF0FE000C78D9 /* TabViewContentView.swift */,
 				4B333C38267BF13F000C78D9 /* TabViewTwo.swift */,
 				4B333C36267BF12F000C78D9 /* TabViewOne.swift */,
+				4B333C3A267BF52C000C78D9 /* DetailViewOne.swift */,
 				4BC336F3266948E600AF7AE1 /* LoginView.swift */,
 				4B333C1E26715A82000C78D9 /* SessionSettingsView.swift */,
 				4B333C202671661E000C78D9 /* PlacementSettings.swift */,
@@ -374,6 +377,7 @@
 				4BC336F4266948E700AF7AE1 /* LoginView.swift in Sources */,
 				4BC336FB266A9BE200AF7AE1 /* CustomARView.swift in Sources */,
 				4B333C31267A9224000C78D9 /* ItemButton.swift in Sources */,
+				4B333C3B267BF52C000C78D9 /* DetailViewOne.swift in Sources */,
 				4B333C23267263CF000C78D9 /* Kfn8App.swift in Sources */,
 				4BC33701266AC9CA00AF7AE1 /* BrowseView.swift in Sources */,
 				4B333C39267BF13F000C78D9 /* TabViewTwo.swift in Sources */,
