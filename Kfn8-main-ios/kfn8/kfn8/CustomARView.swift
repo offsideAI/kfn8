@@ -77,7 +77,9 @@ class CustomARView: ARView {
             config.sceneReconstruction = .mesh
         }
         
-        session.run(config, options: [])
+        
+        
+        self.session.run(config, options: [])
     }
     
     @objc required dynamic init?(coder decoder: NSCoder) {

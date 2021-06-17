@@ -26,7 +26,7 @@ struct LoginView: View {
                     CardView()
                 }
                 
-                Text("Kaffeinate Reality")
+                Text("Kfn8 The Metaverse")
                     .font(.title)
                     .foregroundColor(.secondary)
                     .padding()
@@ -34,7 +34,7 @@ struct LoginView: View {
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Text("Get Started")
+                        Text("Metaverse Explorer")
                             .bold()
                             .frame(width: 280, height: 50, alignment: .center)
                             .background(Color.blue)
@@ -45,7 +45,7 @@ struct LoginView: View {
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Text("Sign Up")
+                        Text("Metaverse Finder")
                             .bold()
                             .frame(width: 280, height: 50, alignment: .center)
                             .background(Color.blue)
