@@ -15,6 +15,7 @@ R - 0.188
 G - 0.200
 B - 0.631
 
+App Icon color - #1b3132
 
 ## Links
 https://developer.apple.com/augmented-reality/tools/

@@ -19,22 +19,22 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>UILaunchScreen</key>
-	<dict>
-		<key>UIImageRespectsSafeAreaInsets</key>
-		<true/>
-		<key>UIImageName</key>
-		<string>LogoIcon</string>
-		<key>UIColorName</key>
-		<string>Kfn8</string>
-	</dict>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>TODO-FIXME-DEBUG App may need to use the camera for scanning </string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>Kfn8</string>
+		<key>UIImageName</key>
+		<string>LogoIcon</string>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<true/>
+	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
