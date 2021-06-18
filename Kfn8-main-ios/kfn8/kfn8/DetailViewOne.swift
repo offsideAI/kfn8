@@ -10,8 +10,15 @@ import SwiftUI
 
 
 struct DetailViewOne: View {
+    let items: [String] = ["🤩", "🦊", "☘️", "🎃", "🐐"]
     var body: some View {
-        Text("DetailViewOne")
+        List(items, id: \.self) { item in
+            NavigationLink(
+                destination: Text("Destination"), label: {
+                    Text(item)
+                }
+            )
+        }
     }
     
 }
@@ -20,7 +27,9 @@ struct DetailViewOne: View {
 
 struct DetailViewOne_Previews: PreviewProvider {
     static var previews: some View {
-        DetailViewOne()
+        NavigationView {
+            DetailViewOne()
+        }
     }
 }
 
