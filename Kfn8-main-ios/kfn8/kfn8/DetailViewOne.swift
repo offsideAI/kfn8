@@ -14,7 +14,7 @@ struct DetailViewOne: View {
     var body: some View {
         List(items, id: \.self) { item in
             NavigationLink(
-                destination: Text("Destination"), label: {
+                destination: EmojiView(item: item), label: {
                     Text(item)
                 }
             )

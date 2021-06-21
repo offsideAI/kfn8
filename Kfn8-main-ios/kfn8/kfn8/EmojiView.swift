@@ -9,8 +9,13 @@ import SwiftUI
 
 
 struct EmojiView: View {
+    let item: String
     var body: some View {
-        Text("Welcome")
+        Text(item)
+            .font(.system(size: 40))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.pink)
+        
     }
     
 }
@@ -19,7 +24,7 @@ struct EmojiView: View {
 
 struct EmojiView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiView()
+        EmojiView(item: "🍅")
     }
 }
 

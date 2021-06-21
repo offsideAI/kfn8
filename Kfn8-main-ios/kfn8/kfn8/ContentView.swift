@@ -44,8 +44,6 @@ struct ARViewContainer: UIViewRepresentable {
   @EnvironmentObject var sessionSettings: SessionSettings
   @Binding var modelConfirmedForPlacement: Model?
   func makeUIView(context: Context) -> CustomARView {
-      
-    // TODO-FIXME-DEBUG-DEPRECATE let arView = CustomARView(frame: .zero)
     let arView = CustomARView(frame: .zero, sessionSettings: sessionSettings)
     // Subscribe to SceneEvents.Update
     self.placementSettings.sceneObserver = arView.scene.subscribe(to: SceneEvents.Update.self, { (event) in
