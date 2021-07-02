@@ -17,7 +17,7 @@ struct TabViewOne: View {
             Map(coordinateRegion: $region)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("TabViewOne")
+                Text("")
                 NavigationLink(destination:
                                 DetailViewOne(),
                                label: {

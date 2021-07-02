@@ -41,7 +41,7 @@ struct LoginView: View {
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     })
-                
+                /* TODO-FIXME-DEBUG-TEMP
                 NavigationLink(
                     destination: TabViewContentView(),
                     label: {
@@ -53,6 +53,7 @@ struct LoginView: View {
                             .cornerRadius(10)
                             .padding(10)
                     })
+                */
             }
         }
         .accentColor(Color(.label))

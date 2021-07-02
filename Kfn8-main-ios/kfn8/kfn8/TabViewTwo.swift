@@ -11,7 +11,7 @@ import SwiftUI
 
 struct TabViewTwo: View {
     var body: some View {
-        Text("Welcome")
+        Text("")
     }
     
 }
