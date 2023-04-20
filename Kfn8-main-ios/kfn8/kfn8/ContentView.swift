@@ -60,7 +60,7 @@ struct ARViewContainer: UIViewRepresentable {
         if let modelEntity = model.modelEntity {
             print("DEBUG: adding model to scene \(model.modelName)")
             
-            let anchorEntity = AnchorEntity(plane: .any)
+            let anchorEntity = AnchorEntity()
             anchorEntity.addChild(modelEntity.clone(recursive: true))
             uiView.scene.addAnchor(anchorEntity)
             
@@ -97,7 +97,7 @@ struct ARViewContainer: UIViewRepresentable {
       clonedEntity.generateCollisionShapes(recursive: true)
       arView.installGestures([.translation, .rotation], for: clonedEntity)
       // 3. Create an anchorEntity and add clonedEntity to the anchorEntity
-      let anchorEntity = AnchorEntity(plane: .any)
+      let anchorEntity = AnchorEntity()
       anchorEntity.addChild(clonedEntity)
       // 4. Add the anchorEntity to the arView scene
       arView.scene.addAnchor(anchorEntity)

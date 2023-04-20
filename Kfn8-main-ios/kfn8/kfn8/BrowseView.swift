@@ -61,7 +61,8 @@ struct ModelsByCategoryGrid: View {
       ForEach(ModelCategory.allCases, id:\.self) { category in
         
         // Only display grid if category contains items
-        if let modelsByCategory = models.get(category: category) {
+        let modelsByCategory = models.get(category: category)
+          if !modelsByCategory.isEmpty {
           HorizontalGrid(isBrowseShown: $isBrowseShown, title: category.label, items: modelsByCategory)
         }
         
