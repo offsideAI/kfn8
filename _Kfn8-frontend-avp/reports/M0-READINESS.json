@@ -1,0 +1,24 @@
+{
+  "developer_dir": "/Users/coder/Developer/Xcode/Xcode_27_0_0/Xcode_27_0_0.app/Contents/Developer",
+  "status": "blocked",
+  "m0_passed": false,
+  "checks": [
+    {
+      "command": [
+        "xcodebuild",
+        "-version"
+      ],
+      "exit_code": 0,
+      "output": "Xcode 27.0\nBuild version 27A266a"
+    },
+    {
+      "command": [
+        "xcodebuild",
+        "-showsdks"
+      ],
+      "exit_code": 69,
+      "output": "2026-09-19 01:48:52.655 xcodebuild[3684:167682371]  DVTFilePathFSEvents: Failed to start fs event stream.\n2026-09-19 01:48:52.902 xcodebuild[3684:167682367] [MT] DVTDeveloperPaths: Failed to get length of DARWIN_USER_CACHE_DIR from confstr(3), error = Error Domain=NSPOSIXErrorDomain Code=5 \"Input/output error\". Using NSCachesDirectory instead.\nYou have not agreed to the Xcode license agreements. Please run 'sudo xcodebuild -license' from within a Terminal window to review and agree to the Xcode and Apple SDKs license."
+    }
+  ],
+  "reason": "Command failed; inspect recorded output. No setup or licence changes made."
+}

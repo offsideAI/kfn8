@@ -1,4 +1,28 @@
-# kfn8
+# Kfn8 monorepo
+
+The repository root owns the only `.git` directory. Work targets the parent repository's `main` branch; no Git operation is permitted without the founder's explicit approval. Do not initialise nested repositories.
+
+## Active MVP1 work
+
+- `_Kfn8-frontend-avp/`: visionOS 27 planning, roadmap, readiness tools and future AVP client.
+- `_Kfn8-frontend-avp/_Kfn8-backend-fastapi/`: current empty backend directory; backend implementation has not started. This is a component of this monorepo, not a separate repository. No directory moves were made during the repository review.
+- `Kfn8-main-ios/`: existing legacy iOS project, not an MVP1 iOS target.
+- `assets/`, `assets-usdz/`, `screenshots/`, `screenshots_1_2_0/`: existing source/reference material; do not treat it as an approved MVP1 asset library.
+
+See [technical plan](_Kfn8-frontend-avp/TECHNICAL-PLAN.md) and [status roadmap](_Kfn8-frontend-avp/ROADMAP.md). The shared root `.gitignore` covers Swift/Xcode and Python generated output, local environments and signing credentials. It intentionally does not blanket-ignore models, textures, screenshots, videos, lockfiles, shared schemes or test reports.
+
+Run available tooling tests from this root:
+
+```sh
+python3 -m unittest discover -s _Kfn8-frontend-avp/tests -v
+```
+
+M0 remains blocked on the last recorded Xcode 27 licence check; device tests are not complete. Source directory `_Kfn8-frontent-avp-src` still has its original spelling, pending the founder's rename to `_Kfn8-frontend-avp-src`.
+
+## Historical app notes
+
+The palette and links below describe the legacy app, not MVP1's Showroom palette or approved asset licences.
+
 ----
 
 ## Logo
