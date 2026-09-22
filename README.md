@@ -4,7 +4,7 @@ The repository root owns the only `.git` directory. Work targets the parent repo
 
 ## Active MVP1 work
 
-- `_Kfn8-frontend-avp/`: visionOS 27 planning, roadmap, readiness tools and future AVP client.
+- `_Kfn8-frontend-avp/`: visionOS 27 planning, roadmap, readiness tools, reports and the AVP client source (`_Kfn8-frontend-avp-src/`, currently the nonshipping M0 probe).
 - `_Kfn8-frontend-avp/_Kfn8-backend-fastapi/`: current empty backend directory; backend implementation has not started. This is a component of this monorepo, not a separate repository. No directory moves were made during the repository review.
 - `Kfn8-main-ios/`: existing legacy iOS project, not an MVP1 iOS target.
 - `assets/`, `assets-usdz/`, `screenshots/`, `screenshots_1_2_0/`: existing source/reference material; do not treat it as an approved MVP1 asset library.
@@ -17,7 +17,7 @@ Run available tooling tests from this root:
 python3 -m unittest discover -s _Kfn8-frontend-avp/tests -v
 ```
 
-M0 remains blocked on the last recorded Xcode 27 licence check; device tests are not complete. Source directory `_Kfn8-frontent-avp-src` still has its original spelling, pending the founder's rename to `_Kfn8-frontend-avp-src`.
+M0 device tests are not complete. The client source lives in `_Kfn8-frontend-avp/_Kfn8-frontend-avp-src/` (renamed from the misspelled empty directory on 2026-09-22); see its README for build, test and the founder device protocol.
 
 ## Historical app notes
 

@@ -1,0 +1,69 @@
+# xcodegen spec for the Kfn8 client component. Run `xcodegen generate` from this directory with the Xcode 27
+# toolchain. The generated .xcodeproj is disposable; this file is the source of truth.
+name: Kfn8
+options:
+  bundleIdPrefix: com.appliaison.kfn8
+  deploymentTarget:
+    visionOS: "27.0"
+  xcodeVersion: "27.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: false
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY: YES
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: YES
+    GCC_TREAT_WARNINGS_AS_ERRORS: YES
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    CODE_SIGN_STYLE: Automatic
+    # Team ID from the existing Kfn8 iOS project; signing is verified only on the founder's machine.
+    DEVELOPMENT_TEAM: G7Y435RZV6
+packages:
+  Kfn8M0ProbeCore:
+    path: Packages/Kfn8M0ProbeCore
+targets:
+  Kfn8M0Probe:
+    type: application
+    platform: visionOS
+    deploymentTarget: "27.0"
+    sources:
+      - path: Kfn8M0Probe
+        excludes: ["Info.plist", "*.entitlements"]
+    dependencies:
+      - package: Kfn8M0ProbeCore
+    # xcodegen GENERATES this plist from `properties`; do not hand-edit Kfn8M0Probe/Info.plist.
+    info:
+      path: Kfn8M0Probe/Info.plist
+      properties:
+        CFBundleDisplayName: Kfn8 M0 Probe
+        CFBundleShortVersionString: "0.0.1"
+        CFBundleVersion: "1"
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+          UIApplicationPreferredDefaultSceneSessionRole: UIWindowSceneSessionRoleApplication
+        NSWorldSensingUsageDescription: The M0 probe detects floors, walls, ceilings and tables so virtual fixtures can attach to real surfaces. Nothing leaves the device.
+        NSPhotoLibraryAddUsageDescription: Only used if you explicitly choose to save an exported still image of your room during the export probe.
+    entitlements:
+      path: Kfn8M0Probe/Kfn8M0Probe.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.appliaison.kfn8.m0probe
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        PRODUCT_NAME: Kfn8M0Probe
+        MARKETING_VERSION: 0.0.1
+        CURRENT_PROJECT_VERSION: 1
+        TARGETED_DEVICE_FAMILY: "7"
+        SUPPORTED_PLATFORMS: "xros xrsimulator"
+        # Nonshipping probe: no App Store, no analytics, no accounts.
+schemes:
+  Kfn8M0Probe:
+    build:
+      targets:
+        Kfn8M0Probe: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - package: Kfn8M0ProbeCore/Kfn8M0ProbeCoreTests

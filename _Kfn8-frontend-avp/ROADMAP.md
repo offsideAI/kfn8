@@ -20,15 +20,15 @@ Global constraints apply to every task: visionOS 27 only, Swift 6 strict concurr
 
 ## Progress snapshot
 
-Last updated: 2026-09-19. **71 tasks: 66 ⬜ not started · 1 🟡 in progress · 2 ✅ done · 2 ⏸️ blocked/deferred · 0 🟢 verified on-device.** Counts cover Tasks only, not Story/Epic rollups.
+Last updated: 2026-09-22 (afternoon). **71 tasks: 62 ⬜ not started · 2 🟡 in progress · 6 ✅ done · 1 ⏸️ blocked/deferred · 0 🟢 verified on-device.** Counts cover Tasks only, not Story/Epic rollups.
 
-Completed: repository/toolchain inspection and readiness tooling (8 tests passed). Partial work: readiness findings report and remaining M0 setup. Current blocker: Xcode 27 licence acceptance; no headset tests have run. Evidence: [M0 findings](reports/M0-FINDINGS.md), [readiness command output](reports/M0-READINESS.json). Earlier nested-repository commit IDs are historical only; that metadata was removed at the founder’s request. They are not revisions in the parent monorepo.
+Completed: repository/toolchain inspection and readiness tooling (8 tests passed). Partial work: readiness findings report and remaining M0 setup. Xcode 27 licence accepted; readiness exits 0 (`toolchain_ready_device_unverified`). The nonshipping M0 probe target exists in `_Kfn8-frontend-avp-src` (Swift 6 strict concurrency, warnings as errors), builds for the visionOS 27 device and simulator SDKs, and its 41 Swift Testing tests pass on the host and on the visionOS 27 simulator. SDK API evidence for all five probes is recorded. The splat attempt is spent and recorded as not ingestible. Simulator smoke run on visionOS 27.0 passed (window, immersive space, fixtures, frame sampling) and exposed three defects that are fixed; simulator results are not device evidence. Blocked: the founder signed into Xcode 27, but the stored account's team is neither G4Y5TXVX4P nor G7Y435RZV6, so automatic signing still fails until the founder supplies the Team ID; no physical Vision Pro is paired. No headset tests have run. Evidence: [M0 findings](reports/M0-FINDINGS.md), [SDK API evidence](reports/M0-SDK-API-EVIDENCE.md), [readiness 2026-09-22](reports/M0-READINESS-2026-09-22.json), [readiness 2026-09-19 blocked](reports/M0-READINESS.json). Earlier nested-repository commit IDs are historical only; that metadata was removed at the founder’s request. They are not revisions in the parent monorepo.
 
 ## Status / critical path
 
 | Epic | Milestone | Status | Effort estimate | Exit dependency |
 |---|---|---|---|---|
-| E0 | M0 Feasibility | ⏸️ blocked — Xcode 27 licence | 3–7 days | Accepted Xcode 27 licence, signing, M2 measurements |
+| E0 | M0 Feasibility | 🟡 in progress — probe built and tested, device evidence pending | 3–7 days | Xcode account sign-in for signing, M2 pairing, founder-run M2 measurements |
 | E1 | M1 Scan and place | ⬜ not started | 3–5 weeks | All three blocking M0 probes pass |
 | E2 | M2 Catalogue | ⬜ not started | 2–3 weeks | M1, cloud access, paired contract/client build |
 | E3 | M3 Designs | ⬜ not started | 2–3 weeks | M2 and export feasibility decision |
@@ -38,7 +38,7 @@ Completed: repository/toolchain inspection and readiness tooling (8 tests passed
 
 External dependencies: Xcode 27 toolchain/signing/headset readiness gates M0; launch-library budgeting/acquisition follows M0 and gates E4/performance/release. Do not mistake the four low-poly fixtures for a launch library. M2/M6 completion records the monorepo revision when a commit is explicitly authorised, component build IDs and contract hash; the milestone report is not evidence that the backend was deployed.
 
-## ⏸️ Epic E0 — M0: prove the platform
+## 🟡 Epic E0 — M0: prove the platform
 
 ### ⏸️ E0.S1 — Reproducible development readiness
 
@@ -46,16 +46,16 @@ As the operator, I can determine why the exact supported toolchain/device is or 
 
 - ✅ E0.S1.T1 Inspect both source documents, interview decisions, repository status and installed toolchains; record paths/version evidence without altering global Xcode selection.
 - ✅ E0.S1.T2 Implement `tools/check_m0_readiness.py` and tests: explicit developer directory, Xcode version, device/simulator SDKs, Swift 6+, command errors/timeouts, fail-closed exit code, explicit device-evidence warning. Test valid/wrong SDK, licence refusal, missing executable and timeout. Capture a real run in the M0 report.
-- ⏸️ E0.S1.T3 Complete founder's Xcode licence review/acceptance, first-launch components, signing and M2 pairing; verify a signed visionOS 27-only build deploys. No automated agreement acceptance. **Blocked:** Xcode 27 SDK listing exits 69 until the founder reviews/accepts its licence; signing and M2 deployment remain unverified.
-- ⏸️ E0.S1.T4 Set up client/backend component boundaries inside the existing `kfn8` monorepo; retain source/assets/screenshots and use shared root ignore rules. Await the founder’s source-directory rename, then set up the Swift 6 strict-concurrency M0 target. **Partial / blocked:** nested client `.git` removed; monorepo rules and documents corrected. Source-folder spelling and Swift target remain unresolved; SDK build validation awaits E0.S1.T3. No nested repositories or Git operations without explicit approval.
+- ⏸️ E0.S1.T3 Complete founder's Xcode licence review/acceptance, first-launch components, signing and M2 pairing; verify a signed visionOS 27-only build deploys. No automated agreement acceptance. **Progress (2026-09-22):** licence accepted; SDKs xros27.0/xrsimulator27.0, Swift 6.4; readiness exits 0. **Blocked:** `xcodebuild -allowProvisioningUpdates` fails with “No Account for Team” for both G7Y435RZV6 (legacy project) and G4Y5TXVX4P (the only Apple Development certificate on this Mac); `devicectl list devices` shows no physical Vision Pro paired, only the simulator. Founder signed in on 2026-09-22, but the account's team does not match either ID; founder must supply the Team ID shown in Xcode → Settings → Accounts and pair the M2.
+- ✅ E0.S1.T4 Set up client/backend component boundaries inside the existing `kfn8` monorepo; retain source/assets/screenshots and use shared root ignore rules. Await the founder’s source-directory rename, then set up the Swift 6 strict-concurrency M0 target. **Done 2026-09-22:** the empty misspelled directory was renamed to `_Kfn8-frontend-avp-src` (it was empty, so nothing else moved); `project.yml` (xcodegen) defines the `Kfn8M0Probe` visionOS 27.0-only target with `SWIFT_STRICT_CONCURRENCY=complete`, Swift 6 language mode and warnings as errors; local package `Kfn8M0ProbeCore`. Backend directory remains empty by plan (its first content is E1.S1.T2). No nested repositories or Git operations without explicit approval.
 
 Acceptance: readiness reports actual command failures; signed build runs on M2. Tools passing in isolation does not complete this story.
 Demo: run readiness command with Xcode 27; inspect SDK/version evidence; launch signed probe on headset.
 
 ### ⬜ E0.S2 — Blocking spatial-capability evidence
 
-- ⬜ E0.S2.T1 Read exact installed SDK declarations and Apple samples for physical-space lighting, Environment Occlusion and ManipulationComponent; record public API names and permissions in report. Fail rather than invent APIs.
-- ⬜ E0.S2.T2 Implement minimal nonshipping Mixed Immersive probe with Swift Testing for its pure control state; build device/simulator configurations with strict concurrency and no shims.
+- ✅ E0.S2.T1 Read exact installed SDK declarations and Apple samples for physical-space lighting, Environment Occlusion and ManipulationComponent; record public API names and permissions in report. Fail rather than invent APIs. **Done 2026-09-22:** [M0-SDK-API-EVIDENCE.md](reports/M0-SDK-API-EVIDENCE.md) cites `PointLightComponent.SurroundingsLight`/`SpotLightComponent.SurroundingsLight` (visionOS 27.0), `EnvironmentBlendingComponent.occluded(by: .surroundings)` (26.0), `ManipulationComponent`/`ManipulationEvents` (26.0), export and splat routes, and ARKit permissions. Apple sample code was not available offline; the swiftinterface files are the authority.
+- ✅ E0.S2.T2 Implement minimal nonshipping Mixed Immersive probe with Swift Testing for its pure control state; build device/simulator configurations with strict concurrency and no shims. **Done 2026-09-22:** `Kfn8M0Probe` builds for `generic/platform=visionOS` and `visionOS Simulator` (unsigned compile checks); 41 Swift Testing tests pass via `swift test` on the host and via the scheme on the visionOS 27.0 simulator (one JSON round-trip test initially failed on sub-second timestamp precision and was fixed before this status was set). No `#available` checks. The only conditional is `#if canImport(ScreenCaptureKit)` because the simulator SDK ships no such framework.
 - ⬜ E0.S2.T3 Measure virtual lamp contribution on a real wall/floor: recorded room/light setup, on/off comparison, capture/numerical evidence and frame behavior. No appearance-only assertion.
 - ⬜ E0.S2.T4 Walk a virtual object behind real furniture and inspect occlusion edges while turning/moving; record repeatable artifacts, not just static screenshots.
 - ⬜ E0.S2.T5 Exercise direct/indirect manipulation, all four attachment policies, invalid-release continuation without re-grab, cancel, and volume handoff; capture expected/observed behavior.
@@ -66,8 +66,8 @@ Demo: founder executes T3–T5 on M2 with probe build ID and returns local trace
 
 ### 🟡 E0.S3 — Bounded nonblocking investigations and findings
 
-- ⬜ E0.S3.T1 Test an actual passthrough-plus-placements export: write file, open file, inspect real room pixels, permissions and distribution restrictions. Record unavailable rather than substitute furniture-only image.
-- ⬜ E0.S3.T2 Spend only a few minutes on the approved Postshot candidate: obtain an ingestible file quickly or record “no readily available splat asset in a RealityKit-ingestable form”; one attempt, no debugging/search/conversion project. If it works record bytes/load time/frame behavior alongside meshes; note ~2M size and v1.1 conversion implication.
+- 🟡 E0.S3.T1 Test an actual passthrough-plus-placements export: write file, open file, inspect real room pixels, permissions and distribution restrictions. Record unavailable rather than substitute furniture-only image. **Progress:** consent-gated ScreenCaptureKit picker/stream probe implemented (the only third-party route in the visionOS 27 SDK; `SCScreenshotManager` is unavailable, ARKit camera access needs an enterprise entitlement). Device run and file inspection pending.
+- ✅ E0.S3.T2 Spend only a few minutes on the approved Postshot candidate: obtain an ingestible file quickly or record “no readily available splat asset in a RealityKit-ingestable form”; one attempt, no debugging/search/conversion project. If it works record bytes/load time/frame behavior alongside meshes; note ~2M size and v1.1 conversion implication. **Done 2026-09-22, budget spent:** the page offers only a Box folder (browser interaction, no direct URL) with PLY files (~719k splats, 159 MB uncompressed); RealityKit 27 exposes `GaussianSplatResource` with a raw buffer initialiser only and no PLY/SPZ loader. Recorded as no readily available ingestible asset; v1.1 would need a PLY-to-buffer conversion step.
 - 🟡 E0.S3.T3 Complete `reports/M0-FINDINGS.md` with exact versions, methodology, measurements, captures, separate blocking/nonblocking outcomes and M1 go/no-go. Export limitation requires a product scope decision before M3, not an M0 failure. **Progress:** readiness findings are written; device measurements and final M0 conclusions are not yet available.
 
 Exit: E0.S1/S2 accepted by evidence, S3 findings recorded. No routine sign-off pause, but founder decisions remain required for unresolved product/platform failures.
