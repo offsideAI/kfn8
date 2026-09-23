@@ -3,8 +3,9 @@
 # Principle: generated, per-user and secret material is ignored; authored material is versioned even when it is
 # large. Versioned on purpose: Swift/Python sources, project.yml, Package.swift and Package.resolved, shared Xcode
 # schemes, the legacy iOS project, USDZ/GLB/textures under assets*/, specification PNGs, reports/ and
-# reports/evidence/ (device screenshots and evidence JSON), fonts and their licences, backend contracts/ and
-# alembic/ migrations, uv/poetry/pip lockfiles.
+# reports/evidence/ (device screenshots and evidence JSON), fonts and their licences, backend contracts/, alembic/
+# migrations, assets-source/ (CC0 inputs), assets-conformed/ (approved outputs), ledger/ (approval evidence), ops/
+# (deploy spec and runbook), requirements.txt, .python-version, uv/poetry/pip lockfiles.
 #
 # Unanchored patterns apply at any depth; patterns starting with / are relative to this file.
 
@@ -101,7 +102,7 @@ AuthKey_*.p8
 /_Kfn8-frontend-avp/_Kfn8-backend-fastapi/ops/**/secrets*
 /_Kfn8-frontend-avp/_Kfn8-backend-fastapi/ops/**/*.tfvars
 
-### Asset-pipeline intermediates (approved masters/LODs/USDZ under assets*/ and the future ledger are versioned)
+### Asset-pipeline intermediates (approved masters/LODs/USDZ under assets*/ and the backend ledger/ are versioned)
 *.blend1
 *.blend2
 *.fbx.bak

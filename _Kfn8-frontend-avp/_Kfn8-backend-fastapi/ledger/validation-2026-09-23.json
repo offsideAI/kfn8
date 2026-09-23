@@ -1,0 +1,1622 @@
+[
+  {
+    "manifest": "assets-conformed/ceramic_vase_02/manifest.json",
+    "passed": true,
+    "checks": [
+      {
+        "name": "manifest.schema",
+        "passed": true,
+        "detail": "manifest matches contract v1 schema",
+        "rendition": null
+      },
+      {
+        "name": "approval.provenance",
+        "passed": true,
+        "detail": "approved with evidence",
+        "rendition": null
+      },
+      {
+        "name": "approval.visual_dimensions",
+        "passed": true,
+        "detail": "approved with evidence",
+        "rendition": null
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 753288 actual 753288",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.2184 m, spec 0.2184 m, drift 0.01%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 0.3092 m, spec 0.3092 m, drift 0.00%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.2184 m, spec 0.2184 m, drift 0.01%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "11128 \u2264 150000",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 2048",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 11128 measured 11128",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 619876 actual 619876",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.2184 m, spec 0.2184 m, drift 0.02%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 0.3091 m, spec 0.3092 m, drift 0.03%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.2186 m, spec 0.2184 m, drift 0.08%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y 0.0001 m (tolerance 0.0020)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z -0.0001 m (tolerance 0.0020)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "5006 \u2264 50000",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 1024",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 5006 measured 5006",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 525644 actual 525644",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.2184 m, spec 0.2184 m, drift 0.01%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 0.3098 m, spec 0.3092 m, drift 0.19%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.2184 m, spec 0.2184 m, drift 0.01%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y -0.0004 m (tolerance 0.0020)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x -0.0004 m (tolerance 0.0020)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z -0.0003 m (tolerance 0.0020)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "1669 \u2264 15000",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 1024",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 1669 measured 1669",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 1055384 actual 1055384",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "units.metres",
+        "passed": true,
+        "detail": "metersPerUnit 1.0",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "axis.up_y",
+        "passed": true,
+        "detail": "upAxis Y",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.2184 m, spec 0.2184 m, drift 0.01%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 0.3092 m, spec 0.3092 m, drift 0.00%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.2184 m, spec 0.2184 m, drift 0.01%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y -0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "11128 \u2264 150000",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 2048",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "renditions.formats",
+        "passed": true,
+        "detail": "formats present: ['glb', 'usdz']",
+        "rendition": null
+      },
+      {
+        "name": "dimensions.cross",
+        "passed": true,
+        "detail": "all representations agree within \u00b11 %",
+        "rendition": null
+      }
+    ],
+    "measurements": {
+      "lod0.glb.default": {
+        "min": [
+          -0.10918986797332764,
+          0.0,
+          -0.10919085890054703
+        ],
+        "max": [
+          0.10918986797332764,
+          0.30918481945991516,
+          0.10919085890054703
+        ],
+        "size": [
+          0.21837973594665527,
+          0.30918481945991516,
+          0.21838171780109406
+        ],
+        "triangles": 11128,
+        "max_texture_edge": 1024
+      },
+      "lod1.glb.default": {
+        "min": [
+          -0.10921428352594376,
+          5.411788879428059e-05,
+          -0.10934505611658096
+        ],
+        "max": [
+          0.10922868549823761,
+          0.3091500997543335,
+          0.1092296689748764
+        ],
+        "size": [
+          0.21844296902418137,
+          0.3090959818655392,
+          0.21857472509145737
+        ],
+        "triangles": 5006,
+        "max_texture_edge": 1024
+      },
+      "lod2.glb.default": {
+        "min": [
+          -0.1096053421497345,
+          -0.00039541226578876376,
+          -0.10950279980897903
+        ],
+        "max": [
+          0.10877769440412521,
+          0.30938464403152466,
+          0.10887087881565094
+        ],
+        "size": [
+          0.2183830365538597,
+          0.3097800562973134,
+          0.21837367862462997
+        ],
+        "triangles": 1669,
+        "max_texture_edge": 1024
+      },
+      "lod0.usdz.default": {
+        "min": [
+          -0.10918986797332764,
+          -2.4245241125996803e-17,
+          -0.10919085890054703
+        ],
+        "max": [
+          0.10918986797332764,
+          0.30918481945991516,
+          0.1091908589005471
+        ],
+        "size": [
+          0.21837973594665527,
+          0.30918481945991516,
+          0.2183817178010941
+        ],
+        "triangles": 11128,
+        "max_texture_edge": 1024
+      }
+    }
+  },
+  {
+    "manifest": "assets-conformed/hanging_industrial_lamp/manifest.json",
+    "passed": true,
+    "checks": [
+      {
+        "name": "manifest.schema",
+        "passed": true,
+        "detail": "manifest matches contract v1 schema",
+        "rendition": null
+      },
+      {
+        "name": "approval.provenance",
+        "passed": true,
+        "detail": "approved with evidence",
+        "rendition": null
+      },
+      {
+        "name": "approval.visual_dimensions",
+        "passed": true,
+        "detail": "approved with evidence",
+        "rendition": null
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 3245796 actual 3245796",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.5496 m, spec 0.5496 m, drift 0.00%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 1.3554 m, spec 1.3554 m, drift 0.00%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.5496 m, spec 0.5496 m, drift 0.00%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y 0.0000 m (tolerance 0.0068)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0027)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z 0.0000 m (tolerance 0.0027)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "9530 \u2264 150000",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 2048",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 9530 measured 9530",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 3078244 actual 3078244",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.5496 m, spec 0.5496 m, drift 0.00%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 1.3552 m, spec 1.3554 m, drift 0.01%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.5496 m, spec 0.5496 m, drift 0.00%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y -0.0009 m (tolerance 0.0068)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0027)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z 0.0000 m (tolerance 0.0027)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "4288 \u2264 50000",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 1024",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 4288 measured 4288",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 3094508 actual 3094508",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.5496 m, spec 0.5496 m, drift 0.00%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 1.3562 m, spec 1.3554 m, drift 0.06%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.5496 m, spec 0.5496 m, drift 0.00%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y -0.0009 m (tolerance 0.0068)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0027)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z 0.0000 m (tolerance 0.0027)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "4748 \u2264 15000",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 1024",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 4748 measured 4748",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 3447731 actual 3447731",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "units.metres",
+        "passed": true,
+        "detail": "metersPerUnit 1.0",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "axis.up_y",
+        "passed": true,
+        "detail": "upAxis Y",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.5496 m, spec 0.5496 m, drift 0.00%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 1.3554 m, spec 1.3554 m, drift 0.00%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.5496 m, spec 0.5496 m, drift 0.00%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y -0.0000 m (tolerance 0.0068)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0027)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z 0.0000 m (tolerance 0.0027)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "9530 \u2264 150000",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 2048",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "renditions.formats",
+        "passed": true,
+        "detail": "formats present: ['glb', 'usdz']",
+        "rendition": null
+      },
+      {
+        "name": "dimensions.cross",
+        "passed": true,
+        "detail": "all representations agree within \u00b11 %",
+        "rendition": null
+      }
+    ],
+    "measurements": {
+      "lod0.glb.default": {
+        "min": [
+          -0.2748032510280609,
+          0.0,
+          -0.2748032212257385
+        ],
+        "max": [
+          0.2748032510280609,
+          1.355350136756897,
+          0.2748032212257385
+        ],
+        "size": [
+          0.5496065020561218,
+          1.355350136756897,
+          0.549606442451477
+        ],
+        "triangles": 9530,
+        "max_texture_edge": 1024
+      },
+      "lod1.glb.default": {
+        "min": [
+          -0.2748032510280609,
+          -0.0009486578055657446,
+          -0.2748032212257385
+        ],
+        "max": [
+          0.2748032510280609,
+          1.3542511463165283,
+          0.2748032212257385
+        ],
+        "size": [
+          0.5496065020561218,
+          1.355199804122094,
+          0.549606442451477
+        ],
+        "triangles": 4288,
+        "max_texture_edge": 1024
+      },
+      "lod2.glb.default": {
+        "min": [
+          -0.2748032510280609,
+          -0.0009486578055657446,
+          -0.2748032212257385
+        ],
+        "max": [
+          0.2748032510280609,
+          1.3552404642105103,
+          0.2748032212257385
+        ],
+        "size": [
+          0.5496065020561218,
+          1.356189122016076,
+          0.549606442451477
+        ],
+        "triangles": 4748,
+        "max_texture_edge": 1024
+      },
+      "lod0.usdz.default": {
+        "min": [
+          -0.2748032510280609,
+          -6.101857268919509e-17,
+          -0.2748032212257385
+        ],
+        "max": [
+          0.2748032510280609,
+          1.355350136756897,
+          0.2748032212257388
+        ],
+        "size": [
+          0.5496065020561218,
+          1.355350136756897,
+          0.5496064424514773
+        ],
+        "triangles": 9530,
+        "max_texture_edge": 1024
+      }
+    }
+  },
+  {
+    "manifest": "assets-conformed/industrial_wall_sconce/manifest.json",
+    "passed": true,
+    "checks": [
+      {
+        "name": "manifest.schema",
+        "passed": true,
+        "detail": "manifest matches contract v1 schema",
+        "rendition": null
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 1841384 actual 1841384",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.1503 m, spec 0.1503 m, drift 0.03%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 0.3418 m, spec 0.3418 m, drift 0.01%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.2516 m, spec 0.2516 m, drift 0.01%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "9826 \u2264 150000",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 2048",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 9826 measured 9826",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 1719152 actual 1719152",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.1502 m, spec 0.1503 m, drift 0.05%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 0.3418 m, spec 0.3418 m, drift 0.00%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.2518 m, spec 0.2516 m, drift 0.09%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y -0.0000 m (tolerance 0.0020)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z -0.0001 m (tolerance 0.0020)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "4420 \u2264 50000",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 1024",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 4420 measured 4420",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 1627788 actual 1627788",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.1500 m, spec 0.1503 m, drift 0.23%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 0.3418 m, spec 0.3418 m, drift 0.01%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.2527 m, spec 0.2516 m, drift 0.45%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y -0.0000 m (tolerance 0.0020)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z -0.0008 m (tolerance 0.0020)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "1472 \u2264 15000",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 1024",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 1472 measured 1472",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 2082797 actual 2082797",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "units.metres",
+        "passed": true,
+        "detail": "metersPerUnit 1.0",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "axis.up_y",
+        "passed": true,
+        "detail": "upAxis Y",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.1503 m, spec 0.1503 m, drift 0.03%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 0.3418 m, spec 0.3418 m, drift 0.01%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.2516 m, spec 0.2516 m, drift 0.01%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y -0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z 0.0000 m (tolerance 0.0020)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "9826 \u2264 150000",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 2048",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "renditions.formats",
+        "passed": true,
+        "detail": "formats present: ['glb', 'usdz']",
+        "rendition": null
+      },
+      {
+        "name": "dimensions.cross",
+        "passed": true,
+        "detail": "all representations agree within \u00b11 %",
+        "rendition": null
+      }
+    ],
+    "measurements": {
+      "lod0.glb.default": {
+        "min": [
+          -0.0751740038394928,
+          0.0,
+          -0.12578794360160828
+        ],
+        "max": [
+          0.0751740038394928,
+          0.3417818546295166,
+          0.12578795850276947
+        ],
+        "size": [
+          0.1503480076789856,
+          0.3417818546295166,
+          0.25157590210437775
+        ],
+        "triangles": 9826,
+        "max_texture_edge": 1024
+      },
+      "lod1.glb.default": {
+        "min": [
+          -0.07511594891548157,
+          -1.8686756675379002e-06,
+          -0.12602952122688293
+        ],
+        "max": [
+          0.07511594891548157,
+          0.3417818546295166,
+          0.12578795850276947
+        ],
+        "size": [
+          0.15023189783096313,
+          0.34178372330518414,
+          0.2518174797296524
+        ],
+        "triangles": 4420,
+        "max_texture_edge": 1024
+      },
+      "lod2.glb.default": {
+        "min": [
+          -0.07497982680797577,
+          -1.4557672329829074e-05,
+          -0.12713496387004852
+        ],
+        "max": [
+          0.07497982680797577,
+          0.34182634949684143,
+          0.1255945861339569
+        ],
+        "size": [
+          0.14995965361595154,
+          0.34184090716917126,
+          0.25272955000400543
+        ],
+        "triangles": 1472,
+        "max_texture_edge": 1024
+      },
+      "lod0.usdz.default": {
+        "min": [
+          -0.0751740038394928,
+          -2.793053755007368e-17,
+          -0.12578794360160828
+        ],
+        "max": [
+          0.0751740038394928,
+          0.34178185462951666,
+          0.12578795850276955
+        ],
+        "size": [
+          0.1503480076789856,
+          0.3417818546295167,
+          0.25157590210437786
+        ],
+        "triangles": 9826,
+        "max_texture_edge": 1024
+      }
+    }
+  },
+  {
+    "manifest": "assets-conformed/modern_arm_chair_01/manifest.json",
+    "passed": true,
+    "checks": [
+      {
+        "name": "manifest.schema",
+        "passed": true,
+        "detail": "manifest matches contract v1 schema",
+        "rendition": null
+      },
+      {
+        "name": "approval.provenance",
+        "passed": true,
+        "detail": "approved with evidence",
+        "rendition": null
+      },
+      {
+        "name": "approval.visual_dimensions",
+        "passed": true,
+        "detail": "approved with evidence",
+        "rendition": null
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 2701312 actual 2701312",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.8203 m, spec 0.8203 m, drift 0.01%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 1.0229 m, spec 1.0229 m, drift 0.00%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.9866 m, spec 0.9866 m, drift 0.00%",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y 0.0000 m (tolerance 0.0051)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0041)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z 0.0000 m (tolerance 0.0049)",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "8916 \u2264 150000",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 2048",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 8916 measured 8916",
+        "rendition": "lod0.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 2579880 actual 2579880",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.8204 m, spec 0.8203 m, drift 0.01%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 1.0230 m, spec 1.0229 m, drift 0.01%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.9869 m, spec 0.9866 m, drift 0.03%",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y -0.0001 m (tolerance 0.0051)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x -0.0000 m (tolerance 0.0041)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z -0.0001 m (tolerance 0.0049)",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "4012 \u2264 50000",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 1024",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 4012 measured 4012",
+        "rendition": "lod1.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 2506372 actual 2506372",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.8198 m, spec 0.8203 m, drift 0.06%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 1.0243 m, spec 1.0229 m, drift 0.14%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.9873 m, spec 0.9866 m, drift 0.07%",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y 0.0001 m (tolerance 0.0051)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x -0.0002 m (tolerance 0.0041)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z -0.0004 m (tolerance 0.0049)",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "1336 \u2264 15000",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 1024",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "declared.triangles",
+        "passed": true,
+        "detail": "declared 1336 measured 1336",
+        "rendition": "lod2.glb.default"
+      },
+      {
+        "name": "rendition.size",
+        "passed": true,
+        "detail": "declared 2919867 actual 2919867",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "rendition.sha256",
+        "passed": true,
+        "detail": "hash matches",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "units.metres",
+        "passed": true,
+        "detail": "metersPerUnit 1.0",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "axis.up_y",
+        "passed": true,
+        "detail": "upAxis Y",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.x",
+        "passed": true,
+        "detail": "measured 0.8203 m, spec 0.8203 m, drift 0.01%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.y",
+        "passed": true,
+        "detail": "measured 1.0229 m, spec 1.0229 m, drift 0.00%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "dimensions.z",
+        "passed": true,
+        "detail": "measured 0.9866 m, spec 0.9866 m, drift 0.00%",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.base",
+        "passed": true,
+        "detail": "min.y -0.0000 m (tolerance 0.0051)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.centre_x",
+        "passed": true,
+        "detail": "centre.x 0.0000 m (tolerance 0.0041)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "pivot.centre_z",
+        "passed": true,
+        "detail": "centre.z 0.0000 m (tolerance 0.0049)",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "materials.metallic_roughness",
+        "passed": true,
+        "detail": "PBR metallic-roughness",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "budget.triangles",
+        "passed": true,
+        "detail": "8916 \u2264 150000",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "budget.texture_edge",
+        "passed": true,
+        "detail": "1024 \u2264 2048",
+        "rendition": "lod0.usdz.default"
+      },
+      {
+        "name": "renditions.formats",
+        "passed": true,
+        "detail": "formats present: ['glb', 'usdz']",
+        "rendition": null
+      },
+      {
+        "name": "dimensions.cross",
+        "passed": true,
+        "detail": "all representations agree within \u00b11 %",
+        "rendition": null
+      }
+    ],
+    "measurements": {
+      "lod0.glb.default": {
+        "min": [
+          -0.4101722240447998,
+          0.0,
+          -0.4932808578014374
+        ],
+        "max": [
+          0.4101722240447998,
+          1.0228520631790161,
+          0.4932808578014374
+        ],
+        "size": [
+          0.8203444480895996,
+          1.0228520631790161,
+          0.9865617156028748
+        ],
+        "triangles": 8916,
+        "max_texture_edge": 1024
+      },
+      "lod1.glb.default": {
+        "min": [
+          -0.4101886451244354,
+          -0.00012832341599278152,
+          -0.49357232451438904
+        ],
+        "max": [
+          0.41017967462539673,
+          1.0228520631790161,
+          0.4932808578014374
+        ],
+        "size": [
+          0.8203683197498322,
+          1.022980386595009,
+          0.9868531823158264
+        ],
+        "triangles": 4012,
+        "max_texture_edge": 1024
+      },
+      "lod2.glb.default": {
+        "min": [
+          -0.41013702750205994,
+          5.8078519941773266e-05,
+          -0.4940500557422638
+        ],
+        "max": [
+          0.4096936583518982,
+          1.0243619680404663,
+          0.49323904514312744
+        ],
+        "size": [
+          0.8198306858539581,
+          1.0243038895205245,
+          0.9872891008853912
+        ],
+        "triangles": 1336,
+        "max_texture_edge": 1024
+      },
+      "lod0.usdz.default": {
+        "min": [
+          -0.4101722240447998,
+          -1.0953035318760071e-16,
+          -0.4932808578014374
+        ],
+        "max": [
+          0.4101722240447998,
+          1.0228520631790161,
+          0.4932808578014376
+        ],
+        "size": [
+          0.8203444480895996,
+          1.0228520631790161,
+          0.986561715602875
+        ],
+        "triangles": 8916,
+        "max_texture_edge": 1024
+      }
+    }
+  }
+]

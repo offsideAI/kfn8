@@ -1,0 +1,98 @@
+{
+  "contract_version": "1.0.0",
+  "asset": {
+    "id": "92f7b771-f53a-59ee-97b4-d89e02e8eefb",
+    "name": "Modern arm chair",
+    "sku": null,
+    "category": "seating",
+    "affinity": "floor",
+    "provenance": "licensed",
+    "delivery_mode": "public",
+    "style_tags": [
+      "mid-century",
+      "walnut"
+    ],
+    "dominant_colour": "walnut",
+    "weight_class": "medium",
+    "is_floor_covering": false
+  },
+  "revision": 1,
+  "front_axis": "-Z",
+  "dimension_spec": {
+    "width_m": 0.8203,
+    "depth_m": 0.9866,
+    "height_m": 1.0229,
+    "authority_kind": "operator",
+    "source": "Poly Haven modern_arm_chair_01 1k glTF, conformed geometry measured after furniture-scale sanity check",
+    "approved_by": "measured by agent; founder sign-off is the visual_dimensions approval",
+    "approved_at": "2026-09-23T16:54:49Z",
+    "evidence_sha256": "ffd86ad39fd3db37a1cfc2edf802d72f14d44e8189bd70fe392618ec65c3eddf"
+  },
+  "licence": {
+    "source_url": "https://polyhaven.com/a/modern_arm_chair_01",
+    "author": "Vibrant Nordic",
+    "licence_id": "CC0-1.0",
+    "attribution_required": false,
+    "attribution_text": null,
+    "evidence_reference": "ledger/evidence/modern_arm_chair_01.info.json + ledger/evidence/polyhaven-license.html",
+    "evidence_sha256": "ffd86ad39fd3db37a1cfc2edf802d72f14d44e8189bd70fe392618ec65c3eddf",
+    "recorded_at": "2026-09-23T16:54:49Z"
+  },
+  "approvals": [
+    {
+      "kind": "provenance",
+      "actor": "OffsideAI",
+      "decided_at": "2026-09-23T17:30:30Z",
+      "evidence_reference": "ledger/review-sheet-2026-09-23.png",
+      "evidence_sha256": "288c277e2695f7c5c5c7e8fc6220b08a05e8cfe95cf2332a28df47983d744710",
+      "input_sha256": "3eca47e63b2700fa20b56acdc047cae6cfab423215ff9f2fd7b7d744e089bbfd",
+      "approved": true
+    },
+    {
+      "kind": "visual_dimensions",
+      "actor": "OffsideAI",
+      "decided_at": "2026-09-23T17:30:30Z",
+      "evidence_reference": "ledger/review-sheet-2026-09-23.png",
+      "evidence_sha256": "288c277e2695f7c5c5c7e8fc6220b08a05e8cfe95cf2332a28df47983d744710",
+      "input_sha256": "3eca47e63b2700fa20b56acdc047cae6cfab423215ff9f2fd7b7d744e089bbfd",
+      "approved": true
+    }
+  ],
+  "renditions": [
+    {
+      "lod": 0,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod0.glb",
+      "sha256": "3c7b990f4d6c55f3db37e4a8dbc694383de6e680363d7755bb31803332ac6a94",
+      "size_bytes": 2701312,
+      "triangles": 8916
+    },
+    {
+      "lod": 1,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod1.glb",
+      "sha256": "ac4859e18c6720dcc56ab0c1a50380a2d6b821c08152adb811433fe33b0d1ee1",
+      "size_bytes": 2579880,
+      "triangles": 4012
+    },
+    {
+      "lod": 2,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod2.glb",
+      "sha256": "13bc6811ab68a7e61bc3abe31326eaab488fcb7718f97054fe74b82ceb644870",
+      "size_bytes": 2506372,
+      "triangles": 1336
+    },
+    {
+      "lod": 0,
+      "format": "usdz",
+      "variant_key": "default",
+      "path": "lod0.usdz",
+      "sha256": "611f88c0e98406b9acabf3b80ea8d39715d9c39a3d1a6c5e42adc3085fa86358",
+      "size_bytes": 2919867
+    }
+  ]
+}

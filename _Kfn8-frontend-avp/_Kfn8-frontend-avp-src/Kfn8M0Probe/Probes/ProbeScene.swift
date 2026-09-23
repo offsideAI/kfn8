@@ -11,6 +11,7 @@ final class ProbeScene {
     private var models: [AttachmentAffinity: ModelEntity] = [:]
     private var shapes: [AttachmentAffinity: ShapeResource] = [:]
     private let lampLightEntity = Entity()
+    private var testPanel = ModelEntity()
     private(set) var occlusionEntity = ModelEntity()
     static let fixtureGroup = CollisionGroup(rawValue: 1 << 2)
 
@@ -19,12 +20,14 @@ final class ProbeScene {
     private static let brass = UIColor(red: 0.72, green: 0.58, blue: 0.30, alpha: 1)
     private static let clay = UIColor(red: 0.66, green: 0.45, blue: 0.36, alpha: 1)
 
+    /// Spawn positions keep the centre line clear: the control window sits about 1–1.5 m straight ahead, and any
+    /// entity behind it captures gaze and blocks window scrolling (observed on device 2026-09-22).
     static func initialPosition(for affinity: AttachmentAffinity) -> SIMD3<Float> {
         switch affinity {
-        case .floor: SIMD3(0.0, 0.0, -1.2)
-        case .wall: SIMD3(0.5, 1.4, -1.2)
-        case .ceiling: SIMD3(-0.5, 2.0, -1.2)
-        case .tabletop: SIMD3(0.5, 0.75, -0.8)
+        case .floor: SIMD3(-1.1, 0.0, -2.0)
+        case .wall: SIMD3(1.1, 1.4, -2.2)
+        case .ceiling: SIMD3(-0.6, 2.0, -2.4)
+        case .tabletop: SIMD3(1.2, 0.75, -1.4)
         }
     }
 
@@ -75,6 +78,8 @@ final class ProbeScene {
         pivot.components.set(CollisionComponent(shapes: [shape], mode: .trigger,
                                                 filter: CollisionFilter(group: ProbeScene.fixtureGroup, mask: SurfaceTracker.realWorldGroup)))
         pivot.components.set(GroundingShadowComponent(castsShadow: true))
+        // Same occlusion setting the product uses, so any fixture dragged behind furniture is also a valid test.
+        pivot.components.set(EnvironmentBlendingComponent(preferredBlendingMode: .occluded(by: .surroundings)))
         pivot.components.set(FixtureComponent(affinity: affinity))
         models[affinity] = model
         return pivot
@@ -93,16 +98,40 @@ final class ProbeScene {
         floorFixture.addChild(post)
         floorFixture.addChild(bulb)
         floorFixture.addChild(lampLightEntity)
+        // Virtual test panel 45 cm behind the lamp, facing the user, moves with the lamp.
+        testPanel = ModelEntity(mesh: .generateBox(size: SIMD3(0.6, 0.6, 0.02), cornerRadius: 0.01),
+                                materials: [SimpleMaterial(color: ProbeScene.bone, roughness: 0.9, isMetallic: false)])
+        testPanel.name = "virtualTestPanel"
+        testPanel.position = SIMD3(-0.55, 0.9, -0.2)
+        floorFixture.addChild(testPanel)
+    }
+
+    func setTestPanel(visible: Bool) { testPanel.isEnabled = visible }
+
+    var cubePosition: SIMD3<Float> { occlusionEntity.position(relativeTo: nil) }
+    func setCubePosition(_ position: SIMD3<Float>) { occlusionEntity.setPosition(position, relativeTo: nil) }
+
+    /// Diagnostic for the window: which light components are actually on the lamp entity right now.
+    var lampComponentSummary: String {
+        var parts: [String] = []
+        if lampLightEntity.components.has(PointLightComponent.self) { parts.append("PointLight") }
+        if lampLightEntity.components.has(PointLightComponent.SurroundingsLight.self) { parts.append("PointLight.SurroundingsLight") }
+        if lampLightEntity.components.has(SpotLightComponent.self) { parts.append("SpotLight") }
+        if lampLightEntity.components.has(SpotLightComponent.SurroundingsLight.self) { parts.append("SpotLight.SurroundingsLight") }
+        if lampLightEntity.components.has(SpotLightComponent.Shadow.self) { parts.append("Shadow") }
+        let inScene = lampLightEntity.scene != nil ? "in scene" : "NOT in scene"
+        return parts.isEmpty ? "none (\(inScene))" : parts.joined(separator: " + ") + " (\(inScene))"
     }
 
     private func buildOcclusionObject() {
-        occlusionEntity = ModelEntity(mesh: .generateBox(size: SIMD3(0.45, 0.45, 0.45), cornerRadius: 0.02),
-                                      materials: [SimpleMaterial(color: ProbeScene.clay, roughness: 0.7, isMetallic: false)])
+        // Bone-white and larger than every fixture so it cannot be confused with the clay tabletop block.
+        occlusionEntity = ModelEntity(mesh: .generateBox(size: SIMD3(0.5, 0.5, 0.5), cornerRadius: 0.02),
+                                      materials: [SimpleMaterial(color: ProbeScene.bone, roughness: 0.6, isMetallic: false)])
         occlusionEntity.name = "occlusionProbe"
-        occlusionEntity.position = SIMD3(-0.9, 0.225, -1.5)
+        occlusionEntity.position = SIMD3(0, 0.25, -2.6) // straight ahead, beyond the window, easy to find
         occlusionEntity.components.set(EnvironmentBlendingComponent(preferredBlendingMode: .occluded(by: .surroundings)))
         ManipulationComponent.configureEntity(occlusionEntity, hoverEffect: .spotlight(.default), allowedInputTypes: .all,
-                                              collisionShapes: [.generateBox(size: SIMD3(0.45, 0.45, 0.45))])
+                                              collisionShapes: [.generateBox(size: SIMD3(0.5, 0.5, 0.5))])
         var manipulation = occlusionEntity.components[ManipulationComponent.self] ?? ManipulationComponent()
         manipulation.releaseBehavior = .stay
         manipulation.dynamics.scalingBehavior = .none
@@ -113,6 +142,7 @@ final class ProbeScene {
     // MARK: Lighting
 
     func applyLighting(_ state: LightingProbeState) {
+        setTestPanel(visible: state.showVirtualTestPanel)
         lampLightEntity.components.remove(PointLightComponent.self)
         lampLightEntity.components.remove(PointLightComponent.SurroundingsLight.self)
         lampLightEntity.components.remove(SpotLightComponent.self)
@@ -143,11 +173,9 @@ final class ProbeScene {
     // MARK: Occlusion
 
     func applyOcclusion(_ state: OcclusionProbeState) {
-        switch state.mode {
-        case .occludedBySurroundings:
-            occlusionEntity.components.set(EnvironmentBlendingComponent(preferredBlendingMode: .occluded(by: .surroundings)))
-        case .defaultBlending:
-            occlusionEntity.components.set(EnvironmentBlendingComponent(preferredBlendingMode: .default))
+        let mode: EnvironmentBlendingComponent.BlendingMode = state.mode == .occludedBySurroundings ? .occluded(by: .surroundings) : .default
+        for e in [occlusionEntity] + Array(fixtures.values) {
+            e.components.set(EnvironmentBlendingComponent(preferredBlendingMode: mode))
         }
     }
 
@@ -169,8 +197,18 @@ final class ProbeScene {
 
     func apply(pose: AttachedPose, to affinity: AttachmentAffinity) {
         guard let fixture = fixtures[affinity] else { return }
-        fixture.setPosition(pose.position, relativeTo: nil)
+        fixture.setPosition(ProbeScene.mountedPosition(for: affinity, pose: pose), relativeTo: nil)
         fixture.setOrientation(pose.orientation, relativeTo: nil)
+    }
+
+    /// Mount-point offset from the base-centre pivot. Wall items hang by their back face, so the pivot sits half the
+    /// depth in front of the wall plane; without this the block straddled the wall mesh and every release was
+    /// judged invalid on device (2026-09-22 run 3). Floor, tabletop and ceiling items need no offset in the probe.
+    static func mountedPosition(for affinity: AttachmentAffinity, pose: AttachedPose) -> SIMD3<Float> {
+        guard affinity == .wall else { return pose.position }
+        let depth = size(for: .wall).z
+        let outward = pose.orientation.act(SIMD3<Float>(0, 0, 1)) // item's back (+Z) points into the wall along the normal
+        return pose.position + outward * (depth / 2 + 0.01)
     }
 
     /// Continuous soft cue: translucent while intersecting real geometry or held after an unresolved release.
@@ -183,11 +221,20 @@ final class ProbeScene {
         }
     }
 
-    /// Sweeps the fixture's collision box by 1 mm at the candidate position against real-world mesh collision only.
+    /// Sweeps a slightly shrunken copy of the fixture's collision box by 1 mm at the candidate position against
+    /// real-world mesh collision only. The shrink (4 cm per side, 6 cm off the base) is a tolerance for the scene
+    /// mesh's own thickness and noise: the first device run showed a floor-standing fixture judged as intersecting
+    /// the floor mesh on every release (push-outs of ±2 cm in Y, then three unresolved releases). Real obstacles are
+    /// far larger than that tolerance.
     func intersectsRealWorld(affinity: AttachmentAffinity, at position: SIMD3<Float>) -> Bool {
-        guard let fixture = fixtures[affinity], let shape = shapes[affinity], let scene = fixture.scene else { return false }
+        guard let fixture = fixtures[affinity], let scene = fixture.scene else { return false }
+        let size = ProbeScene.size(for: affinity)
+        let inset: Float = 0.04
+        let baseLift: Float = 0.06
+        let testSize = SIMD3(max(size.x - 2 * inset, 0.02), max(size.y - baseLift - inset, 0.02), max(size.z - 2 * inset, 0.02))
+        let testShape = ShapeResource.generateBox(size: testSize).offsetBy(translation: SIMD3(0, baseLift + testSize.y / 2, 0))
         let orientation = fixture.orientation(relativeTo: nil)
-        let hits = scene.convexCast(convexShape: shape, fromPosition: position, fromOrientation: orientation,
+        let hits = scene.convexCast(convexShape: testShape, fromPosition: position, fromOrientation: orientation,
                                     toPosition: position + SIMD3(0, 0.001, 0), toOrientation: orientation,
                                     query: .any, mask: SurfaceTracker.realWorldGroup)
         return !hits.isEmpty

@@ -61,17 +61,40 @@ xcrun simctl io $UDID screenshot $S/shot.png
 
 Launch arguments are the only automation hook: `--open-immersive`, `--lamp-on`, `--occlusion-default`. Without them the app behaves exactly as on device. ARKit plane detection and scene reconstruction report "unsupported" on the simulator, and ScreenCaptureKit is absent from the simulator SDK, so attachment, collision and export can only be judged on the headset.
 
+## Remote-driven runs (agent drives, founder wears)
+
+The probe polls `Documents/commands.json` in its container twice a second and executes each command file once, writing `Documents/status.json` after every poll. `../tools/probe_remote.py` writes commands with `devicectl copy to`, pulls status, and can capture the Mac screen, which shows the headset view when the founder turns on **Mirror My View** (Control Center → Mirror My View → this Mac).
+
+```sh
+python3 ../tools/probe_remote.py status
+python3 ../tools/probe_remote.py run '[{"op":"openSpace"}]' --wait 4
+python3 ../tools/probe_remote.py run '[{"op":"lamp","on":true,"type":"point","intensity":40000,"surroundings":true}]' --capture on.png
+python3 ../tools/probe_remote.py run '[{"op":"occlusion","mode":"occluded"},{"op":"move","fixture":"cube","to":[0.2,0.3,-2.5]}]' --capture occ.png
+python3 ../tools/probe_remote.py run '[{"op":"record","probe":"lighting","outcome":"passed","observed":"agent: wall brightened in mirrored view"}]'
+python3 ../tools/probe_remote.py evidence ./M0-EVIDENCE.json
+```
+
+Ops: `openSpace`, `closeSpace`, `lamp` (on/type/intensity/radius/surroundings), `occlusion` (mode occluded|default), `move` (fixture floor|wall|ceiling|tabletop|cube, to [x,y,z] in metres, immersive-space origin at the floor under the user), `nudge` (fixture, by [dx,dy,dz]), `cancel` (fixture), `record` (probe, outcome, observed; tagged `recordedBy: agent-mirrored-view`), `note`, `resetFrames`, `status`. Hand manipulation events cannot be scripted; the ManipulationComponent probe still needs real pinches and grabs.
+
+Limits found on device: `devicectl device capture screenshot` is refused by Vision Pro, and `devicectl device process launch` hangs while the headset is not being worn. The founder opens the app from the Home View and keeps the headset on; everything else can be driven from the Mac.
+
 ## Founder device protocol (M2 Vision Pro, visionOS 27)
 
 Simulator results are never device evidence; the evidence file records `isSimulator` and the gate logic ignores simulator records.
 
-1. Open `Kfn8.xcodeproj` in Xcode 27, select the paired Apple Vision Pro, run the `Kfn8M0Probe` scheme. Note the build number shown in the Environment section.
-2. Accept the world-sensing prompt. Wait until the Environment section shows planes and mesh anchors for the room.
-3. Open the immersive space. Fixtures appear about 1.2 m in front of you: walnut floor block with brass lamp, brass wall block at 1.4 m, brass ceiling block at 2.0 m, clay tabletop block at 0.75 m, and a clay occlusion cube to the left.
-4. **Lighting (blocking).** Drag the floor lamp next to a real wall. Turn the lamp on and off with the button, with SurroundingsLight enabled, then disabled. Try point and spot. Take system screenshots (top button plus crown) in each state. Type what you saw on the wall and floor, pick an outcome, press Record.
-5. **Occlusion (blocking).** Drag the clay cube behind a real sofa or table. Walk and turn while looking at the boundary. Toggle blending mode to compare. Record edge quality and moving artifacts, pick an outcome, press Record.
-6. **Manipulation (blocking).** For each fixture: drag with indirect pinch and with a direct grab. Release on its proper surface (floor, wall, ceiling, table) and somewhere invalid (inside a real object, or off its surface). Observe: does it stay where released (`.stay`), does it turn translucent when invalid, does anything jump farther than 25 cm, and can you continue moving it without pinching again? Use the 5 cm buttons and Cancel as the non-gesture path. Record your observations; the transcript counters are appended automatically.
-7. **Export (nonblocking).** Grant consent, present the picker, choose the app content, wait for the first frame. Share the PNG to yourself and open it. Does it show your real room plus the fixtures, only the fixtures, or nothing? Record.
-8. Share `M0-EVIDENCE.json` from the Evidence section and return it with the screenshots.
+**No typing.** Each probe section has observation chips (tap the ones that are true) and three buttons: Record passed, Record failed, Record inconclusive. One tap writes the record with the selected chips plus the app's automatic context (intensity, components, surfaces, transcripts, frame times). Free-form remarks go to the agent in chat and are written into the findings as founder-reported. The evidence file is written automatically on launch, after every drag, on every lamp toggle and on immersive close; the agent pulls it with:
 
-Accessibility checks to fold in: VoiceOver reaches every button in the window; Dynamic Type at the largest size does not clip labels; with Reduce Motion enabled nothing in the probe animates differently (the probe has no animations).
+```sh
+xcrun devicectl device copy from --device <UDID> --domain-type appDataContainer \
+  --domain-identifier com.appliaison.kfn8.m0probe --source Documents/M0-EVIDENCE.json --destination ./M0-EVIDENCE.json
+```
+
+1. Room lights on. Open "Kfn8 M0 Probe". Environment section: OS 27.0, Simulator no.
+2. Tap "Open immersive space", allow world sensing, look around for 20 seconds until Surfaces shows planes and mesh anchors and "Scene understanding" says running.
+3. **Lighting.** Drag the lamp (walnut block) near a real wall. Tap "Turn lamp on" and off a few times; raise Intensity if faint. Tap the chips that are true, then one Record button. Screenshot with the lamp on and off (top button + Digital Crown).
+4. **Occlusion.** Drag the clay cube behind a sofa or table. Look at the edge while still, then while walking and turning. Tap "Toggle blending mode" to compare. Chips, then Record.
+5. **Manipulation.** For each of the four fixtures: indirect pinch drag, direct grab, release on its proper surface, release somewhere invalid (inside furniture or off its surface), try to keep moving it without re-pinching, tap Cancel, tap a 5 cm button. Chips, then Record.
+6. **Export.** Consent, present picker, pick this app, wait for "captured", share the PNG to the Mac, open it. No chips; the agent records the result from the file and your description.
+7. Tap "Close immersive space". Tell the agent you are done; the file is pulled from the headset.
+
+Accessibility checks to fold in: VoiceOver reaches every button and chip; Dynamic Type at the largest size does not clip; Reduce Motion changes nothing (the probe has no animations).

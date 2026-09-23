@@ -1,0 +1,904 @@
+{
+ "Diffuse": {
+  "8k": {
+   "jpg": {
+    "size": 4529584,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_diff_8k.jpg",
+    "md5": "6d96f1ebff699c4d96bcb166b302886e"
+   },
+   "png": {
+    "size": 42148605,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/8k/ceramic_vase_02/ceramic_vase_02_diff_8k.png",
+    "md5": "8e84431d556bc21fe9d47ac612d1f7ca"
+   },
+   "exr": {
+    "size": 29537211,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/8k/ceramic_vase_02/ceramic_vase_02_diff_8k.exr",
+    "md5": "d9723765808251f0a8c908e662d6142b"
+   }
+  },
+  "4k": {
+   "jpg": {
+    "size": 1305070,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_diff_4k.jpg",
+    "md5": "71e065979879dfda91671510378f4ad8"
+   },
+   "png": {
+    "size": 12651401,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/ceramic_vase_02/ceramic_vase_02_diff_4k.png",
+    "md5": "1c0d795be413d3ed8bde20b8027f4a99"
+   },
+   "exr": {
+    "size": 8570625,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/ceramic_vase_02/ceramic_vase_02_diff_4k.exr",
+    "md5": "2bf3505d818930793e36893a7e7b0dee"
+   }
+  },
+  "2k": {
+   "jpg": {
+    "size": 364783,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_diff_2k.jpg",
+    "md5": "a0be26808189fa4b33b98895d10fcc91"
+   },
+   "png": {
+    "size": 3534188,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/ceramic_vase_02/ceramic_vase_02_diff_2k.png",
+    "md5": "afb19c648cd128787b49c1c6e8996b95"
+   },
+   "exr": {
+    "size": 2433267,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_diff_2k.exr",
+    "md5": "a1c08cd684055b8e074410322b2d56a6"
+   }
+  },
+  "1k": {
+   "jpg": {
+    "size": 98894,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_diff_1k.jpg",
+    "md5": "767b3412c76a91ddc807d69b5b34df96"
+   },
+   "png": {
+    "size": 983499,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/ceramic_vase_02/ceramic_vase_02_diff_1k.png",
+    "md5": "2da9df17174c2ab765d9e041074847b5"
+   },
+   "exr": {
+    "size": 680771,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/ceramic_vase_02/ceramic_vase_02_diff_1k.exr",
+    "md5": "308e974ab737564c65049e4191271882"
+   }
+  }
+ },
+ "nor_dx": {
+  "8k": {
+   "jpg": {
+    "size": 12068938,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_nor_dx_8k.jpg",
+    "md5": "f2213ad709a2aa3c88c55a2d198b6f15"
+   },
+   "png": {
+    "size": 69523390,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/8k/ceramic_vase_02/ceramic_vase_02_nor_dx_8k.png",
+    "md5": "fedd406cf903e81cefc2751ae081dd29"
+   },
+   "exr": {
+    "size": 75192017,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/8k/ceramic_vase_02/ceramic_vase_02_nor_dx_8k.exr",
+    "md5": "a7c6e26d1977956ad1e74e77b78341ae"
+   }
+  },
+  "4k": {
+   "jpg": {
+    "size": 3487874,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_nor_dx_4k.jpg",
+    "md5": "0f72f8ef0867d9245dbbc26a035cef6c"
+   },
+   "png": {
+    "size": 22479828,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/ceramic_vase_02/ceramic_vase_02_nor_dx_4k.png",
+    "md5": "3afb81562c0344719dbec27edd32ef9a"
+   },
+   "exr": {
+    "size": 25629982,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/ceramic_vase_02/ceramic_vase_02_nor_dx_4k.exr",
+    "md5": "260373729809a1380a961d1a2497df70"
+   }
+  },
+  "2k": {
+   "jpg": {
+    "size": 799453,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_nor_dx_2k.jpg",
+    "md5": "1ff3d1aae1489d8483f51c6f551457ec"
+   },
+   "png": {
+    "size": 5990155,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/ceramic_vase_02/ceramic_vase_02_nor_dx_2k.png",
+    "md5": "e0101e9bd6b1b74c1a8ee320803c1817"
+   },
+   "exr": {
+    "size": 6597353,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_nor_dx_2k.exr",
+    "md5": "4116485d974ebcf6b92ad748dcf33b6e"
+   }
+  },
+  "1k": {
+   "jpg": {
+    "size": 163793,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_nor_dx_1k.jpg",
+    "md5": "c4716ad8a5bb8934604064e108b0acd0"
+   },
+   "png": {
+    "size": 1534421,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/ceramic_vase_02/ceramic_vase_02_nor_dx_1k.png",
+    "md5": "66ee4e23bfa80536e62eb00397b407ca"
+   },
+   "exr": {
+    "size": 1580289,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/ceramic_vase_02/ceramic_vase_02_nor_dx_1k.exr",
+    "md5": "5a93a2872440516128c95a18ec99e14a"
+   }
+  }
+ },
+ "nor_gl": {
+  "8k": {
+   "jpg": {
+    "size": 12079261,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_nor_gl_8k.jpg",
+    "md5": "a688c877a537acdb8441869a9fcb9715"
+   },
+   "png": {
+    "size": 69556522,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/8k/ceramic_vase_02/ceramic_vase_02_nor_gl_8k.png",
+    "md5": "3c535953b4007faba947cde8fc1a2533"
+   },
+   "exr": {
+    "size": 75225475,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/8k/ceramic_vase_02/ceramic_vase_02_nor_gl_8k.exr",
+    "md5": "8089328a23e366196a7b684466776c52"
+   }
+  },
+  "4k": {
+   "jpg": {
+    "size": 3490521,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_nor_gl_4k.jpg",
+    "md5": "58e0f55105a3ae38ef1c135f66fd6b3d"
+   },
+   "png": {
+    "size": 22486184,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/ceramic_vase_02/ceramic_vase_02_nor_gl_4k.png",
+    "md5": "0bdf0842ff9fdbe108e845ee934c68e4"
+   },
+   "exr": {
+    "size": 25630627,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/ceramic_vase_02/ceramic_vase_02_nor_gl_4k.exr",
+    "md5": "76ae4c3e3c8771bac200d9dd6698829e"
+   }
+  },
+  "2k": {
+   "jpg": {
+    "size": 798697,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_nor_gl_2k.jpg",
+    "md5": "f2ddbbeaf86c1e0b28fe15cc4d5626f7"
+   },
+   "png": {
+    "size": 5990741,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/ceramic_vase_02/ceramic_vase_02_nor_gl_2k.png",
+    "md5": "6e4e46fafa2cb3fabd39d64a3a82c304"
+   },
+   "exr": {
+    "size": 6595935,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_nor_gl_2k.exr",
+    "md5": "c6ebd28f355a3b3a6eb2f2996969fd0b"
+   }
+  },
+  "1k": {
+   "jpg": {
+    "size": 164130,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_nor_gl_1k.jpg",
+    "md5": "05e671a686f54f3add772305cf531045"
+   },
+   "png": {
+    "size": 1535196,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/ceramic_vase_02/ceramic_vase_02_nor_gl_1k.png",
+    "md5": "edab6fa63b702b708ca5b7ba578d1727"
+   },
+   "exr": {
+    "size": 1580009,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/ceramic_vase_02/ceramic_vase_02_nor_gl_1k.exr",
+    "md5": "225f932cd1a9f395f273fed17c410280"
+   }
+  }
+ },
+ "blend": {
+  "8k": {
+   "blend": {
+    "include": {
+     "textures/ceramic_vase_02_rough_8k.jpg": {
+      "size": 6501666,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_rough_8k.jpg",
+      "md5": "efe785d5fe40696b3c48ea3a9cf42235"
+     },
+     "textures/ceramic_vase_02_diff_8k.jpg": {
+      "size": 4529584,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_diff_8k.jpg",
+      "md5": "6d96f1ebff699c4d96bcb166b302886e"
+     },
+     "textures/ceramic_vase_02_nor_gl_8k.exr": {
+      "size": 75225475,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/8k/ceramic_vase_02/ceramic_vase_02_nor_gl_8k.exr",
+      "md5": "8089328a23e366196a7b684466776c52"
+     }
+    },
+    "size": 192621,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/8k/ceramic_vase_02/ceramic_vase_02_8k.blend",
+    "md5": "8a95b614171c1f3fc0acf7f1372f05d4"
+   }
+  },
+  "4k": {
+   "blend": {
+    "include": {
+     "textures/ceramic_vase_02_diff_4k.jpg": {
+      "size": 1305070,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_diff_4k.jpg",
+      "md5": "71e065979879dfda91671510378f4ad8"
+     },
+     "textures/ceramic_vase_02_rough_4k.jpg": {
+      "size": 2203956,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_rough_4k.jpg",
+      "md5": "fdd1a690c879b1db9b53cabfc5b6192b"
+     },
+     "textures/ceramic_vase_02_nor_gl_4k.exr": {
+      "size": 25630627,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/ceramic_vase_02/ceramic_vase_02_nor_gl_4k.exr",
+      "md5": "76ae4c3e3c8771bac200d9dd6698829e"
+     }
+    },
+    "size": 192594,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/4k/ceramic_vase_02/ceramic_vase_02_4k.blend",
+    "md5": "9eca94ac926f85b1a7ec02442191af10"
+   }
+  },
+  "2k": {
+   "blend": {
+    "include": {
+     "textures/ceramic_vase_02_nor_gl_2k.exr": {
+      "size": 6595935,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_nor_gl_2k.exr",
+      "md5": "c6ebd28f355a3b3a6eb2f2996969fd0b"
+     },
+     "textures/ceramic_vase_02_rough_2k.jpg": {
+      "size": 666816,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_rough_2k.jpg",
+      "md5": "ef6dbb211018010a4bcea2fb5f15007b"
+     },
+     "textures/ceramic_vase_02_diff_2k.jpg": {
+      "size": 364783,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_diff_2k.jpg",
+      "md5": "a0be26808189fa4b33b98895d10fcc91"
+     }
+    },
+    "size": 192664,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/ceramic_vase_02/ceramic_vase_02_2k.blend",
+    "md5": "5d0f6c519ee2e0cb905f791a7b0f1530"
+   }
+  },
+  "1k": {
+   "blend": {
+    "include": {
+     "textures/ceramic_vase_02_nor_gl_1k.exr": {
+      "size": 1580009,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/ceramic_vase_02/ceramic_vase_02_nor_gl_1k.exr",
+      "md5": "225f932cd1a9f395f273fed17c410280"
+     },
+     "textures/ceramic_vase_02_diff_1k.jpg": {
+      "size": 98894,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_diff_1k.jpg",
+      "md5": "767b3412c76a91ddc807d69b5b34df96"
+     },
+     "textures/ceramic_vase_02_rough_1k.jpg": {
+      "size": 190645,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_rough_1k.jpg",
+      "md5": "cc2ad94640549ada75e9363d4ce8da5c"
+     }
+    },
+    "size": 192638,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/1k/ceramic_vase_02/ceramic_vase_02_1k.blend",
+    "md5": "60343083dbfe4fb1cfff66365ddd0e33"
+   }
+  }
+ },
+ "gltf": {
+  "8k": {
+   "gltf": {
+    "include": {
+     "textures/ceramic_vase_02_rough_8k.jpg": {
+      "size": 6501666,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_rough_8k.jpg",
+      "md5": "efe785d5fe40696b3c48ea3a9cf42235"
+     },
+     "textures/ceramic_vase_02_diff_8k.jpg": {
+      "size": 4529584,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_diff_8k.jpg",
+      "md5": "6d96f1ebff699c4d96bcb166b302886e"
+     },
+     "textures/ceramic_vase_02_nor_gl_8k.jpg": {
+      "size": 12079261,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_nor_gl_8k.jpg",
+      "md5": "a688c877a537acdb8441869a9fcb9715"
+     },
+     "ceramic_vase_02.bin": {
+      "size": 293776,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/ceramic_vase_02/ceramic_vase_02.bin",
+      "md5": "39b375411e2dd303ac86c17cb1ded216"
+     }
+    },
+    "size": 2716,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/ceramic_vase_02/ceramic_vase_02_8k.gltf",
+    "md5": "4fa45aaa4ae41b9fd80dab214f485ea6"
+   }
+  },
+  "4k": {
+   "gltf": {
+    "include": {
+     "textures/ceramic_vase_02_diff_4k.jpg": {
+      "size": 1305070,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_diff_4k.jpg",
+      "md5": "71e065979879dfda91671510378f4ad8"
+     },
+     "textures/ceramic_vase_02_rough_4k.jpg": {
+      "size": 2203956,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_rough_4k.jpg",
+      "md5": "fdd1a690c879b1db9b53cabfc5b6192b"
+     },
+     "textures/ceramic_vase_02_nor_gl_4k.jpg": {
+      "size": 3490521,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_nor_gl_4k.jpg",
+      "md5": "58e0f55105a3ae38ef1c135f66fd6b3d"
+     },
+     "ceramic_vase_02.bin": {
+      "size": 293776,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/ceramic_vase_02/ceramic_vase_02.bin",
+      "md5": "39b375411e2dd303ac86c17cb1ded216"
+     }
+    },
+    "size": 2716,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/ceramic_vase_02/ceramic_vase_02_4k.gltf",
+    "md5": "d9a0447094fc65dc46ecbbc26702c90c"
+   }
+  },
+  "2k": {
+   "gltf": {
+    "include": {
+     "textures/ceramic_vase_02_nor_gl_2k.jpg": {
+      "size": 798697,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_nor_gl_2k.jpg",
+      "md5": "f2ddbbeaf86c1e0b28fe15cc4d5626f7"
+     },
+     "textures/ceramic_vase_02_rough_2k.jpg": {
+      "size": 666816,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_rough_2k.jpg",
+      "md5": "ef6dbb211018010a4bcea2fb5f15007b"
+     },
+     "textures/ceramic_vase_02_diff_2k.jpg": {
+      "size": 364783,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_diff_2k.jpg",
+      "md5": "a0be26808189fa4b33b98895d10fcc91"
+     },
+     "ceramic_vase_02.bin": {
+      "size": 293776,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/ceramic_vase_02/ceramic_vase_02.bin",
+      "md5": "39b375411e2dd303ac86c17cb1ded216"
+     }
+    },
+    "size": 2716,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/ceramic_vase_02/ceramic_vase_02_2k.gltf",
+    "md5": "30ab527490cb2f4e7492cdbe29ee40fc"
+   }
+  },
+  "1k": {
+   "gltf": {
+    "include": {
+     "textures/ceramic_vase_02_nor_gl_1k.jpg": {
+      "size": 164130,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_nor_gl_1k.jpg",
+      "md5": "05e671a686f54f3add772305cf531045"
+     },
+     "textures/ceramic_vase_02_diff_1k.jpg": {
+      "size": 98894,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_diff_1k.jpg",
+      "md5": "767b3412c76a91ddc807d69b5b34df96"
+     },
+     "ceramic_vase_02.bin": {
+      "size": 293776,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/ceramic_vase_02/ceramic_vase_02.bin",
+      "md5": "39b375411e2dd303ac86c17cb1ded216"
+     },
+     "textures/ceramic_vase_02_rough_1k.jpg": {
+      "size": 190645,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_rough_1k.jpg",
+      "md5": "cc2ad94640549ada75e9363d4ce8da5c"
+     }
+    },
+    "size": 2716,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/ceramic_vase_02/ceramic_vase_02_1k.gltf",
+    "md5": "2f49a3853a20857a2f0169a764689aa9"
+   }
+  }
+ },
+ "usd": {
+  "8k": {
+   "usd": {
+    "include": {
+     "textures/ceramic_vase_02_rough_8k.jpg": {
+      "size": 6501666,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_rough_8k.jpg",
+      "md5": "efe785d5fe40696b3c48ea3a9cf42235"
+     },
+     "textures/ceramic_vase_02_diff_8k.jpg": {
+      "size": 4529584,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_diff_8k.jpg",
+      "md5": "6d96f1ebff699c4d96bcb166b302886e"
+     },
+     "textures/ceramic_vase_02_nor_gl_8k.exr": {
+      "size": 75225475,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/8k/ceramic_vase_02/ceramic_vase_02_nor_gl_8k.exr",
+      "md5": "8089328a23e366196a7b684466776c52"
+     }
+    },
+    "size": 71080,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/usd/8k/ceramic_vase_02/ceramic_vase_02_8k.usdc",
+    "md5": "b1eea61533cadbca7389088b1405f32c"
+   }
+  },
+  "4k": {
+   "usd": {
+    "include": {
+     "textures/ceramic_vase_02_diff_4k.jpg": {
+      "size": 1305070,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_diff_4k.jpg",
+      "md5": "71e065979879dfda91671510378f4ad8"
+     },
+     "textures/ceramic_vase_02_rough_4k.jpg": {
+      "size": 2203956,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_rough_4k.jpg",
+      "md5": "fdd1a690c879b1db9b53cabfc5b6192b"
+     },
+     "textures/ceramic_vase_02_nor_gl_4k.exr": {
+      "size": 25630627,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/ceramic_vase_02/ceramic_vase_02_nor_gl_4k.exr",
+      "md5": "76ae4c3e3c8771bac200d9dd6698829e"
+     }
+    },
+    "size": 71080,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/usd/4k/ceramic_vase_02/ceramic_vase_02_4k.usdc",
+    "md5": "8586dd00c3bda369c7ba493b409011fc"
+   }
+  },
+  "2k": {
+   "usd": {
+    "include": {
+     "textures/ceramic_vase_02_nor_gl_2k.exr": {
+      "size": 6595935,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_nor_gl_2k.exr",
+      "md5": "c6ebd28f355a3b3a6eb2f2996969fd0b"
+     },
+     "textures/ceramic_vase_02_rough_2k.jpg": {
+      "size": 666816,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_rough_2k.jpg",
+      "md5": "ef6dbb211018010a4bcea2fb5f15007b"
+     },
+     "textures/ceramic_vase_02_diff_2k.jpg": {
+      "size": 364783,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_diff_2k.jpg",
+      "md5": "a0be26808189fa4b33b98895d10fcc91"
+     }
+    },
+    "size": 71080,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/usd/2k/ceramic_vase_02/ceramic_vase_02_2k.usdc",
+    "md5": "4196c8fb63e15e7ecd6e098531b9e569"
+   }
+  },
+  "1k": {
+   "usd": {
+    "include": {
+     "textures/ceramic_vase_02_nor_gl_1k.exr": {
+      "size": 1580009,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/ceramic_vase_02/ceramic_vase_02_nor_gl_1k.exr",
+      "md5": "225f932cd1a9f395f273fed17c410280"
+     },
+     "textures/ceramic_vase_02_diff_1k.jpg": {
+      "size": 98894,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_diff_1k.jpg",
+      "md5": "767b3412c76a91ddc807d69b5b34df96"
+     },
+     "textures/ceramic_vase_02_rough_1k.jpg": {
+      "size": 190645,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_rough_1k.jpg",
+      "md5": "cc2ad94640549ada75e9363d4ce8da5c"
+     }
+    },
+    "size": 71097,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/usd/1k/ceramic_vase_02/ceramic_vase_02_1k.usdc",
+    "md5": "752e8902a5c2144d368c7746b1077b65"
+   }
+  }
+ },
+ "Metal": {
+  "8k": {
+   "jpg": {
+    "size": 786828,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_metal_8k.jpg",
+    "md5": "5f26c2cf9864f606a385079105582ab9"
+   },
+   "png": {
+    "size": 65408,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/8k/ceramic_vase_02/ceramic_vase_02_metal_8k.png",
+    "md5": "202c765cf53ae1b04635a5ec99af69c7"
+   },
+   "exr": {
+    "size": 150384,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/8k/ceramic_vase_02/ceramic_vase_02_metal_8k.exr",
+    "md5": "0772fc00d2401f5baeaf186d0650f64b"
+   }
+  },
+  "4k": {
+   "jpg": {
+    "size": 197004,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_metal_4k.jpg",
+    "md5": "921d904a81bd79b20edf344db2775b2c"
+   },
+   "png": {
+    "size": 16432,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/ceramic_vase_02/ceramic_vase_02_metal_4k.png",
+    "md5": "df8ab9679c470bb69b185cfc565b2bef"
+   },
+   "exr": {
+    "size": 42864,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/ceramic_vase_02/ceramic_vase_02_metal_4k.exr",
+    "md5": "bebd3d00adc3cc7a3e5cdff00e7210bb"
+   }
+  },
+  "2k": {
+   "jpg": {
+    "size": 49548,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_metal_2k.jpg",
+    "md5": "55a2f4c6c290ccc7dca012bae0d5413e"
+   },
+   "png": {
+    "size": 4187,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/ceramic_vase_02/ceramic_vase_02_metal_2k.png",
+    "md5": "12f0d8cf69c8a3427fbdfaaffe7978a5"
+   },
+   "exr": {
+    "size": 13296,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_metal_2k.exr",
+    "md5": "26f5859311eb8c5599af834149ce0b6f"
+   }
+  },
+  "1k": {
+   "jpg": {
+    "size": 12684,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_metal_1k.jpg",
+    "md5": "e8c0e6464de97eac1caa382a44a2682f"
+   },
+   "png": {
+    "size": 1139,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/ceramic_vase_02/ceramic_vase_02_metal_1k.png",
+    "md5": "14c604b27ea726bc5b38e48671f77ce0"
+   },
+   "exr": {
+    "size": 4784,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/ceramic_vase_02/ceramic_vase_02_metal_1k.exr",
+    "md5": "1432812273fad43af8a7513d46fbd180"
+   }
+  }
+ },
+ "fbx": {
+  "8k": {
+   "fbx": {
+    "include": {
+     "textures/ceramic_vase_02_rough_8k.jpg": {
+      "size": 6501666,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_rough_8k.jpg",
+      "md5": "efe785d5fe40696b3c48ea3a9cf42235"
+     },
+     "textures/ceramic_vase_02_diff_8k.jpg": {
+      "size": 4529584,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_diff_8k.jpg",
+      "md5": "6d96f1ebff699c4d96bcb166b302886e"
+     },
+     "textures/ceramic_vase_02_nor_gl_8k.exr": {
+      "size": 75225475,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/8k/ceramic_vase_02/ceramic_vase_02_nor_gl_8k.exr",
+      "md5": "8089328a23e366196a7b684466776c52"
+     }
+    },
+    "size": 295004,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/8k/ceramic_vase_02/ceramic_vase_02_8k.fbx",
+    "md5": "9f8d2d2ff5d721571439d6a0d7b45387"
+   }
+  },
+  "4k": {
+   "fbx": {
+    "include": {
+     "textures/ceramic_vase_02_diff_4k.jpg": {
+      "size": 1305070,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_diff_4k.jpg",
+      "md5": "71e065979879dfda91671510378f4ad8"
+     },
+     "textures/ceramic_vase_02_rough_4k.jpg": {
+      "size": 2203956,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_rough_4k.jpg",
+      "md5": "fdd1a690c879b1db9b53cabfc5b6192b"
+     },
+     "textures/ceramic_vase_02_nor_gl_4k.exr": {
+      "size": 25630627,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/ceramic_vase_02/ceramic_vase_02_nor_gl_4k.exr",
+      "md5": "76ae4c3e3c8771bac200d9dd6698829e"
+     }
+    },
+    "size": 294988,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/4k/ceramic_vase_02/ceramic_vase_02_4k.fbx",
+    "md5": "e40d48b258ee72a015a9df1728e0460c"
+   }
+  },
+  "2k": {
+   "fbx": {
+    "include": {
+     "textures/ceramic_vase_02_nor_gl_2k.exr": {
+      "size": 6595935,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_nor_gl_2k.exr",
+      "md5": "c6ebd28f355a3b3a6eb2f2996969fd0b"
+     },
+     "textures/ceramic_vase_02_rough_2k.jpg": {
+      "size": 666816,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_rough_2k.jpg",
+      "md5": "ef6dbb211018010a4bcea2fb5f15007b"
+     },
+     "textures/ceramic_vase_02_diff_2k.jpg": {
+      "size": 364783,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_diff_2k.jpg",
+      "md5": "a0be26808189fa4b33b98895d10fcc91"
+     }
+    },
+    "size": 295004,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/2k/ceramic_vase_02/ceramic_vase_02_2k.fbx",
+    "md5": "d7661239b9a589f18844b753205cf1b6"
+   }
+  },
+  "1k": {
+   "fbx": {
+    "include": {
+     "textures/ceramic_vase_02_nor_gl_1k.exr": {
+      "size": 1580009,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/ceramic_vase_02/ceramic_vase_02_nor_gl_1k.exr",
+      "md5": "225f932cd1a9f395f273fed17c410280"
+     },
+     "textures/ceramic_vase_02_diff_1k.jpg": {
+      "size": 98894,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_diff_1k.jpg",
+      "md5": "767b3412c76a91ddc807d69b5b34df96"
+     },
+     "textures/ceramic_vase_02_rough_1k.jpg": {
+      "size": 190645,
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_rough_1k.jpg",
+      "md5": "cc2ad94640549ada75e9363d4ce8da5c"
+     }
+    },
+    "size": 295004,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/1k/ceramic_vase_02/ceramic_vase_02_1k.fbx",
+    "md5": "3045adfb9c2e5eb8cdec60ff014f670a"
+   }
+  }
+ },
+ "arm": {
+  "8k": {
+   "jpg": {
+    "size": 6405417,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_arm_8k.jpg",
+    "md5": "ff224affd34f1a4ce0d2de17e990a2a1"
+   },
+   "png": {
+    "size": 34638608,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/8k/ceramic_vase_02/ceramic_vase_02_arm_8k.png",
+    "md5": "b16c13baf99c13a1178fa516b827bef8"
+   },
+   "exr": {
+    "size": 50366960,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/8k/ceramic_vase_02/ceramic_vase_02_arm_8k.exr",
+    "md5": "0e2cf2e56c70421501e3e90205bba8af"
+   }
+  },
+  "4k": {
+   "jpg": {
+    "size": 2100094,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_arm_4k.jpg",
+    "md5": "5c40ae7435881579c68622bb45a8a63d"
+   },
+   "png": {
+    "size": 11758061,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/ceramic_vase_02/ceramic_vase_02_arm_4k.png",
+    "md5": "f65df3c4dfd617b57539514639a21096"
+   },
+   "exr": {
+    "size": 17839678,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/ceramic_vase_02/ceramic_vase_02_arm_4k.exr",
+    "md5": "ec64ca2ee1a102f31c640bf420d8dfc0"
+   }
+  },
+  "2k": {
+   "jpg": {
+    "size": 632418,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_arm_2k.jpg",
+    "md5": "266ebb662d0de1cf4151eb89c738d7fb"
+   },
+   "png": {
+    "size": 3241302,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/ceramic_vase_02/ceramic_vase_02_arm_2k.png",
+    "md5": "9a1f8ee7c2d5941e8ff06687ba67890c"
+   },
+   "exr": {
+    "size": 5394827,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_arm_2k.exr",
+    "md5": "5812449d1f1d75b5fa3ed7f74b9aded6"
+   }
+  },
+  "1k": {
+   "jpg": {
+    "size": 182556,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_arm_1k.jpg",
+    "md5": "ba3007f907b82141f9d85972f0bbbaf0"
+   },
+   "png": {
+    "size": 853111,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/ceramic_vase_02/ceramic_vase_02_arm_1k.png",
+    "md5": "a555cf0293021daf4c633576c4da3f65"
+   },
+   "exr": {
+    "size": 1552725,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/ceramic_vase_02/ceramic_vase_02_arm_1k.exr",
+    "md5": "a185d351953605c5a4d663088afc7281"
+   }
+  }
+ },
+ "AO": {
+  "8k": {
+   "jpg": {
+    "size": 1985078,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_ao_8k.jpg",
+    "md5": "ff4529b7def7298be13a21bc59b986cc"
+   },
+   "png": {
+    "size": 8108350,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/8k/ceramic_vase_02/ceramic_vase_02_ao_8k.png",
+    "md5": "81488f3c89c79dfc78e5272b3e041ec7"
+   },
+   "exr": {
+    "size": 10532875,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/8k/ceramic_vase_02/ceramic_vase_02_ao_8k.exr",
+    "md5": "109c94d87bdfe1e25eed3d826810db8a"
+   }
+  },
+  "4k": {
+   "jpg": {
+    "size": 454670,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_ao_4k.jpg",
+    "md5": "88b0d0c3ea4e4d2abca6528d766173a0"
+   },
+   "png": {
+    "size": 2949855,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/ceramic_vase_02/ceramic_vase_02_ao_4k.png",
+    "md5": "bb076d608803e5c0c0d2c6ec66ddff83"
+   },
+   "exr": {
+    "size": 3557145,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/ceramic_vase_02/ceramic_vase_02_ao_4k.exr",
+    "md5": "85ee33482c7801ad3602352f9b979933"
+   }
+  },
+  "2k": {
+   "jpg": {
+    "size": 111349,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_ao_2k.jpg",
+    "md5": "7ed574fbbd06ab9cafdb0895be3b4037"
+   },
+   "png": {
+    "size": 688566,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/ceramic_vase_02/ceramic_vase_02_ao_2k.png",
+    "md5": "d36f80262495cdf30e454ff057a76bd1"
+   },
+   "exr": {
+    "size": 820664,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_ao_2k.exr",
+    "md5": "eefaf2402c32e4d8ae79104f3fa3ec98"
+   }
+  },
+  "1k": {
+   "jpg": {
+    "size": 38871,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_ao_1k.jpg",
+    "md5": "c549382a7733c94d18f347d1a68d2fb2"
+   },
+   "png": {
+    "size": 138946,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/ceramic_vase_02/ceramic_vase_02_ao_1k.png",
+    "md5": "c047d4fc7f5e20e734f637ef7364b2ab"
+   },
+   "exr": {
+    "size": 184901,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/ceramic_vase_02/ceramic_vase_02_ao_1k.exr",
+    "md5": "b09ce8ed4cbdefb1a03e57c60ea39bc6"
+   }
+  }
+ },
+ "Rough": {
+  "8k": {
+   "jpg": {
+    "size": 6501666,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/8k/ceramic_vase_02/ceramic_vase_02_rough_8k.jpg",
+    "md5": "efe785d5fe40696b3c48ea3a9cf42235"
+   },
+   "png": {
+    "size": 20160920,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/8k/ceramic_vase_02/ceramic_vase_02_rough_8k.png",
+    "md5": "30829f85b462e7a636124354c10698ab"
+   },
+   "exr": {
+    "size": 31464493,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/8k/ceramic_vase_02/ceramic_vase_02_rough_8k.exr",
+    "md5": "13fe7e30002accc22f3bc6e3f70a5ee9"
+   }
+  },
+  "4k": {
+   "jpg": {
+    "size": 2203956,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/ceramic_vase_02/ceramic_vase_02_rough_4k.jpg",
+    "md5": "fdd1a690c879b1db9b53cabfc5b6192b"
+   },
+   "png": {
+    "size": 6311273,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/ceramic_vase_02/ceramic_vase_02_rough_4k.png",
+    "md5": "d4bf6a0a8ba8efc980660396eb450621"
+   },
+   "exr": {
+    "size": 9820039,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/ceramic_vase_02/ceramic_vase_02_rough_4k.exr",
+    "md5": "1ceaf01ea95ce54acbabe6b0cacad13d"
+   }
+  },
+  "2k": {
+   "jpg": {
+    "size": 666816,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/ceramic_vase_02/ceramic_vase_02_rough_2k.jpg",
+    "md5": "ef6dbb211018010a4bcea2fb5f15007b"
+   },
+   "png": {
+    "size": 1857102,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/ceramic_vase_02/ceramic_vase_02_rough_2k.png",
+    "md5": "825e61245e307eacf5807c7d7edd1920"
+   },
+   "exr": {
+    "size": 2867512,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/ceramic_vase_02/ceramic_vase_02_rough_2k.exr",
+    "md5": "c0a29b877a3e41486709b281af1cfb1d"
+   }
+  },
+  "1k": {
+   "jpg": {
+    "size": 190645,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ceramic_vase_02/ceramic_vase_02_rough_1k.jpg",
+    "md5": "cc2ad94640549ada75e9363d4ce8da5c"
+   },
+   "png": {
+    "size": 526826,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/ceramic_vase_02/ceramic_vase_02_rough_1k.png",
+    "md5": "884794769c997fa41034a359f40b064b"
+   },
+   "exr": {
+    "size": 840380,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/ceramic_vase_02/ceramic_vase_02_rough_1k.exr",
+    "md5": "7499565a9dcb05b7966bd9110d603ed3"
+   }
+  }
+ }
+}

@@ -1,0 +1,1107 @@
+{
+ "blend": {
+  "1k": {
+   "blend": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/1k/industrial_wall_sconce/industrial_wall_sconce_1k.blend",
+    "md5": "fedd939d6c99c2c0519fd0b858805dc3",
+    "size": 346511,
+    "include": {
+     "textures/industrial_wall_sconce_bulb_diff_1k.png": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_1k.png",
+      "md5": "8efc1a6181fa9b99ee41864949a1e584",
+      "size": 593199
+     },
+     "textures/industrial_wall_sconce_diff_1k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_diff_1k.jpg",
+      "md5": "00a9741f896c002be1fb4307a16c834d",
+      "size": 445573
+     },
+     "textures/industrial_wall_sconce_metal_1k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_metal_1k.exr",
+      "md5": "ab96f65d5473e9ba21960e56d5cef4a4",
+      "size": 522181
+     },
+     "textures/industrial_wall_sconce_nor_gl_1k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_1k.exr",
+      "md5": "20d0fac0fa7dbb7934ec433177c54dd3",
+      "size": 455899
+     },
+     "textures/industrial_wall_sconce_rough_1k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_rough_1k.exr",
+      "md5": "92fd8bb4fc6374b106defb70f7bd317b",
+      "size": 505277
+     }
+    }
+   }
+  },
+  "2k": {
+   "blend": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/industrial_wall_sconce/industrial_wall_sconce_2k.blend",
+    "md5": "0305317340aeeef76659a84608769b26",
+    "size": 346414,
+    "include": {
+     "textures/industrial_wall_sconce_bulb_diff_2k.png": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_2k.png",
+      "md5": "2ff6a51f0e61e771fd819160cb4aea43",
+      "size": 2069644
+     },
+     "textures/industrial_wall_sconce_diff_2k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_diff_2k.jpg",
+      "md5": "363343bc96f99f41dc3ccc76df0640b1",
+      "size": 1595833
+     },
+     "textures/industrial_wall_sconce_metal_2k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_metal_2k.exr",
+      "md5": "dd8ef770559b5c961b82a1a676d16126",
+      "size": 1811605
+     },
+     "textures/industrial_wall_sconce_nor_gl_2k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_2k.exr",
+      "md5": "9396c116a566cd5541d3deedf6f59320",
+      "size": 2080205
+     },
+     "textures/industrial_wall_sconce_rough_2k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_rough_2k.exr",
+      "md5": "d6728cf7ac984010e01f5001ab01ae2d",
+      "size": 1778247
+     }
+    }
+   }
+  },
+  "4k": {
+   "blend": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/4k/industrial_wall_sconce/industrial_wall_sconce_4k.blend",
+    "md5": "22de89bf98a797de633370e716989a79",
+    "size": 346441,
+    "include": {
+     "textures/industrial_wall_sconce_bulb_diff_4k.png": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_4k.png",
+      "md5": "e00a976f5761129d781cc3ca2b19fb6d",
+      "size": 7854313
+     },
+     "textures/industrial_wall_sconce_diff_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_diff_4k.jpg",
+      "md5": "0ff589069071d4e8369bc9d19c9b551a",
+      "size": 5959439
+     },
+     "textures/industrial_wall_sconce_metal_4k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_metal_4k.exr",
+      "md5": "36dec8fbf56850bdf6352471d31eed96",
+      "size": 6379559
+     },
+     "textures/industrial_wall_sconce_nor_gl_4k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_4k.exr",
+      "md5": "95ce979dc32c84887788e9ad224fc8bf",
+      "size": 10386478
+     },
+     "textures/industrial_wall_sconce_rough_4k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_rough_4k.exr",
+      "md5": "299ed53ebc875716a5c0410555fdf673",
+      "size": 6654429
+     }
+    }
+   }
+  }
+ },
+ "AO": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_ao_1k.exr",
+    "md5": "9e53e2ffc5630edfa5302cf69c87f39c",
+    "size": 321334
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_ao_1k.jpg",
+    "md5": "0023966e459d639f598a2a1f4fcce2f9",
+    "size": 258682
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_ao_1k.png",
+    "md5": "04b07b5d25aae1e1993aa7119d948f78",
+    "size": 633510
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_ao_2k.exr",
+    "md5": "51db72d674aa64eaebcde978d29dab36",
+    "size": 830809
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_ao_2k.jpg",
+    "md5": "ada55bb5059a090d9e8f531c897637a6",
+    "size": 726088
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_ao_2k.png",
+    "md5": "940656ec0c6931ade086079d60abab98",
+    "size": 1564178
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_ao_4k.exr",
+    "md5": "76c6bccab6b5a7aea6115e847cad7647",
+    "size": 2371393
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_ao_4k.jpg",
+    "md5": "b587d744955ef9efa41742904c003ac7",
+    "size": 2207841
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_ao_4k.png",
+    "md5": "6ddbabb34bd61739e8a18fe4fc49a211",
+    "size": 2477399
+   }
+  }
+ },
+ "arm": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_arm_1k.exr",
+    "md5": "b105a903a8eaf68fca61bd3e4c2c7e01",
+    "size": 1386299
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_arm_1k.jpg",
+    "md5": "c877d7c8b3199e6c9cbeaa6c86a18d8f",
+    "size": 545385
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_arm_1k.png",
+    "md5": "54bccdd2b70b88722c09c37f870ba40e",
+    "size": 3319662
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_arm_2k.exr",
+    "md5": "2ae10dc8620952ff80c7efa2dbe81aed",
+    "size": 4784507
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_arm_2k.jpg",
+    "md5": "d2371d23e1774acdeaf4cef38089be6c",
+    "size": 1877772
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_arm_2k.png",
+    "md5": "527dff36b033e0dff8fe691f2fd87896",
+    "size": 9886203
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_arm_4k.exr",
+    "md5": "8027902eaffdbdff498321b7dac8812c",
+    "size": 17353995
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_arm_4k.jpg",
+    "md5": "04b22ae16656c545144a39dd804a5f7c",
+    "size": 6656226
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_arm_4k.png",
+    "md5": "e2ed6387bd0c0525cdbcffbd84bf6dbd",
+    "size": 17796678
+   }
+  }
+ },
+ "bulb_ao": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_ao_1k.exr",
+    "md5": "9355cfe2f9c26c5addb3f23caf07fc23",
+    "size": 360690
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_ao_1k.jpg",
+    "md5": "1ec32599fa59132569ef183418d522aa",
+    "size": 259411
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_ao_1k.png",
+    "md5": "079348212be020a4f50d5510cfb2ff6c",
+    "size": 841657
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_ao_2k.exr",
+    "md5": "e8f13836cee4eae8b247c5bbd8c21c69",
+    "size": 961155
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_ao_2k.jpg",
+    "md5": "9078fc901bcb726f229a6d824ac3dbc2",
+    "size": 769912
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_ao_2k.png",
+    "md5": "ee6d34a3b3c1c59b46d69bc8c0c68607",
+    "size": 1886666
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_ao_4k.exr",
+    "md5": "8380535770f648a926d2d8ef9c6b7cd6",
+    "size": 3138564
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_ao_4k.jpg",
+    "md5": "5e9e19b35f7794804e85f4fff7cc0b30",
+    "size": 2653721
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_ao_4k.png",
+    "md5": "28a001959aa999c674a07b39c8ac2653",
+    "size": 3358807
+   }
+  }
+ },
+ "bulb_arm": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_arm_1k.exr",
+    "md5": "2db34184eed78a497c2179d67913e24a",
+    "size": 1021761
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_arm_1k.jpg",
+    "md5": "e6fa20fe71704be36dabbc6e178650c5",
+    "size": 419575
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_arm_1k.png",
+    "md5": "1a1d8f24364a91662e24f0a548ed022e",
+    "size": 1785435
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_arm_2k.exr",
+    "md5": "bce745b0acac452642a7b7139824cb70",
+    "size": 3240874
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_arm_2k.jpg",
+    "md5": "d1e683dcf04549ad4330d60699363c28",
+    "size": 1336859
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_arm_2k.png",
+    "md5": "ff8d5e413ab3a5c5468a22a88fea6e42",
+    "size": 4686496
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_arm_4k.exr",
+    "md5": "11e22398668dd901c4e52c4f48af5d56",
+    "size": 11253623
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_arm_4k.jpg",
+    "md5": "e2b1805bc424e02d88e1e3b4e8e33b04",
+    "size": 4644394
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_arm_4k.png",
+    "md5": "95b6c275a8938b08aac2622bce80b9a4",
+    "size": 9720690
+   }
+  }
+ },
+ "bulb_diff": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_1k.exr",
+    "md5": "cd9a2b8705755ee5c37d2cb08a464191",
+    "size": 434111
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_1k.jpg",
+    "md5": "0ffbe4a8ccece6a89f820ed128827e66",
+    "size": 364889
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_1k.png",
+    "md5": "8efc1a6181fa9b99ee41864949a1e584",
+    "size": 593199
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_2k.exr",
+    "md5": "ac44a39278bba9067bd4cad263bf82e2",
+    "size": 1500788
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_2k.jpg",
+    "md5": "880eceb3e0aa1958ddd3bd9c4366641d",
+    "size": 1319855
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_2k.png",
+    "md5": "2ff6a51f0e61e771fd819160cb4aea43",
+    "size": 2069644
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_4k.exr",
+    "md5": "420a63c0f7755d30392d965e15c15458",
+    "size": 5728629
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_4k.jpg",
+    "md5": "ce9410529c6ce9a81e1d62eafc760919",
+    "size": 4999185
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_4k.png",
+    "md5": "e00a976f5761129d781cc3ca2b19fb6d",
+    "size": 7854313
+   }
+  }
+ },
+ "bulb_nor_dx": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_nor_dx_1k.exr",
+    "md5": "2e7ac994e5f8921009943417991624f1",
+    "size": 586961
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_nor_dx_1k.jpg",
+    "md5": "2077804cc3f879ed8b4b23bbebad3598",
+    "size": 305706
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_nor_dx_1k.png",
+    "md5": "a7f6600008991577a3cac00b208f61c6",
+    "size": 2800828
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_nor_dx_2k.exr",
+    "md5": "08a1a83a71652c7de0c9e90efc237292",
+    "size": 2032314
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_nor_dx_2k.jpg",
+    "md5": "78d80d0f4faba3a361caaf931cd768f4",
+    "size": 1077847
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_nor_dx_2k.png",
+    "md5": "c78293f5758f6ead48550ceab57b5858",
+    "size": 9194805
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_nor_dx_4k.exr",
+    "md5": "f708d34e2eaa39e74862f23d9fc4fcdd",
+    "size": 8026052
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_nor_dx_4k.jpg",
+    "md5": "37124beec5d4400c477cb2d48b0cd937",
+    "size": 3853461
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_nor_dx_4k.png",
+    "md5": "c6b8dca4c43fbeece58a96ade006f7d0",
+    "size": 29804992
+   }
+  }
+ },
+ "bulb_rough": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_rough_1k.exr",
+    "md5": "240fa473d61e3b2d3c6fe44f222eab6d",
+    "size": 249002
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_rough_1k.jpg",
+    "md5": "52206f12ccf180de854a11de6a1cdcb0",
+    "size": 174204
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_rough_1k.png",
+    "md5": "c4a9d1805b0ff1429c3bc3bb0fdf8649",
+    "size": 429848
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_rough_2k.exr",
+    "md5": "f1584c60ea62d68f0e8bb00194c34435",
+    "size": 878191
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_rough_2k.jpg",
+    "md5": "7bf0ce8967baf4a05466c753b370949a",
+    "size": 655432
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_rough_2k.png",
+    "md5": "7450261c981933002dcfdd6e9bd6b5d0",
+    "size": 1404830
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_rough_4k.exr",
+    "md5": "b835ef3df9f36bb5ee05e9e63a187354",
+    "size": 3313473
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_rough_4k.jpg",
+    "md5": "106ec498c8cbeb757de96bec5c67d974",
+    "size": 2629247
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_rough_4k.png",
+    "md5": "ba5316b6eb0af1fcbbd98f7c5eb5f24f",
+    "size": 3736090
+   }
+  }
+ },
+ "Diffuse": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_diff_1k.exr",
+    "md5": "3b5cdb865c458793d793948ac9aded17",
+    "size": 835003
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_diff_1k.jpg",
+    "md5": "00a9741f896c002be1fb4307a16c834d",
+    "size": 445573
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_diff_1k.png",
+    "md5": "29b488bc35ddc3512166139609ab755e",
+    "size": 902515
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_diff_2k.exr",
+    "md5": "ba6c078ab1e8bd71cb94e1e20e422b17",
+    "size": 3006053
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_diff_2k.jpg",
+    "md5": "363343bc96f99f41dc3ccc76df0640b1",
+    "size": 1595833
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_diff_2k.png",
+    "md5": "8d13f39e2b25f2ea89adcae13f4b7f09",
+    "size": 3330579
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_diff_4k.exr",
+    "md5": "0ee7e3426b8b620130ae213b2a26b539",
+    "size": 11917895
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_diff_4k.jpg",
+    "md5": "0ff589069071d4e8369bc9d19c9b551a",
+    "size": 5959439
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_diff_4k.png",
+    "md5": "2243cfb9ad148c8560a5817b2d402191",
+    "size": 11790036
+   }
+  }
+ },
+ "Displacement": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_disp_1k.exr",
+    "md5": "3918873729679c2351af0435c4a20b15",
+    "size": 5341
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_disp_1k.jpg",
+    "md5": "4c8f58b79c1cf236592560d6bf0aae4a",
+    "size": 12709
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_disp_1k.png",
+    "md5": "0bf40ff46d325331a6381e92b233f89f",
+    "size": 4356
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_disp_2k.exr",
+    "md5": "5ccf18677b23b0ed85ce4924f62e9317",
+    "size": 10845
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_disp_2k.jpg",
+    "md5": "3635a529fbb2d82e9fef46b49c298814",
+    "size": 49573
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_disp_2k.png",
+    "md5": "88e74a3efffd8fcbd9e7ee96af42542a",
+    "size": 12845
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_disp_4k.exr",
+    "md5": "5663a97c514d22b34aefc0b4e3c590dd",
+    "size": 22930
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_disp_4k.jpg",
+    "md5": "87e7817e2cb1b374c81e6e9f68a366be",
+    "size": 197069
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_disp_4k.png",
+    "md5": "65fbd60c51694900eb6218c62cd90c38",
+    "size": 42336
+   }
+  }
+ },
+ "Metal": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_metal_1k.exr",
+    "md5": "ab96f65d5473e9ba21960e56d5cef4a4",
+    "size": 522181
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_metal_1k.jpg",
+    "md5": "de3a98e88bdf17844ebc709c0d571275",
+    "size": 485468
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_metal_1k.png",
+    "md5": "6b338fc7a95fbf34af0ef05abcc2ec04",
+    "size": 1246626
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_metal_2k.exr",
+    "md5": "dd8ef770559b5c961b82a1a676d16126",
+    "size": 1811605
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_metal_2k.jpg",
+    "md5": "e7f2cf384d5f9b4c72e2255c3ee6597d",
+    "size": 1763701
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_metal_2k.png",
+    "md5": "e3cbfe83fd7204896a2ee34e772d9ac9",
+    "size": 3733036
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_metal_4k.exr",
+    "md5": "36dec8fbf56850bdf6352471d31eed96",
+    "size": 6379559
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_metal_4k.jpg",
+    "md5": "b104e0d6d63de806d505f2f07754ece0",
+    "size": 6407848
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_metal_4k.png",
+    "md5": "a00dc78b1b2041b60d4a0557e25cfbea",
+    "size": 7849984
+   }
+  }
+ },
+ "nor_dx": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_nor_dx_1k.exr",
+    "md5": "1a980e7fc7660cab5f646b3207885457",
+    "size": 453378
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_nor_dx_1k.jpg",
+    "md5": "2645b65a77a01f7a7cb6116b27b0d703",
+    "size": 222484
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_nor_dx_1k.png",
+    "md5": "af47d4bccd6ce893eac8c76512d7e544",
+    "size": 3072044
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_nor_dx_2k.exr",
+    "md5": "7e48133f761fe7e046ab2a731ce62502",
+    "size": 2051886
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_nor_dx_2k.jpg",
+    "md5": "84fb2332a293481a9290b1fa3a243b86",
+    "size": 1061512
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_nor_dx_2k.png",
+    "md5": "be5168d1304f926713ed69c7098b7ecd",
+    "size": 10988621
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_nor_dx_4k.exr",
+    "md5": "3e7c2a1c71d54f5d39f4af0afea8aa65",
+    "size": 10391713
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_nor_dx_4k.jpg",
+    "md5": "64ffb35da6424c07c472e0d5db8e3823",
+    "size": 4988561
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_nor_dx_4k.png",
+    "md5": "064bfeffef6f70d1b136f35291613045",
+    "size": 35159014
+   }
+  }
+ },
+ "nor_gl": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_1k.exr",
+    "md5": "20d0fac0fa7dbb7934ec433177c54dd3",
+    "size": 455899
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_1k.jpg",
+    "md5": "7f50c6c2ad0b75cc3b55c6cdf3b4d9b1",
+    "size": 205591
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_1k.png",
+    "md5": "8e10f3d955e83a5865fa59f5d1e82ea3",
+    "size": 3072019
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_2k.exr",
+    "md5": "9396c116a566cd5541d3deedf6f59320",
+    "size": 2080205
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_2k.jpg",
+    "md5": "55ed6a15d44a54f3017c28d3ea54f104",
+    "size": 981672
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_2k.png",
+    "md5": "47d55b0e95dfc15105f3519939f2f9a2",
+    "size": 10989140
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_4k.exr",
+    "md5": "95ce979dc32c84887788e9ad224fc8bf",
+    "size": 10386478
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_4k.jpg",
+    "md5": "13502cc8a2fae33405f296754741d1dd",
+    "size": 4467389
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_4k.png",
+    "md5": "7c007765b96f542ef0994f02d7d684dd",
+    "size": 35135279
+   }
+  }
+ },
+ "Rough": {
+  "1k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_rough_1k.exr",
+    "md5": "92fd8bb4fc6374b106defb70f7bd317b",
+    "size": 505277
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_rough_1k.jpg",
+    "md5": "c08d3bd14906cbe6275b929015dc9c8b",
+    "size": 371106
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_rough_1k.png",
+    "md5": "43f1b1bd465ac4f474e6f2030567d998",
+    "size": 1181235
+   }
+  },
+  "2k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_rough_2k.exr",
+    "md5": "d6728cf7ac984010e01f5001ab01ae2d",
+    "size": 1778247
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_rough_2k.jpg",
+    "md5": "6fa41940697faf1546f7d10d42abd71e",
+    "size": 1350961
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_rough_2k.png",
+    "md5": "2f9efb08247259fb60db4167ca945a55",
+    "size": 3302992
+   }
+  },
+  "4k": {
+   "exr": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_rough_4k.exr",
+    "md5": "299ed53ebc875716a5c0410555fdf673",
+    "size": 6654429
+   },
+   "jpg": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_rough_4k.jpg",
+    "md5": "e707581258af8900450d6af379881a9c",
+    "size": 5132202
+   },
+   "png": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_rough_4k.png",
+    "md5": "95f0796977f6d5a7bbe199ce6cfe2774",
+    "size": 6065726
+   }
+  }
+ },
+ "fbx": {
+  "1k": {
+   "fbx": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/1k/industrial_wall_sconce/industrial_wall_sconce_1k.fbx",
+    "md5": "9685c06f0af4d74495eea4b4a826722b",
+    "size": 305436,
+    "include": {
+     "textures/industrial_wall_sconce_bulb_diff_1k.png": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_1k.png",
+      "md5": "8efc1a6181fa9b99ee41864949a1e584",
+      "size": 593199
+     },
+     "textures/industrial_wall_sconce_diff_1k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_diff_1k.jpg",
+      "md5": "00a9741f896c002be1fb4307a16c834d",
+      "size": 445573
+     },
+     "textures/industrial_wall_sconce_metal_1k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_metal_1k.exr",
+      "md5": "ab96f65d5473e9ba21960e56d5cef4a4",
+      "size": 522181
+     },
+     "textures/industrial_wall_sconce_nor_gl_1k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_1k.exr",
+      "md5": "20d0fac0fa7dbb7934ec433177c54dd3",
+      "size": 455899
+     },
+     "textures/industrial_wall_sconce_rough_1k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_rough_1k.exr",
+      "md5": "92fd8bb4fc6374b106defb70f7bd317b",
+      "size": 505277
+     }
+    }
+   }
+  },
+  "2k": {
+   "fbx": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/2k/industrial_wall_sconce/industrial_wall_sconce_2k.fbx",
+    "md5": "f07255b5f58665501752148a3cdd8d33",
+    "size": 305436,
+    "include": {
+     "textures/industrial_wall_sconce_bulb_diff_2k.png": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_2k.png",
+      "md5": "2ff6a51f0e61e771fd819160cb4aea43",
+      "size": 2069644
+     },
+     "textures/industrial_wall_sconce_diff_2k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_diff_2k.jpg",
+      "md5": "363343bc96f99f41dc3ccc76df0640b1",
+      "size": 1595833
+     },
+     "textures/industrial_wall_sconce_metal_2k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_metal_2k.exr",
+      "md5": "dd8ef770559b5c961b82a1a676d16126",
+      "size": 1811605
+     },
+     "textures/industrial_wall_sconce_nor_gl_2k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_2k.exr",
+      "md5": "9396c116a566cd5541d3deedf6f59320",
+      "size": 2080205
+     },
+     "textures/industrial_wall_sconce_rough_2k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_rough_2k.exr",
+      "md5": "d6728cf7ac984010e01f5001ab01ae2d",
+      "size": 1778247
+     }
+    }
+   }
+  },
+  "4k": {
+   "fbx": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/4k/industrial_wall_sconce/industrial_wall_sconce_4k.fbx",
+    "md5": "767ce1380ad158ed543a5a9a2a1dbcfc",
+    "size": 305436,
+    "include": {
+     "textures/industrial_wall_sconce_bulb_diff_4k.png": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_4k.png",
+      "md5": "e00a976f5761129d781cc3ca2b19fb6d",
+      "size": 7854313
+     },
+     "textures/industrial_wall_sconce_diff_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_diff_4k.jpg",
+      "md5": "0ff589069071d4e8369bc9d19c9b551a",
+      "size": 5959439
+     },
+     "textures/industrial_wall_sconce_metal_4k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_metal_4k.exr",
+      "md5": "36dec8fbf56850bdf6352471d31eed96",
+      "size": 6379559
+     },
+     "textures/industrial_wall_sconce_nor_gl_4k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_4k.exr",
+      "md5": "95ce979dc32c84887788e9ad224fc8bf",
+      "size": 10386478
+     },
+     "textures/industrial_wall_sconce_rough_4k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_rough_4k.exr",
+      "md5": "299ed53ebc875716a5c0410555fdf673",
+      "size": 6654429
+     }
+    }
+   }
+  }
+ },
+ "gltf": {
+  "1k": {
+   "gltf": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/industrial_wall_sconce/industrial_wall_sconce_1k.gltf",
+    "md5": "39c1dd9ad11422e3a55673989c150270",
+    "size": 4961,
+    "include": {
+     "textures/industrial_wall_sconce_nor_gl_1k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_1k.jpg",
+      "md5": "7f50c6c2ad0b75cc3b55c6cdf3b4d9b1",
+      "size": 205591
+     },
+     "textures/industrial_wall_sconce_diff_1k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_diff_1k.jpg",
+      "md5": "00a9741f896c002be1fb4307a16c834d",
+      "size": 445573
+     },
+     "textures/industrial_wall_sconce_arm_1k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_arm_1k.jpg",
+      "md5": "c877d7c8b3199e6c9cbeaa6c86a18d8f",
+      "size": 545385
+     },
+     "textures/industrial_wall_sconce_bulb_diff_1k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_1k.jpg",
+      "md5": "0ffbe4a8ccece6a89f820ed128827e66",
+      "size": 364889
+     },
+     "industrial_wall_sconce.bin": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/industrial_wall_sconce/industrial_wall_sconce.bin",
+      "md5": "0a3eac103bc90f9eb2d9151e487c1e79",
+      "size": 275052
+     }
+    }
+   }
+  },
+  "2k": {
+   "gltf": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/industrial_wall_sconce/industrial_wall_sconce_2k.gltf",
+    "md5": "6da4981d21dce2d73bb397f61f5de841",
+    "size": 4961,
+    "include": {
+     "textures/industrial_wall_sconce_nor_gl_2k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_2k.jpg",
+      "md5": "55ed6a15d44a54f3017c28d3ea54f104",
+      "size": 981672
+     },
+     "textures/industrial_wall_sconce_diff_2k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_diff_2k.jpg",
+      "md5": "363343bc96f99f41dc3ccc76df0640b1",
+      "size": 1595833
+     },
+     "textures/industrial_wall_sconce_arm_2k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_arm_2k.jpg",
+      "md5": "d2371d23e1774acdeaf4cef38089be6c",
+      "size": 1877772
+     },
+     "textures/industrial_wall_sconce_bulb_diff_2k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_2k.jpg",
+      "md5": "880eceb3e0aa1958ddd3bd9c4366641d",
+      "size": 1319855
+     },
+     "industrial_wall_sconce.bin": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/industrial_wall_sconce/industrial_wall_sconce.bin",
+      "md5": "0a3eac103bc90f9eb2d9151e487c1e79",
+      "size": 275052
+     }
+    }
+   }
+  },
+  "4k": {
+   "gltf": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/industrial_wall_sconce/industrial_wall_sconce_4k.gltf",
+    "md5": "41d228a41337aa99a5dbf7eca4c4a75d",
+    "size": 4961,
+    "include": {
+     "textures/industrial_wall_sconce_nor_gl_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_4k.jpg",
+      "md5": "13502cc8a2fae33405f296754741d1dd",
+      "size": 4467389
+     },
+     "textures/industrial_wall_sconce_diff_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_diff_4k.jpg",
+      "md5": "0ff589069071d4e8369bc9d19c9b551a",
+      "size": 5959439
+     },
+     "textures/industrial_wall_sconce_arm_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_arm_4k.jpg",
+      "md5": "04b22ae16656c545144a39dd804a5f7c",
+      "size": 6656226
+     },
+     "textures/industrial_wall_sconce_bulb_diff_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_4k.jpg",
+      "md5": "ce9410529c6ce9a81e1d62eafc760919",
+      "size": 4999185
+     },
+     "industrial_wall_sconce.bin": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/industrial_wall_sconce/industrial_wall_sconce.bin",
+      "md5": "0a3eac103bc90f9eb2d9151e487c1e79",
+      "size": 275052
+     }
+    }
+   }
+  }
+ },
+ "usd": {
+  "1k": {
+   "usd": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/usd/1k/industrial_wall_sconce/industrial_wall_sconce_1k.usdc",
+    "md5": "57b5a17f5bbc461f16d4b07b0b76e628",
+    "size": 481362,
+    "include": {
+     "textures/industrial_wall_sconce_bulb_diff_1k.png": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_1k.png",
+      "md5": "8efc1a6181fa9b99ee41864949a1e584",
+      "size": 593199
+     },
+     "textures/industrial_wall_sconce_diff_1k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_sconce/industrial_wall_sconce_diff_1k.jpg",
+      "md5": "00a9741f896c002be1fb4307a16c834d",
+      "size": 445573
+     },
+     "textures/industrial_wall_sconce_metal_1k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_metal_1k.exr",
+      "md5": "ab96f65d5473e9ba21960e56d5cef4a4",
+      "size": 522181
+     },
+     "textures/industrial_wall_sconce_nor_gl_1k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_1k.exr",
+      "md5": "20d0fac0fa7dbb7934ec433177c54dd3",
+      "size": 455899
+     },
+     "textures/industrial_wall_sconce_rough_1k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/industrial_wall_sconce/industrial_wall_sconce_rough_1k.exr",
+      "md5": "92fd8bb4fc6374b106defb70f7bd317b",
+      "size": 505277
+     }
+    }
+   }
+  },
+  "2k": {
+   "usd": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/usd/2k/industrial_wall_sconce/industrial_wall_sconce_2k.usdc",
+    "md5": "a7e6cbb91a5983cfaeecb87e156c849c",
+    "size": 481362,
+    "include": {
+     "textures/industrial_wall_sconce_bulb_diff_2k.png": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_2k.png",
+      "md5": "2ff6a51f0e61e771fd819160cb4aea43",
+      "size": 2069644
+     },
+     "textures/industrial_wall_sconce_diff_2k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/industrial_wall_sconce/industrial_wall_sconce_diff_2k.jpg",
+      "md5": "363343bc96f99f41dc3ccc76df0640b1",
+      "size": 1595833
+     },
+     "textures/industrial_wall_sconce_metal_2k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_metal_2k.exr",
+      "md5": "dd8ef770559b5c961b82a1a676d16126",
+      "size": 1811605
+     },
+     "textures/industrial_wall_sconce_nor_gl_2k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_2k.exr",
+      "md5": "9396c116a566cd5541d3deedf6f59320",
+      "size": 2080205
+     },
+     "textures/industrial_wall_sconce_rough_2k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/industrial_wall_sconce/industrial_wall_sconce_rough_2k.exr",
+      "md5": "d6728cf7ac984010e01f5001ab01ae2d",
+      "size": 1778247
+     }
+    }
+   }
+  },
+  "4k": {
+   "usd": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/usd/4k/industrial_wall_sconce/industrial_wall_sconce_4k.usdc",
+    "md5": "6e57a507ea3655953bdbba79ea821f08",
+    "size": 481362,
+    "include": {
+     "textures/industrial_wall_sconce_bulb_diff_4k.png": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/industrial_wall_sconce/industrial_wall_sconce_bulb_diff_4k.png",
+      "md5": "e00a976f5761129d781cc3ca2b19fb6d",
+      "size": 7854313
+     },
+     "textures/industrial_wall_sconce_diff_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/industrial_wall_sconce/industrial_wall_sconce_diff_4k.jpg",
+      "md5": "0ff589069071d4e8369bc9d19c9b551a",
+      "size": 5959439
+     },
+     "textures/industrial_wall_sconce_metal_4k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_metal_4k.exr",
+      "md5": "36dec8fbf56850bdf6352471d31eed96",
+      "size": 6379559
+     },
+     "textures/industrial_wall_sconce_nor_gl_4k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_nor_gl_4k.exr",
+      "md5": "95ce979dc32c84887788e9ad224fc8bf",
+      "size": 10386478
+     },
+     "textures/industrial_wall_sconce_rough_4k.exr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/industrial_wall_sconce/industrial_wall_sconce_rough_4k.exr",
+      "md5": "299ed53ebc875716a5c0410555fdf673",
+      "size": 6654429
+     }
+    }
+   }
+  }
+ }
+}

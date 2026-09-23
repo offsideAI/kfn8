@@ -1,0 +1,90 @@
+{
+  "contract_version": "1.0.0",
+  "asset": {
+    "id": "ae10f796-6633-55a0-b434-6e95c0bbbe61",
+    "name": "Industrial caged sconce",
+    "sku": null,
+    "category": "lighting",
+    "affinity": "wall",
+    "provenance": "licensed",
+    "delivery_mode": "public",
+    "style_tags": [
+      "industrial"
+    ],
+    "dominant_colour": "black",
+    "weight_class": "light",
+    "is_floor_covering": false
+  },
+  "revision": 1,
+  "front_axis": "-Z",
+  "dimension_spec": {
+    "width_m": 0.2102,
+    "depth_m": 0.2059,
+    "height_m": 0.3819,
+    "authority_kind": "operator",
+    "source": "Poly Haven industrial_caged_sconce 1k glTF, conformed geometry measured after furniture-scale sanity check",
+    "approved_by": "measured by agent; founder sign-off is the visual_dimensions approval",
+    "approved_at": "2026-09-23T16:54:49Z",
+    "evidence_sha256": "3d70ba64061626d1d27740c233b60ac7ceba15bde5a5ebb17dd6815d5d4468d7"
+  },
+  "licence": {
+    "source_url": "https://polyhaven.com/a/industrial_caged_sconce",
+    "author": "Ulan Cabanilla",
+    "licence_id": "CC0-1.0",
+    "attribution_required": false,
+    "attribution_text": null,
+    "evidence_reference": "ledger/evidence/industrial_caged_sconce.info.json + ledger/evidence/polyhaven-license.html",
+    "evidence_sha256": "3d70ba64061626d1d27740c233b60ac7ceba15bde5a5ebb17dd6815d5d4468d7",
+    "recorded_at": "2026-09-23T16:54:49Z"
+  },
+  "approvals": [],
+  "renditions": [
+    {
+      "lod": 0,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod0.glb",
+      "sha256": "8e600d39cf17ab12b61376b7109ba04d7a3c3942ebe0dc33bdcc316781d30fa2",
+      "size_bytes": 2340924,
+      "triangles": 4936
+    },
+    {
+      "lod": 1,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod1.glb",
+      "sha256": "a51526f7da60bc9c184178c085a0bd90fb7766ef5ec25974c346c24b51dc55dd",
+      "size_bytes": 2285252,
+      "triangles": 2998
+    },
+    {
+      "lod": 2,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod2.glb",
+      "sha256": "e95769a5022bda78121a2b08f219585267878f1601f17afc2b6dcdcc2d72eab8",
+      "size_bytes": 2265956,
+      "triangles": 2459
+    },
+    {
+      "lod": 0,
+      "format": "usdz",
+      "variant_key": "default",
+      "path": "lod0.usdz",
+      "sha256": "a5983ff0792d587a73277c4d1c92f95d40b5af91327b4eb55b8f37a4e0006f3d",
+      "size_bytes": 2397345
+    }
+  ],
+  "attachment": {
+    "mount_point_m": [
+      0.0,
+      0.191,
+      0.103
+    ],
+    "mount_normal": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  }
+}

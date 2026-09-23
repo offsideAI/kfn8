@@ -1,0 +1,37 @@
+{
+  "body": {
+    "affinity": "floor",
+    "category": "seating",
+    "delivery_mode": "public",
+    "dimensions_m": {
+      "depth": 0.9,
+      "height": 1.0,
+      "width": 0.8
+    },
+    "dominant_colour": "walnut",
+    "id": "44b6881a-7206-4397-a5be-548301c37baa",
+    "is_floor_covering": false,
+    "latest_revision": 1,
+    "latest_revision_id": "757a56a4-28bb-4b99-a1f1-0771bf78012d",
+    "name": "Chair",
+    "offer": {
+      "amount_minor": 49900,
+      "available": true,
+      "currency": "USD",
+      "fetched_at": "2026-09-23T18:45:47.550395Z",
+      "retailer_url": "https://example.test/p"
+    },
+    "style_tags": [
+      "modern"
+    ],
+    "tenant_id": "00000000-0000-4000-8000-00000000c0de",
+    "thumbnail_url": null,
+    "variants": [
+      {
+        "id": "default",
+        "label": "Default"
+      }
+    ]
+  },
+  "status": 200
+}

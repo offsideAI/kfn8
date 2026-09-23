@@ -1,0 +1,110 @@
+{
+  "contract_version": "1.0.0",
+  "asset": {
+    "id": "74f8a716-7e73-5b65-97e5-6135e615804c",
+    "name": "Industrial wall sconce",
+    "sku": null,
+    "category": "lighting",
+    "affinity": "wall",
+    "provenance": "licensed",
+    "delivery_mode": "public",
+    "style_tags": [
+      "industrial",
+      "brass"
+    ],
+    "dominant_colour": "brass",
+    "weight_class": "light",
+    "is_floor_covering": false
+  },
+  "revision": 1,
+  "front_axis": "-Z",
+  "dimension_spec": {
+    "width_m": 0.1503,
+    "depth_m": 0.2516,
+    "height_m": 0.3418,
+    "authority_kind": "operator",
+    "source": "Poly Haven industrial_wall_sconce 1k glTF, conformed geometry measured after furniture-scale sanity check",
+    "approved_by": "measured by agent; founder sign-off is the visual_dimensions approval",
+    "approved_at": "2026-09-23T18:20:17Z",
+    "evidence_sha256": "dae0a255805ac94e379fd68de06824f2107ab1c5f04e10d81d85adb3c0c332bf"
+  },
+  "licence": {
+    "source_url": "https://polyhaven.com/a/industrial_wall_sconce",
+    "author": "Ulan Cabanilla",
+    "licence_id": "CC0-1.0",
+    "attribution_required": false,
+    "attribution_text": null,
+    "evidence_reference": "ledger/evidence/industrial_wall_sconce.info.json + ledger/evidence/polyhaven-license.html",
+    "evidence_sha256": "dae0a255805ac94e379fd68de06824f2107ab1c5f04e10d81d85adb3c0c332bf",
+    "recorded_at": "2026-09-23T18:20:17Z"
+  },
+  "approvals": [
+    {
+      "kind": "provenance",
+      "actor": "OffsideAI",
+      "decided_at": "2026-09-23T18:22:12Z",
+      "evidence_reference": "ledger/review-sheet-sconce-2026-09-23.png",
+      "evidence_sha256": "bd33a65df9edd9c1cfc32168f73fc04df3e4e4f3a6bad3d784440f428b5e7b5d",
+      "input_sha256": "ca7690abb26be1bd5eb3d17d29a47df2fce9f01d8e9edd3d2b48141bbd415479",
+      "approved": true
+    },
+    {
+      "kind": "visual_dimensions",
+      "actor": "OffsideAI",
+      "decided_at": "2026-09-23T18:22:12Z",
+      "evidence_reference": "ledger/review-sheet-sconce-2026-09-23.png",
+      "evidence_sha256": "bd33a65df9edd9c1cfc32168f73fc04df3e4e4f3a6bad3d784440f428b5e7b5d",
+      "input_sha256": "ca7690abb26be1bd5eb3d17d29a47df2fce9f01d8e9edd3d2b48141bbd415479",
+      "approved": true
+    }
+  ],
+  "renditions": [
+    {
+      "lod": 0,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod0.glb",
+      "sha256": "9d2eeaef22424efec6a10bb20691b0b17b88dc0a75ab01fee21f264a03e9ec36",
+      "size_bytes": 1841384,
+      "triangles": 9826
+    },
+    {
+      "lod": 1,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod1.glb",
+      "sha256": "cfb20f48c3e85872aef13ac052f7072fb81ee35cf9ccf4c44455d1fc7b0cd442",
+      "size_bytes": 1719152,
+      "triangles": 4420
+    },
+    {
+      "lod": 2,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod2.glb",
+      "sha256": "d18e563e01b4ddf475d2d4d451e92851ea2df772efe32811cfbc48e11b31bb45",
+      "size_bytes": 1627788,
+      "triangles": 1472
+    },
+    {
+      "lod": 0,
+      "format": "usdz",
+      "variant_key": "default",
+      "path": "lod0.usdz",
+      "sha256": "369c6c11e5ce87baa193e4108347e23063a3d4e87b5777daa8f9c95ecd65997d",
+      "size_bytes": 2082797
+    }
+  ],
+  "attachment": {
+    "mount_point_m": [
+      0.0,
+      0.1709,
+      0.1258
+    ],
+    "mount_normal": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "assets": [
+    {
+      "asset": "ceramic_vase_02",
+      "stages": [
+        {
+          "attempt": 1,
+          "ms": 333.3,
+          "results": [
+            [
+              "register",
+              "passed",
+              false
+            ],
+            [
+              "validate",
+              "passed",
+              false
+            ],
+            [
+              "approvals",
+              "failed",
+              false
+            ]
+          ]
+        },
+        {
+          "attempt": 2,
+          "ms": 4.1,
+          "results": [
+            [
+              "register",
+              "passed",
+              true
+            ],
+            [
+              "validate",
+              "passed",
+              true
+            ],
+            [
+              "approvals",
+              "failed",
+              false
+            ]
+          ]
+        }
+      ],
+      "register_ms": 21.8,
+      "revision_id": "93d8c0a4-ac49-41c8-af9e-5f120a006796"
+    },
+    {
+      "asset": "hanging_industrial_lamp",
+      "stages": [
+        {
+          "attempt": 1,
+          "ms": 32.9,
+          "results": [
+            [
+              "register",
+              "passed",
+              false
+            ],
+            [
+              "validate",
+              "passed",
+              false
+            ],
+            [
+              "approvals",
+              "failed",
+              false
+            ]
+          ]
+        },
+        {
+          "attempt": 2,
+          "ms": 7.8,
+          "results": [
+            [
+              "register",
+              "passed",
+              true
+            ],
+            [
+              "validate",
+              "passed",
+              true
+            ],
+            [
+              "approvals",
+              "failed",
+              false
+            ]
+          ]
+        }
+      ],
+      "register_ms": 12.9,
+      "revision_id": "3bf22a0d-35bd-4da5-a071-f894cfac24fd"
+    },
+    {
+      "asset": "industrial_caged_sconce",
+      "stages": [
+        {
+          "attempt": 1,
+          "ms": 24.6,
+          "results": [
+            [
+              "register",
+              "passed",
+              false
+            ],
+            [
+              "validate",
+              "passed",
+              false
+            ],
+            [
+              "approvals",
+              "failed",
+              false
+            ]
+          ]
+        },
+        {
+          "attempt": 2,
+          "ms": 5.9,
+          "results": [
+            [
+              "register",
+              "passed",
+              true
+            ],
+            [
+              "validate",
+              "passed",
+              true
+            ],
+            [
+              "approvals",
+              "failed",
+              false
+            ]
+          ]
+        }
+      ],
+      "register_ms": 10.5,
+      "revision_id": "84fe9c22-99f0-4bd7-908a-3f97d3ab3cd5"
+    },
+    {
+      "asset": "modern_arm_chair_01",
+      "stages": [
+        {
+          "attempt": 1,
+          "ms": 30.3,
+          "results": [
+            [
+              "register",
+              "passed",
+              false
+            ],
+            [
+              "validate",
+              "passed",
+              false
+            ],
+            [
+              "approvals",
+              "failed",
+              false
+            ]
+          ]
+        },
+        {
+          "attempt": 2,
+          "ms": 6.5,
+          "results": [
+            [
+              "register",
+              "passed",
+              true
+            ],
+            [
+              "validate",
+              "passed",
+              true
+            ],
+            [
+              "approvals",
+              "failed",
+              false
+            ]
+          ]
+        }
+      ],
+      "register_ms": 11.8,
+      "revision_id": "b2a2e475-a7c8-403f-b01c-665e10694a5a"
+    }
+  ],
+  "totals": {
+    "assets": 4,
+    "validate_passed": 4,
+    "awaiting_approvals": 4,
+    "public_objects_before_approval": 0,
+    "second_run_skipped_passed_stages": true
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "environment" : {
+    "appBuild" : "1",
+    "deviceModel" : "RealityDevice14,1",
+    "isSimulator" : false,
+    "systemVersion" : "Version 27.0 (Build 24M362)"
+  },
+  "notes" : [
+    {
+      "text" : "app launched; evidence file is written automatically on launch, after each manipulation and on immersive close",
+      "timestamp" : "2026-09-22T22:25:52Z"
+    },
+    {
+      "text" : "immersive space opened; surfaces: 0 planes, 0 mesh anchors; ARKit stopped; scene understanding not started",
+      "timestamp" : "2026-09-22T22:26:17Z"
+    },
+    {
+      "text" : "SpatialTrackingSession: running; all requested capabilities available",
+      "timestamp" : "2026-09-22T22:26:17Z"
+    },
+    {
+      "text" : "immersive space closed; frames n=974 p50=11.110750027000904 p95=11.110750027000904 p99=11.111125349998474 max=88.88595551252365 drops=6; surfaces 7 planes, 8 mesh anchors",
+      "timestamp" : "2026-09-22T22:26:23Z"
+    },
+    {
+      "text" : "immersive space opened; surfaces: 7 planes, 8 mesh anchors; ARKit stopped; scene understanding running; all requested capabilities available",
+      "timestamp" : "2026-09-22T22:26:49Z"
+    },
+    {
+      "text" : "SpatialTrackingSession: running; all requested capabilities available",
+      "timestamp" : "2026-09-22T22:26:49Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "floor: begins 1 updates 415 releases 1 cancelled 0 ends 1 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase placed resolution validAsReleased",
+      "timestamp" : "2026-09-22T22:26:56Z"
+    },
+    {
+      "probe" : "lighting",
+      "text" : "lamp on: point intensity 27000 radius 6.0 surroundings true; components PointLight + PointLight.SurroundingsLight (in scene); surfaces 8 planes 8 mesh; running; all requested capabilities available",
+      "timestamp" : "2026-09-22T22:27:04Z"
+    },
+    {
+      "probe" : "lighting",
+      "text" : "lamp off: point intensity 12000 radius 5.0 surroundings true; components none (in scene); surfaces 8 planes 8 mesh; running; all requested capabilities available",
+      "timestamp" : "2026-09-22T22:28:01Z"
+    },
+    {
+      "text" : "immersive space closed; frames n=16673 p50=11.110750027000904 p95=11.110750027000904 p99=22.22108282148838 max=88.88595551252365 drops=178; surfaces 8 planes, 8 mesh anchors",
+      "timestamp" : "2026-09-22T22:28:18Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "floor: begins 1 updates 415 releases 1 cancelled 0 ends 1 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase placed resolution validAsReleased",
+      "timestamp" : "2026-09-22T22:28:18Z"
+    },
+    {
+      "text" : "immersive space opened; surfaces: 8 planes, 8 mesh anchors; ARKit stopped; scene understanding running; all requested capabilities available",
+      "timestamp" : "2026-09-22T22:29:26Z"
+    },
+    {
+      "text" : "SpatialTrackingSession: running; all requested capabilities available",
+      "timestamp" : "2026-09-22T22:29:26Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "wall: begins 1 updates 1428 releases 1 cancelled 0 ends 1 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase placed resolution resolved(SIMD3<Float>(0.86541104, 0.6343007, -1.5781686))",
+      "timestamp" : "2026-09-22T22:29:47Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "tabletop: begins 1 updates 65 releases 1 cancelled 0 ends 1 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase placed resolution validAsReleased",
+      "timestamp" : "2026-09-22T22:29:57Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "wall: begins 2 updates 2025 releases 2 cancelled 0 ends 2 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase heldInvalid resolution unresolved",
+      "timestamp" : "2026-09-22T22:30:15Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "wall: begins 3 updates 2645 releases 3 cancelled 0 ends 3 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase heldInvalid resolution unresolved",
+      "timestamp" : "2026-09-22T22:31:09Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "wall: begins 4 updates 2914 releases 4 cancelled 0 ends 4 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase heldInvalid resolution unresolved",
+      "timestamp" : "2026-09-22T22:31:13Z"
+    },
+    {
+      "text" : "immersive space closed; frames n=41250 p50=11.110750027000904 p95=11.110750027000904 p99=22.22183346748352 max=99.99624639749527 drops=547; surfaces 11 planes, 8 mesh anchors",
+      "timestamp" : "2026-09-22T22:33:13Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "floor: begins 1 updates 415 releases 1 cancelled 0 ends 1 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase placed resolution validAsReleased",
+      "timestamp" : "2026-09-22T22:33:13Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "wall: begins 4 updates 2914 releases 4 cancelled 0 ends 4 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase heldInvalid resolution unresolved",
+      "timestamp" : "2026-09-22T22:33:13Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "tabletop: begins 1 updates 65 releases 1 cancelled 0 ends 1 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase placed resolution validAsReleased",
+      "timestamp" : "2026-09-22T22:33:13Z"
+    },
+    {
+      "text" : "immersive space opened; surfaces: 11 planes, 8 mesh anchors; ARKit stopped; scene understanding running; all requested capabilities available",
+      "timestamp" : "2026-09-22T22:33:14Z"
+    },
+    {
+      "text" : "SpatialTrackingSession: running; all requested capabilities available",
+      "timestamp" : "2026-09-22T22:33:14Z"
+    },
+    {
+      "text" : "immersive space closed; frames n=42828 p50=11.110750027000904 p95=11.110750027000904 p99=22.22183346748352 max=133.3288699388504 drops=593; surfaces 11 planes, 8 mesh anchors",
+      "timestamp" : "2026-09-22T22:33:24Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "floor: begins 1 updates 415 releases 1 cancelled 0 ends 1 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase placed resolution validAsReleased",
+      "timestamp" : "2026-09-22T22:33:24Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "wall: begins 4 updates 2914 releases 4 cancelled 0 ends 4 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase heldInvalid resolution unresolved",
+      "timestamp" : "2026-09-22T22:33:24Z"
+    },
+    {
+      "probe" : "manipulation",
+      "text" : "tabletop: begins 1 updates 65 releases 1 cancelled 0 ends 1 handoffs 0 updatesAfterRelease 0 inputs [indirectPinch] phase placed resolution validAsReleased",
+      "timestamp" : "2026-09-22T22:33:24Z"
+    }
+  ],
+  "records" : [
+    {
+      "expected" : "Virtual point light visibly brightens the real wall and floor near the lamp; turning it off removes that contribution.",
+      "frameTimes" : {
+        "droppedFrames" : 160,
+        "maxMilliseconds" : 88.88595551252365,
+        "p50Milliseconds" : 11.110750027000904,
+        "p95Milliseconds" : 11.110750027000904,
+        "p99Milliseconds" : 22.221459075808525,
+        "sampleCount" : 11418,
+        "targetFrameRate" : 90
+      },
+      "id" : "AFA78943-109E-4EC6-8482-D730F62DB56C",
+      "observed" : "Real floor brightened; Real wall brightened; Virtual panel brightened; type point intensity 12000 radius 5.0 surroundings true",
+      "outcome" : "passed",
+      "probe" : "lighting",
+      "timestamp" : "2026-09-22T22:27:48Z"
+    },
+    {
+      "expected" : "Object renders on top of real furniture regardless of depth.",
+      "frameTimes" : {
+        "droppedFrames" : 538,
+        "maxMilliseconds" : 88.88595551252365,
+        "p50Milliseconds" : 11.110750027000904,
+        "p95Milliseconds" : 11.110750027000904,
+        "p99Milliseconds" : 22.22183346748352,
+        "sampleCount" : 36563,
+        "targetFrameRate" : 90
+      },
+      "id" : "C5A091E9-2464-46BA-A789-D7B61CE140C0",
+      "observed" : "mode defaultBlending; Cube drew through furniture; Default mode drew on top as expected; Edges clean while still",
+      "outcome" : "failed",
+      "probe" : "occlusion",
+      "timestamp" : "2026-09-22T22:31:19Z"
+    }
+  ]
+}

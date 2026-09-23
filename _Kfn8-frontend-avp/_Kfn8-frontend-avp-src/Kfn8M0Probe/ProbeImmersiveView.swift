@@ -18,6 +18,7 @@ struct ProbeImmersiveView: View {
             FrameTimeSink.shared.isRecording = true
         }
         .task {
+            await session.startSpatialTracking()
             await session.surfaces.start()
         }
         .onDisappear {

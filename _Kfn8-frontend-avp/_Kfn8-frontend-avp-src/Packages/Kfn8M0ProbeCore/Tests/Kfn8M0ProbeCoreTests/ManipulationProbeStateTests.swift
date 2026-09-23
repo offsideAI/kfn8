@@ -67,6 +67,16 @@ import simd
         #expect(state.committedPosition == nil)
     }
 
+    @Test func transcriptSummaryMentionsEveryCounter() {
+        var state = ManipulationProbeState(affinity: .wall, initialPosition: .zero, isNewPlacement: false)
+        state.willBegin(inputKinds: [.directPinch])
+        state.willRelease(wasCancelled: false, resolution: .unresolved)
+        let summary = state.transcriptSummary
+        #expect(summary.hasPrefix("wall:"))
+        #expect(summary.contains("begins 1") && summary.contains("releases 1") && summary.contains("phase heldInvalid"))
+        #expect(summary.contains("directPinch"))
+    }
+
     @Test func handOffIsRecorded() {
         var state = ManipulationProbeState(affinity: .floor, initialPosition: .zero, isNewPlacement: false)
         state.willBegin(inputKinds: [.indirectPinch])

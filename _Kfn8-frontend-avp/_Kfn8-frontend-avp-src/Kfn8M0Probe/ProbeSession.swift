@@ -25,6 +25,13 @@ final class ProbeSession {
     let scene = ProbeScene()
     let surfaces = SurfaceTracker()
     let exporter = ExportProbeCoordinator()
+    /// RealityKit's own scene understanding (what Apple says SurroundingsLight projects onto). Distinct from the
+    /// ARKit providers in SurfaceTracker, which feed placement validation.
+    private let spatialTracking = SpatialTrackingSession()
+    var sceneUnderstandingStatus = "not started"
+    /// Set by the remote channel; the control view observes it and calls the SwiftUI open/dismiss actions.
+    var remoteSpaceRequest: Bool?
+    @ObservationIgnored private var remote: RemoteCommandChannel?
 
     init() {
         evidence = EvidenceLog(environment: ProbeSession.captureEnvironment())
@@ -34,13 +41,50 @@ final class ProbeSession {
                                                             isNewPlacement: false)
         }
         exporter.session = self
+        evidence.note("app launched; evidence file is written automatically on launch, after each manipulation and on immersive close")
+        writeEvidence()
+        remote = RemoteCommandChannel(session: self)
+        remote?.start()
+    }
+
+    func startSpatialTracking() async {
+        let configuration = SpatialTrackingSession.Configuration(tracking: [.world, .plane], sceneUnderstanding: [.collision, .physics])
+        let unavailable = await spatialTracking.run(configuration)
+        if let unavailable {
+            sceneUnderstandingStatus = "running; unavailable anchor \(unavailable.anchor) sceneUnderstanding \(unavailable.sceneUnderstanding)"
+        } else {
+            sceneUnderstandingStatus = "running; all requested capabilities available"
+        }
+        evidence.note("SpatialTrackingSession: \(sceneUnderstandingStatus)")
+        writeEvidence()
+    }
+
+    var lampDiagnostic: String { scene.lampComponentSummary }
+
+    /// Called by the app when the immersive space opens or closes; snapshots frame statistics and transcripts.
+    func immersiveSpaceDidChange(isOpen: Bool) {
+        isImmersiveOpen = isOpen
+        if isOpen {
+            evidence.note("immersive space opened; surfaces: \(surfaces.detected.count) planes, \(surfaces.meshAnchorCount) mesh anchors; ARKit \(surfaces.providerState); scene understanding \(sceneUnderstandingStatus)")
+        } else {
+            let s = frameSummary
+            evidence.note("immersive space closed; frames n=\(s.sampleCount) p50=\(s.p50Milliseconds ?? 0) p95=\(s.p95Milliseconds ?? 0) p99=\(s.p99Milliseconds ?? 0) max=\(s.maxMilliseconds ?? 0) drops=\(s.droppedFrames); surfaces \(surfaces.detected.count) planes, \(surfaces.meshAnchorCount) mesh anchors")
+            for affinity in AttachmentAffinity.allCases {
+                if let state = manipulation[affinity], state.transcript.begins > 0 {
+                    evidence.note(state.transcriptSummary, probe: .manipulation)
+                }
+            }
+        }
+        writeEvidence()
     }
 
     // MARK: Evidence
 
-    func record(_ probe: ProbeKind, expected: String, observed: String, outcome: ProbeOutcome, includeFrameTimes: Bool = true) {
+    func record(_ probe: ProbeKind, expected: String, observed: String, outcome: ProbeOutcome, includeFrameTimes: Bool = true,
+                recordedBy: String = "founder") {
         let summary = includeFrameTimes && FrameTimeSink.shared.statistics.count > 0 ? FrameTimeSink.shared.statistics.summary : nil
-        evidence.append(EvidenceRecord(probe: probe, expected: expected, observed: observed, outcome: outcome, frameTimes: summary))
+        evidence.append(EvidenceRecord(probe: probe, expected: expected, observed: observed, outcome: outcome, frameTimes: summary,
+                                       recordedBy: recordedBy))
         writeEvidence()
     }
 
@@ -62,6 +106,8 @@ final class ProbeSession {
     func toggleLight() {
         lighting.toggleLight()
         scene.applyLighting(lighting)
+        evidence.note("lamp \(lighting.isLightOn ? "on" : "off"): \(lighting.lightType.rawValue) intensity \(Int(lighting.intensity)) radius \(lighting.attenuationRadius) surroundings \(lighting.surroundingsLightingEnabled); components \(scene.lampComponentSummary); surfaces \(surfaces.detected.count) planes \(surfaces.meshAnchorCount) mesh; \(sceneUnderstandingStatus)", probe: .lighting)
+        writeEvidence()
     }
 
     func applyLightingChanges() { scene.applyLighting(lighting) }
@@ -109,6 +155,10 @@ final class ProbeSession {
 
     func manipulationWillEnd(affinity: AttachmentAffinity) {
         manipulation[affinity]?.willEnd()
+        if let state = manipulation[affinity] {
+            evidence.note(state.transcriptSummary, probe: .manipulation)
+        }
+        writeEvidence()
     }
 
     /// Non-gesture cancel path (accessibility requirement): restores the committed placement.
@@ -142,7 +192,7 @@ final class ProbeSession {
                 // Without any detected compatible surface the probe cannot claim validity. Reported, not hidden.
                 return surfaces.detected.isEmpty ? !scene.intersectsRealWorld(affinity: affinity, at: candidate) : false
             }
-            return !scene.intersectsRealWorld(affinity: affinity, at: attached.position)
+            return !scene.intersectsRealWorld(affinity: affinity, at: ProbeScene.mountedPosition(for: affinity, pose: attached))
         }
     }
 

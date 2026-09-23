@@ -104,4 +104,13 @@ public struct ManipulationProbeState: Sendable, Equatable {
     }
 
     public var isSaved: Bool { phase == .placed && committedPosition == currentPosition }
+
+    /// One-line summary of the platform transcript for automatic evidence notes.
+    public var transcriptSummary: String {
+        let t = transcript
+        let inputs = t.inputKinds.map(\.rawValue).sorted().joined(separator: "/")
+        return "\(affinity.rawValue): begins \(t.begins) updates \(t.updates) releases \(t.releases) cancelled \(t.cancelledReleases) "
+            + "ends \(t.ends) handoffs \(t.handOffs) updatesAfterRelease \(t.updatesAfterReleaseWithoutBegin) "
+            + "inputs [\(inputs)] phase \(phase) resolution \(lastResolution.map { "\($0)" } ?? "none")"
+    }
 }

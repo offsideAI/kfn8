@@ -1,0 +1,34 @@
+# DigitalOcean App Platform spec for the Kfn8 catalogue API. Smallest fixed tier, one instance, no autoscaling,
+# no workers, no queues. Apply with: doctl apps create --spec ops/app.yaml  (founder-run; the agent never provisions).
+name: kfn8-catalogue
+region: nyc
+services:
+  - name: api
+    github:
+      repo: REPLACE_OWNER/REPLACE_REPO   # the monorepo on GitHub; source_dir scopes the build to the backend
+      branch: main
+      deploy_on_push: false
+    source_dir: _Kfn8-frontend-avp/_Kfn8-backend-fastapi
+    environment_slug: python
+    # No build_command: the Python buildpack installs requirements.txt; .python-version pins 3.12.
+    run_command: alembic upgrade head && uvicorn kfn8.api.main:app --host 0.0.0.0 --port 8080 --proxy-headers
+    http_port: 8080
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    instance_count: 1
+    health_check:
+      http_path: /health/ready
+    envs:
+      - key: KFN8_DATABASE_URL
+        scope: RUN_TIME
+        value: ${kfn8-db.DATABASE_URL}   # used as-is; the app converts it for asyncpg
+      - key: KFN8_CDN_BASE_URL
+        value: https://REPLACE.cdn.digitaloceanspaces.com
+      - key: KFN8_CURSOR_SECRET
+        type: SECRET
+        value: REPLACE_WITH_RANDOM_SECRET
+databases:
+  - name: kfn8-db
+    engine: PG
+    version: "17"
+    production: true
+    cluster_name: kfn8-pg   # smallest single-node Managed PostgreSQL, created separately (see OPERATIONS.md)

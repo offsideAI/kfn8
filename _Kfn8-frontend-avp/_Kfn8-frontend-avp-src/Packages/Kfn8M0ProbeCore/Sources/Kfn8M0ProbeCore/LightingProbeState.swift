@@ -8,9 +8,13 @@ public struct LightingProbeState: Sendable, Equatable {
     public var lightType: LightType = .point
     public var isLightOn = false
     public var surroundingsLightingEnabled = true
-    /// Lumens for point, candela-equivalent for spot: RealityKit intensity units as declared by the SDK.
-    public var intensity: Float = 2000
-    public var attenuationRadius: Float = 4
+    /// RealityKit intensity units. The SDK's own point-light default is 26963.76; the first device run used 2000 and
+    /// showed nothing, so the default now matches the SDK and the range allows a much brighter lamp.
+    public var intensity: Float = 27000
+    public var attenuationRadius: Float = 6
+    /// A bone-coloured virtual panel behind the lamp. If the lamp lights this but not the real wall, the light works
+    /// and the question is scene understanding; if it lights neither, the light itself is not working.
+    public var showVirtualTestPanel = true
     public private(set) var comparisons: [Comparison] = []
 
     public struct Comparison: Sendable, Equatable, Codable {

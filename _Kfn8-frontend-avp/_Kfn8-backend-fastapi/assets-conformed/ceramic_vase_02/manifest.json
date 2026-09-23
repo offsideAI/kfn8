@@ -1,0 +1,97 @@
+{
+  "contract_version": "1.0.0",
+  "asset": {
+    "id": "8035a75f-8633-5bc5-a814-e52827c9bfa8",
+    "name": "Ceramic vase",
+    "sku": null,
+    "category": "decor",
+    "affinity": "tabletop",
+    "provenance": "licensed",
+    "delivery_mode": "public",
+    "style_tags": [
+      "ceramic"
+    ],
+    "dominant_colour": "bone",
+    "weight_class": "light",
+    "is_floor_covering": false
+  },
+  "revision": 1,
+  "front_axis": "-Z",
+  "dimension_spec": {
+    "width_m": 0.2184,
+    "depth_m": 0.2184,
+    "height_m": 0.3092,
+    "authority_kind": "operator",
+    "source": "Poly Haven ceramic_vase_02 1k glTF, conformed geometry measured after furniture-scale sanity check",
+    "approved_by": "measured by agent; founder sign-off is the visual_dimensions approval",
+    "approved_at": "2026-09-23T16:54:49Z",
+    "evidence_sha256": "0cfc4ddadfb1e1b9eb0179b22dc8dded8305f81c40882e13c41d5199cc45ae73"
+  },
+  "licence": {
+    "source_url": "https://polyhaven.com/a/ceramic_vase_02",
+    "author": "James Ray Cock",
+    "licence_id": "CC0-1.0",
+    "attribution_required": false,
+    "attribution_text": null,
+    "evidence_reference": "ledger/evidence/ceramic_vase_02.info.json + ledger/evidence/polyhaven-license.html",
+    "evidence_sha256": "0cfc4ddadfb1e1b9eb0179b22dc8dded8305f81c40882e13c41d5199cc45ae73",
+    "recorded_at": "2026-09-23T16:54:49Z"
+  },
+  "approvals": [
+    {
+      "kind": "provenance",
+      "actor": "OffsideAI",
+      "decided_at": "2026-09-23T17:30:30Z",
+      "evidence_reference": "ledger/review-sheet-2026-09-23.png",
+      "evidence_sha256": "288c277e2695f7c5c5c7e8fc6220b08a05e8cfe95cf2332a28df47983d744710",
+      "input_sha256": "f5f1e285c9eb8b8ea10a756e9dc916b92cf5737523c92df5d0d7665a77ea1349",
+      "approved": true
+    },
+    {
+      "kind": "visual_dimensions",
+      "actor": "OffsideAI",
+      "decided_at": "2026-09-23T17:30:30Z",
+      "evidence_reference": "ledger/review-sheet-2026-09-23.png",
+      "evidence_sha256": "288c277e2695f7c5c5c7e8fc6220b08a05e8cfe95cf2332a28df47983d744710",
+      "input_sha256": "f5f1e285c9eb8b8ea10a756e9dc916b92cf5737523c92df5d0d7665a77ea1349",
+      "approved": true
+    }
+  ],
+  "renditions": [
+    {
+      "lod": 0,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod0.glb",
+      "sha256": "0c23e5becde1141913f024b09d5f07b94e0f5b1a5e39f00cb449a9db990a6295",
+      "size_bytes": 753288,
+      "triangles": 11128
+    },
+    {
+      "lod": 1,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod1.glb",
+      "sha256": "a567693ebed26679eceeb8506e2d2b32a5e6b6665ca14cf89557f1f22fdf3095",
+      "size_bytes": 619876,
+      "triangles": 5006
+    },
+    {
+      "lod": 2,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod2.glb",
+      "sha256": "ed3c1c287e270cc866bba25c5d34206d0f08c46f2077f5c48ff126a83dff82fb",
+      "size_bytes": 525644,
+      "triangles": 1669
+    },
+    {
+      "lod": 0,
+      "format": "usdz",
+      "variant_key": "default",
+      "path": "lod0.usdz",
+      "sha256": "70da1e52ea9c5a8c51abd67625a204ad483117149de3a1f62d5e4de359ae8b47",
+      "size_bytes": 1055384
+    }
+  ]
+}

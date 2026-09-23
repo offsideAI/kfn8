@@ -1,0 +1,333 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kfn8.app/contracts/v1/asset.schema.json",
+  "title": "Kfn8 asset revision manifest",
+  "description": "One immutable asset revision: identity, approved dimensions, provenance, approvals and every rendition. Contract v1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "asset",
+    "revision",
+    "front_axis",
+    "dimension_spec",
+    "licence",
+    "approvals",
+    "renditions"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "pattern": "^1\\.[0-9]+\\.[0-9]+$"
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "category",
+        "affinity",
+        "provenance",
+        "delivery_mode"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "sku": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "affinity": {
+          "enum": [
+            "floor",
+            "wall",
+            "ceiling",
+            "tabletop",
+            "freestanding-outdoor"
+          ]
+        },
+        "provenance": {
+          "enum": [
+            "licensed",
+            "commissioned",
+            "captured",
+            "generated"
+          ]
+        },
+        "delivery_mode": {
+          "enum": [
+            "public",
+            "restricted"
+          ]
+        },
+        "style_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dominant_colour": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "weight_class": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "is_floor_covering": {
+          "type": "boolean",
+          "description": "Rugs/mats: exempt from virtual-overlap cues."
+        }
+      }
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "front_axis": {
+      "const": "-Z"
+    },
+    "attachment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mount_point_m": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "mount_normal": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "dimension_spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width_m",
+        "depth_m",
+        "height_m",
+        "authority_kind",
+        "source",
+        "approved_by",
+        "approved_at",
+        "evidence_sha256"
+      ],
+      "properties": {
+        "width_m": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 20
+        },
+        "depth_m": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 20
+        },
+        "height_m": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 10
+        },
+        "authority_kind": {
+          "enum": [
+            "retailer",
+            "operator"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approved_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "licence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_url",
+        "author",
+        "licence_id",
+        "attribution_required",
+        "evidence_reference",
+        "evidence_sha256",
+        "recorded_at"
+      ],
+      "properties": {
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "licence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attribution_required": {
+          "type": "boolean"
+        },
+        "attribution_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "actor",
+          "decided_at",
+          "evidence_reference",
+          "evidence_sha256",
+          "approved"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "provenance",
+              "visual_dimensions"
+            ]
+          },
+          "actor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "decided_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "evidence_reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_sha256": {
+            "$ref": "#/$defs/sha256"
+          },
+          "approved": {
+            "type": "boolean"
+          },
+          "input_sha256": {
+            "$ref": "#/$defs/sha256",
+            "description": "Fingerprint of the revision inputs the approver reviewed (manifest without approvals + rendition hashes)."
+          }
+        }
+      }
+    },
+    "renditions": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "lod",
+          "format",
+          "variant_key",
+          "path",
+          "sha256",
+          "size_bytes"
+        ],
+        "properties": {
+          "lod": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "format": {
+            "enum": [
+              "glb",
+              "usdz"
+            ]
+          },
+          "variant_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "$ref": "#/$defs/sha256"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "exclusiveMinimum": 0
+          },
+          "triangles": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "max_texture_edge": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

@@ -7,30 +7,82 @@ struct ProbeControlView: View {
     @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
 
-    @State private var wallObservation = ""
-    @State private var floorObservation = ""
-    @State private var edgeObservation = ""
-    @State private var movingObservation = ""
-    @State private var manipulationObservation = ""
-    @State private var manipulationOutcome: ProbeOutcome = .inconclusive
-    @State private var lightingOutcome: ProbeOutcome = .inconclusive
-    @State private var occlusionOutcome: ProbeOutcome = .inconclusive
+    @State private var lightingChips: Set<String> = []
+    @State private var occlusionChips: Set<String> = []
+    @State private var manipulationChips: Set<String> = []
+
+    private static let lightingOptions = ["Real wall brightened", "Real floor brightened", "Virtual panel brightened",
+                                          "Uneven or jagged on real surfaces", "Turning off removed it", "No change at all"]
+    private static let occlusionOptions = ["Furniture hid the cube", "Cube drew through furniture", "Edges clean while still",
+                                           "Edges lag or flicker while moving", "Default mode drew on top as expected"]
+    private static let manipulationOptions = ["Indirect pinch worked", "Direct grab worked", "Stayed where released",
+                                              "Snapped to its surface", "Invalid release turned translucent",
+                                              "Jumped more than 25 cm", "Moved after release without re-pinch",
+                                              "Cancel restored position", "5 cm buttons moved it", "Scale gesture was rejected"]
+
+    private enum Page: String, CaseIterable, Identifiable {
+        case setup = "Setup", lighting = "1 Light", occlusion = "2 Occlude", manipulation = "3 Move", export = "4 Export", evidence = "Evidence"
+        var id: String { rawValue }
+    }
+    @State private var page: Page = .setup
 
     var body: some View {
         @Bindable var session = session
         NavigationStack {
-            Form {
-                environmentSection
-                immersiveSection
-                lightingSection
-                occlusionSection
-                manipulationSection
-                exportSection
-                evidenceSection
+            VStack(spacing: 0) {
+                // One page at a time so every control fits without scrolling; scrolling was unreliable on device while
+                // the immersive space was open.
+                Picker("Page", selection: $page) {
+                    ForEach(Page.allCases) { Text($0.rawValue).tag($0) }
+                }
+                .pickerStyle(.segmented)
+                .padding([.horizontal, .top])
+                Form {
+                    switch page {
+                    case .setup:
+                        environmentSection
+                        immersiveSection
+                    case .lighting: lightingSection
+                    case .occlusion: occlusionSection
+                    case .manipulation: manipulationSection
+                    case .export: exportSection
+                    case .evidence: evidenceSection
+                    }
+                }
             }
             .navigationTitle("Kfn8 M0 Probe")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    if session.isImmersiveOpen {
+                        Button("Close space") { Task { await dismissImmersiveSpace(); session.immersiveSpaceDidChange(isOpen: false) } }
+                    } else {
+                        Button("Open space") { Task { await openSpace() } }
+                    }
+                }
+            }
         }
         .task { await applyLaunchArguments() }
+        .onChange(of: session.remoteSpaceRequest) { _, request in
+            guard let request else { return }
+            session.remoteSpaceRequest = nil
+            Task {
+                if request, !session.isImmersiveOpen {
+                    await openSpace()
+                } else if !request, session.isImmersiveOpen {
+                    await dismissImmersiveSpace()
+                    session.immersiveSpaceDidChange(isOpen: false)
+                }
+            }
+        }
+    }
+
+    private func openSpace() async {
+        switch await openImmersiveSpace(id: ProbeSession.immersiveSpaceID) {
+        case .opened: session.immersiveSpaceDidChange(isOpen: true)
+        case .error: session.lastError = "Immersive space failed to open"
+        case .userCancelled: session.lastError = "Immersive space cancelled by user"
+        @unknown default: session.lastError = "Immersive space: unknown result"
+        }
     }
 
     /// Simulator/automation hook, driven only by explicit launch arguments. `--open-immersive` opens the Mixed
@@ -40,7 +92,7 @@ struct ProbeControlView: View {
         let arguments = ProcessInfo.processInfo.arguments
         guard arguments.contains("--open-immersive"), !session.isImmersiveOpen else { return }
         if case .opened = await openImmersiveSpace(id: ProbeSession.immersiveSpaceID) {
-            session.isImmersiveOpen = true
+            session.immersiveSpaceDidChange(isOpen: true)
             if arguments.contains("--lamp-on"), !session.lighting.isLightOn { session.toggleLight() }
             if arguments.contains("--occlusion-default"), session.occlusion.mode == .occludedBySurroundings { session.toggleOcclusionMode() }
         } else {
@@ -50,11 +102,13 @@ struct ProbeControlView: View {
 
     private var environmentSection: some View {
         Section("Environment") {
+            LabeledContent("Probe build", value: "3 · white cube ahead")
             LabeledContent("OS", value: session.evidence.environment.systemVersion)
             LabeledContent("Device", value: session.evidence.environment.deviceModel)
             LabeledContent("Simulator", value: session.evidence.environment.isSimulator ? "yes (not device evidence)" : "no")
             LabeledContent("Surfaces", value: "\(session.surfaces.detected.count) planes, \(session.surfaces.meshAnchorCount) mesh anchors")
             LabeledContent("ARKit", value: "\(session.surfaces.providerState); \(session.surfaces.authorization)")
+            LabeledContent("Scene understanding", value: session.sceneUnderstandingStatus)
             if let error = session.lastError {
                 Text(error).foregroundStyle(.secondary)
             }
@@ -67,14 +121,14 @@ struct ProbeControlView: View {
                 Button("Close immersive space") {
                     Task {
                         await dismissImmersiveSpace()
-                        session.isImmersiveOpen = false
+                        session.immersiveSpaceDidChange(isOpen: false)
                     }
                 }
             } else {
                 Button("Open immersive space") {
                     Task {
                         switch await openImmersiveSpace(id: ProbeSession.immersiveSpaceID) {
-                        case .opened: session.isImmersiveOpen = true
+                        case .opened: session.immersiveSpaceDidChange(isOpen: true)
                         case .error: session.lastError = "Immersive space failed to open"
                         case .userCancelled: session.lastError = "Immersive space cancelled by user"
                         @unknown default: session.lastError = "Immersive space: unknown result"
@@ -113,25 +167,23 @@ struct ProbeControlView: View {
             .onChange(of: session.lighting.lightType) { session.applyLightingChanges() }
             Toggle("SurroundingsLight component", isOn: $session.lighting.surroundingsLightingEnabled)
                 .onChange(of: session.lighting.surroundingsLightingEnabled) { session.applyLightingChanges() }
-            Slider(value: $session.lighting.intensity, in: 200...20000, step: 200) { Text("Intensity") }
+            Slider(value: $session.lighting.intensity, in: 1000...100000, step: 1000) { Text("Intensity") }
                 .onChange(of: session.lighting.intensity) { session.applyLightingChanges() }
-            LabeledContent("Intensity", value: String(format: "%.0f", session.lighting.intensity))
+            LabeledContent("Intensity", value: String(format: "%.0f (SDK default 26964)", session.lighting.intensity))
+            Slider(value: $session.lighting.attenuationRadius, in: 1...12, step: 0.5) { Text("Attenuation radius") }
+                .onChange(of: session.lighting.attenuationRadius) { session.applyLightingChanges() }
+            LabeledContent("Attenuation radius", value: String(format: "%.1f m", session.lighting.attenuationRadius))
+            Toggle("Virtual test panel behind lamp", isOn: $session.lighting.showVirtualTestPanel)
+                .onChange(of: session.lighting.showVirtualTestPanel) { session.applyLightingChanges() }
             Button(session.lighting.isLightOn ? "Turn lamp off" : "Turn lamp on") { session.toggleLight() }
-            TextField("Observed on real wall", text: $wallObservation)
-            TextField("Observed on real floor", text: $floorObservation)
-            outcomePicker($lightingOutcome)
-            Button("Record lighting comparison") {
-                let recorded = session.lighting.recordComparison(observedOnWall: wallObservation, observedOnFloor: floorObservation,
-                                                                 frameTimes: session.frameSummary)
-                if recorded {
-                    session.record(.lighting, expected: session.lighting.expectedBehaviour,
-                                   observed: "wall: \(wallObservation); floor: \(floorObservation); type \(session.lighting.lightType.rawValue) intensity \(Int(session.lighting.intensity))",
-                                   outcome: lightingOutcome)
-                } else {
-                    session.lastError = "Turn the lamp on before recording a lighting comparison."
-                }
+            LabeledContent("Lamp components", value: session.lampDiagnostic).font(.caption)
+            chipGrid(ProbeControlView.lightingOptions, selection: $lightingChips)
+            outcomeButtons { outcome in
+                session.record(.lighting, expected: session.lighting.expectedBehaviour,
+                               observed: observed(lightingChips) + "; type \(session.lighting.lightType.rawValue) intensity \(Int(session.lighting.intensity)) radius \(session.lighting.attenuationRadius) surroundings \(session.lighting.surroundingsLightingEnabled)",
+                               outcome: outcome)
             }
-            .disabled(wallObservation.isEmpty || floorObservation.isEmpty)
+            recordedLine(.lighting)
         }
     }
 
@@ -139,18 +191,17 @@ struct ProbeControlView: View {
         @Bindable var session = session
         return Section("2. Environment occlusion (blocking)") {
             Text(session.occlusion.expectedBehaviour).font(.caption).foregroundStyle(.secondary)
-            LabeledContent("Mode", value: session.occlusion.mode.rawValue)
-            Button("Toggle blending mode") { session.toggleOcclusionMode() }
-            TextField("Edge quality while still", text: $edgeObservation)
-            TextField("Artifacts while walking/turning", text: $movingObservation)
-            outcomePicker($occlusionOutcome)
-            Button("Record occlusion observation") {
-                session.occlusion.record(edgeQuality: edgeObservation, artifactsWhileMoving: movingObservation, frameTimes: session.frameSummary)
+            LabeledContent("Mode now", value: session.occlusion.mode == .occludedBySurroundings ? "OCCLUDED by surroundings (the mode under test)" : "default (comparison only)")
+                .bold()
+            Button(session.occlusion.mode == .occludedBySurroundings ? "Switch to default (comparison)" : "Switch back to OCCLUDED (mode under test)") { session.toggleOcclusionMode() }
+            Text("Use the large WHITE cube (or any block). Record while the mode reads OCCLUDED. Passed means real furniture hid it in that mode.").font(.caption).foregroundStyle(.secondary)
+            chipGrid(ProbeControlView.occlusionOptions, selection: $occlusionChips)
+            outcomeButtons { outcome in
+                session.occlusion.record(edgeQuality: observed(occlusionChips), artifactsWhileMoving: "", frameTimes: session.frameSummary)
                 session.record(.occlusion, expected: session.occlusion.expectedBehaviour,
-                               observed: "mode \(session.occlusion.mode.rawValue); edges: \(edgeObservation); moving: \(movingObservation)",
-                               outcome: occlusionOutcome)
+                               observed: "mode \(session.occlusion.mode.rawValue); " + observed(occlusionChips), outcome: outcome)
             }
-            .disabled(edgeObservation.isEmpty || movingObservation.isEmpty)
+            recordedLine(.occlusion)
         }
     }
 
@@ -161,18 +212,13 @@ struct ProbeControlView: View {
             ForEach(AttachmentAffinity.allCases, id: \.self) { affinity in
                 manipulationRow(affinity)
             }
-            TextField("Observed manipulation behaviour", text: $manipulationObservation)
-            outcomePicker($manipulationOutcome)
-            Button("Record manipulation observation") {
-                let transcript = AttachmentAffinity.allCases.map { affinity -> String in
-                    guard let state = session.manipulation[affinity] else { return "" }
-                    let t = state.transcript
-                    return "\(affinity.rawValue): begins \(t.begins) updates \(t.updates) releases \(t.releases) cancelled \(t.cancelledReleases) ends \(t.ends) handoffs \(t.handOffs) updatesAfterRelease \(t.updatesAfterReleaseWithoutBegin) inputs \(t.inputKinds.map(\.rawValue).sorted().joined(separator: "/")) phase \(state.phase)"
-                }.joined(separator: " | ")
-                session.record(.manipulation, expected: "Release .stay honoured; invalid release held unsaved without re-grab requirement resolved by platform evidence",
-                               observed: "\(manipulationObservation) || \(transcript)", outcome: manipulationOutcome)
+            chipGrid(ProbeControlView.manipulationOptions, selection: $manipulationChips)
+            outcomeButtons { outcome in
+                let transcript = AttachmentAffinity.allCases.compactMap { session.manipulation[$0]?.transcriptSummary }.joined(separator: " | ")
+                session.record(.manipulation, expected: "Release .stay honoured; invalid release held unsaved; continuation without re-grab measured from platform events",
+                               observed: observed(manipulationChips) + " || " + transcript, outcome: outcome)
             }
-            .disabled(manipulationObservation.isEmpty)
+            recordedLine(.manipulation)
         }
     }
 
@@ -240,7 +286,7 @@ struct ProbeControlView: View {
                 LabeledContent(probe.title, value: session.evidence.latestOutcome(for: probe).rawValue)
             }
             LabeledContent("Blocking gates passed", value: session.evidence.blockingGatesPassed ? "yes" : "no")
-            LabeledContent("Records", value: "\(session.evidence.records.count)")
+            LabeledContent("Records", value: "\(session.evidence.records.count) recorded, \(session.evidence.notes.count) automatic notes")
             if let url = session.evidenceFileURL {
                 ShareLink(item: url) { Label("Share M0-EVIDENCE.json", systemImage: "doc.text") }
             }
@@ -249,12 +295,41 @@ struct ProbeControlView: View {
         }
     }
 
-    private func outcomePicker(_ selection: Binding<ProbeOutcome>) -> some View {
-        Picker("Outcome", selection: selection) {
-            Text("passed").tag(ProbeOutcome.passed)
-            Text("failed").tag(ProbeOutcome.failed)
-            Text("inconclusive").tag(ProbeOutcome.inconclusive)
+    private func chipGrid(_ options: [String], selection: Binding<Set<String>>) -> some View {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 200), spacing: 8)], alignment: .leading, spacing: 8) {
+            ForEach(options, id: \.self) { option in
+                let isOn = selection.wrappedValue.contains(option)
+                Button {
+                    if isOn { selection.wrappedValue.remove(option) } else { selection.wrappedValue.insert(option) }
+                } label: {
+                    Label(option, systemImage: isOn ? "checkmark.circle.fill" : "circle")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .buttonStyle(.bordered)
+                .tint(isOn ? .accentColor : .secondary)
+                .accessibilityAddTraits(isOn ? .isSelected : [])
+            }
         }
-        .pickerStyle(.segmented)
+        .padding(.vertical, 4)
+    }
+
+    /// One tap records the outcome together with the selected chips. No typing required.
+    private func outcomeButtons(_ record: @escaping (ProbeOutcome) -> Void) -> some View {
+        HStack {
+            Button("Record: passed") { record(.passed) }.tint(.green)
+            Button("Record: failed") { record(.failed) }.tint(.red)
+            Button("Record: inconclusive") { record(.inconclusive) }
+        }
+        .buttonStyle(.borderedProminent)
+    }
+
+    private func recordedLine(_ probe: ProbeKind) -> some View {
+        let count = session.evidence.records(for: probe).count
+        return LabeledContent("Recorded", value: count == 0 ? "not yet" : "\(count)× — latest \(session.evidence.latestOutcome(for: probe).rawValue)")
+            .font(.caption)
+    }
+
+    private func observed(_ chips: Set<String>) -> String {
+        chips.isEmpty ? "no chips selected" : chips.sorted().joined(separator: "; ")
     }
 }
