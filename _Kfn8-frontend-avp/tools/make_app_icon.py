@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Generate the Kfn8 visionOS app icon as a three-layer solid image stack (Back / Middle / Front).
+"""Generate the Kfn8 app icons: the visionOS three-layer solid image stack (Back / Middle / Front) and, from the same
+layers flattened, the single 1024 px iPhone/iPad icon.
 
 Reproducible, dependency-light (Pillow only). Palette is the Showroom palette from the PRD: bone/paper, walnut/clay,
 brass, ink. No purple, indigo or cyan. Each layer is a 1024x1024 PNG drawn at 4x and downsampled for clean edges.
-visionOS applies the circular mask and the parallax between layers itself.
+visionOS applies the circular mask and the parallax between layers itself; iOS applies its own rounded-square mask.
 
-Usage: python3 tools/make_app_icon.py [--catalog PATH] [--preview PATH]
+Usage: python3 tools/make_app_icon.py [--catalog PATH] [--ios-catalog PATH] [--preview PATH]
 """
 import argparse
 import json
@@ -143,6 +144,22 @@ def write_catalog(catalog: Path, layers: dict[str, Image.Image]) -> None:
         }, indent=2) + "\n")
 
 
+def write_ios_catalog(catalog: Path, layers: dict[str, Image.Image]) -> None:
+    """Opaque flattened icon (iOS rejects alpha in app icons) as a single-size universal appiconset."""
+    flat = layers["Back"].copy()
+    flat.alpha_composite(layers["Middle"])
+    flat.alpha_composite(layers["Front"])
+    iconset = catalog / "AppIcon.appiconset"
+    iconset.mkdir(parents=True, exist_ok=True)
+    info = {"author": "xcode", "version": 1}
+    (catalog / "Contents.json").write_text(json.dumps({"info": info}, indent=2) + "\n")
+    flat.convert("RGB").save(iconset / "icon-1024.png", optimize=True)
+    (iconset / "Contents.json").write_text(json.dumps({
+        "images": [{"filename": "icon-1024.png", "idiom": "universal", "platform": "ios", "size": "1024x1024"}],
+        "info": info,
+    }, indent=2) + "\n")
+
+
 def preview(layers: dict[str, Image.Image], out: Path) -> None:
     """Flattened, circle-masked preview for review. Not what visionOS renders (it adds depth and specular)."""
     flat = layers["Back"].copy()
@@ -165,11 +182,14 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     default_catalog = Path(__file__).resolve().parents[1] / "_Kfn8-frontend-avp-src/Kfn8M0Probe/Assets.xcassets"
     parser.add_argument("--catalog", type=Path, default=default_catalog)
+    parser.add_argument("--ios-catalog", type=Path, default=default_catalog.parents[1] / "Kfn8/iOS/Assets.xcassets")
     parser.add_argument("--preview", type=Path, default=None)
     args = parser.parse_args()
     layers = {"Back": finish(back_layer()), "Middle": finish(middle_layer()), "Front": finish(front_layer())}
     write_catalog(args.catalog, layers)
     print(f"wrote {args.catalog}")
+    write_ios_catalog(args.ios_catalog, layers)
+    print(f"wrote {args.ios_catalog}")
     if args.preview:
         preview(layers, args.preview)
         print(f"wrote {args.preview}")

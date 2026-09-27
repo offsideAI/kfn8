@@ -117,6 +117,20 @@ private func frame() throws -> RoomFrame { try RoomFrame.derive(floorHeight: -1.
         #expect(b.frame != nil)
     }
 
+    @Test func scanDataReadsBackTheCurrentScanAndRejectsTampering() async throws {
+        let fx = Fixture()
+        let files = try FileStore(root: fx.filesURL)
+        let store = try fx.open(files: files)
+        let space = try await store.createSpace(name: "Home")
+        let room = try await store.createRoom(in: space.id, name: "Room")
+        #expect(try await store.scanData(for: room.id) == nil)
+        _ = try await store.attachScan(Data("first".utf8), frame: try frame(), to: room.id, capturedAt: .now)
+        let current = try await store.attachScan(Data("world map + planes".utf8), frame: try frame(), to: room.id, capturedAt: .now)
+        #expect(try await store.scanData(for: room.id) == Data("world map + planes".utf8))
+        _ = try await files.write(Data("tampered".utf8), to: current.scan!.relativePath)
+        await #expect(throws: PersistenceError.self) { try await store.scanData(for: room.id) }
+    }
+
     @Test func countedDeleteRemovesScanAndRecordsButKeepsSharedRevisionReferences() async throws {
         let fx = Fixture()
         let files = try FileStore(root: fx.filesURL)

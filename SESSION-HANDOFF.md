@@ -168,3 +168,12 @@ Built and tested on the Mac host and visionOS 27.0 simulator (not device evidenc
 - Simulator uses a labelled synthetic room (ARKit unsupported there). Device path uses ARKit planes, scene reconstruction and a persisted world anchor.
 - Still blocked on founder: fixture approvals, DigitalOcean provisioning/credentials/billing alert, launch-library budget, release name, M0 device outcomes (occlusion, manipulation, export), all device-only acceptance.
 - No Git operations were run.
+
+## 2026-09-23 D7 iPhone + iPad client (supersedes “no iOS target” for this separate track only)
+
+- **Decision.** The founder directed an iPhone + iPad version reusing as much code as possible (decision D7, recorded in SALIENT-NOTES, ROADMAP and AGENTS). It is a separate track (ROADMAP “Track IE”, 23 tasks); MVP1 visionOS scope and acceptance are unchanged.
+- **Layout.** Client sources are split into `Kfn8/Shared`, `Kfn8/visionOS` and `Kfn8/iOS`. The schemes are `Kfn8` (visionOS), `Kfn8iOS` (iPhone/iPad) and `Kfn8M0Probe`. UI-test helpers are shared from `UITestSupport/`.
+- **Tests.** `tools/ci.sh --with-ui` covers visionOS, iPhone 18 Pro and iPad Pro 11-inch simulators; the last run was 15/15 PASS.
+- **Next.** Physical iPhone/iPad run (IE6.T2): LiDAR and non-LiDAR capture, relocalization, touch, occlusion, accessibility. Also add UI coverage for the turn-button tap and the preview sheet.
+- **Other visionOS changes this session.** New items face the user when added. The main window title is plain text. There is an in-room 45° turn button per item.
+- No Git operations were run.

@@ -1,0 +1,79 @@
+{
+  "contract_version": "1.0.0",
+  "asset": {
+    "id": "b0270429-77a0-5dcc-ad9a-464d8d29bcdd",
+    "name": "Leather ottoman",
+    "sku": null,
+    "category": "seating",
+    "affinity": "floor",
+    "provenance": "licensed",
+    "delivery_mode": "public",
+    "style_tags": [
+      "leather",
+      "tufted"
+    ],
+    "dominant_colour": "walnut",
+    "weight_class": "medium",
+    "is_floor_covering": false
+  },
+  "revision": 1,
+  "front_axis": "-Z",
+  "dimension_spec": {
+    "width_m": 0.8846,
+    "depth_m": 0.6211,
+    "height_m": 0.6243,
+    "authority_kind": "operator",
+    "source": "Poly Haven Ottoman_01 1k glTF, conformed geometry measured after furniture-scale sanity check",
+    "approved_by": "measured by agent; founder sign-off is the visual_dimensions approval",
+    "approved_at": "2026-09-26T13:44:29Z",
+    "evidence_sha256": "854a669cd5ab01f25a1b14e7b66f5d10a59e2108d378c25934fce1003eaec6c9"
+  },
+  "licence": {
+    "source_url": "https://polyhaven.com/a/Ottoman_01",
+    "author": "Caspian Fortune",
+    "licence_id": "CC0-1.0",
+    "attribution_required": false,
+    "attribution_text": null,
+    "evidence_reference": "ledger/evidence/Ottoman_01.info.json + ledger/evidence/polyhaven-license.html",
+    "evidence_sha256": "854a669cd5ab01f25a1b14e7b66f5d10a59e2108d378c25934fce1003eaec6c9",
+    "recorded_at": "2026-09-26T13:44:29Z"
+  },
+  "approvals": [],
+  "renditions": [
+    {
+      "lod": 0,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod0.glb",
+      "sha256": "f831a075680a46b227bbb03d9700df6b73bcd8353aff34425374a8a2a3edaf8b",
+      "size_bytes": 651236,
+      "triangles": 4240
+    },
+    {
+      "lod": 1,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod1.glb",
+      "sha256": "64089891300b01b7c2cf3488cb71dad3232542690236082d1a2c863d0666751a",
+      "size_bytes": 596100,
+      "triangles": 1908
+    },
+    {
+      "lod": 2,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod2.glb",
+      "sha256": "6b0383404ea6ef9f0c162702833beb2b609e81f3460d50a13f6c30fac040d67b",
+      "size_bytes": 568100,
+      "triangles": 858
+    },
+    {
+      "lod": 0,
+      "format": "usdz",
+      "variant_key": "default",
+      "path": "lod0.usdz",
+      "sha256": "290e3a907aea0f16163959e8d6490e7a0ae55291d84201f72f14c069b729fe44",
+      "size_bytes": 761466
+    }
+  ]
+}

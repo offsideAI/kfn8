@@ -1,3 +1,4 @@
+import CryptoKit
 import Foundation
 import Kfn8Domain
 import SwiftData
@@ -10,6 +11,8 @@ public protocol DesignRepository: Sendable {
     func createRoom(in space: SpaceID, name: String) async throws -> Room
     func rooms(in space: SpaceID) async throws -> [Room]
     func attachScan(_ data: Data, frame: RoomFrame, to room: RoomID, capturedAt: Date, sessionAnchorID: UUID?) async throws -> Room
+    /// The room's current scan file, checked against its recorded SHA-256; nil when the room has never been scanned.
+    func scanData(for room: RoomID) async throws -> Data?
     func updateFrame(_ frame: RoomFrame, for room: RoomID) async throws -> Room
     func createDesign(in room: RoomID, name: String) async throws -> Design
     func designs(in room: RoomID) async throws -> [Design]
@@ -42,6 +45,7 @@ public enum PersistenceError: Error, Equatable, Sendable {
     case edit(EditError)
     case saveFailed(String)
     case scanWriteFailed(String)
+    case scanUnreadable(String)
     case deletionIncomplete(remainingFiles: Int)
 }
 
@@ -108,6 +112,16 @@ public actor LocalStore: ModelActor, DesignRepository {
         }
         _ = try? await finishPendingDeletions()
         return Self.room(record)
+    }
+
+    public func scanData(for room: RoomID) async throws -> Data? {
+        let record = try fetchRoom(room)
+        guard let path = record.scanRelativePath else { return nil }
+        let data: Data
+        do { data = try await files.read(path) } catch { throw PersistenceError.scanUnreadable("\(path): \(error.localizedDescription)") }
+        let sha = SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
+        guard sha == record.scanSHA256 else { throw PersistenceError.scanUnreadable("\(path): checksum mismatch") }
+        return data
     }
 
     public func updateFrame(_ frame: RoomFrame, for room: RoomID) throws -> Room {

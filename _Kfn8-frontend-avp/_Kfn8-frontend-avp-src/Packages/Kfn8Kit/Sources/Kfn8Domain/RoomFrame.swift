@@ -37,6 +37,17 @@ public struct RoomFrame: Codable, Sendable, Equatable {
 
     /// Inverse: convert an edit made in session space back into room-local space for persistence.
     public func roomLocal(from session: RigidTransform) -> RigidTransform { sessionFromRoom.inverse * session }
+
+    /// Room-local pose for a new placement `distance` metres ahead of a viewer (head on visionOS, camera on iPhone/iPad),
+    /// on the horizontal projection of their gaze, turned so the item's front (−Z) faces them. Yaw θ maps the front
+    /// (0, 0, −1) to (−sin θ, 0, −cos θ); θ = atan2(f.x, f.z) makes that −f, i.e. back toward the viewer.
+    public func poseInFront(of viewer: RigidTransform, distance: Float) -> RigidTransform {
+        var forward = viewer.rotation.act(SIMD3<Float>(0, 0, -1))
+        forward.y = 0
+        forward = simd_length(forward) > 0.01 ? simd_normalize(forward) : SIMD3(0, 0, -1)
+        let session = RigidTransform(translation: viewer.translation + forward * distance, yaw: atan2(forward.x, forward.z))
+        return roomLocal(from: session)
+    }
 }
 
 /// Alignment state after relocalization. Spatial content is withheld until verified.

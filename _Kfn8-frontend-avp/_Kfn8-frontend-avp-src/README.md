@@ -1,9 +1,21 @@
-# Kfn8 client source (visionOS 27, Swift 6)
+# Kfn8 client source (visionOS 27 + iOS/iPadOS 27, Swift 6)
 
-`project.yml` is the source of truth; `Kfn8.xcodeproj` is generated and ignored. Nonshipping M0 probe target only for now.
+`project.yml` is the source of truth; `Kfn8.xcodeproj` is generated and ignored.
+
+| Scheme | Target(s) | Platform |
+|---|---|---|
+| `Kfn8` | `Kfn8`, `Kfn8UITests` | visionOS 27 (MVP1, Apple Vision Pro) |
+| `Kfn8iOS` | `Kfn8iOS`, `Kfn8iOSUITests` | iOS/iPadOS 27, iPhone + iPad (decision D7, roadmap track IE) |
+| `Kfn8M0Probe` | `Kfn8M0Probe` | visionOS 27, nonshipping M0 probe |
 
 ## Layout
 
+- `Packages/Kfn8Kit/`: Domain, Persistence and Catalogue libraries (no RealityKit/ARKit), shared unchanged by both apps and tested on the macOS host.
+- `Kfn8/Shared/`: app code both apps compile: `AppModel` and launch, catalogue loaders, Showroom theme, the main window and its Design/Inventory/Catalogue panels, and the RealityKit placement scene, room-capture rules and labelled simulated room.
+- `Kfn8/visionOS/`: visionOS only: app entry, Mixed Immersive Space, visionOS ARKit providers, ManipulationComponent input, in-room turn buttons, preview volume.
+- `Kfn8/iOS/`: iPhone/iPad only: app entry, `ARView` room screen with touch drag/twist and on-screen turn buttons, ARKit world tracking with plane classification, LiDAR mesh (collisions + occlusion) where present, ARWorldMap relocalization stored inside the room's local scan, preview sheet, app icon.
+- `Kfn8/Resources/`: bundled approved catalogue and fonts, shared.
+- `UITestSupport/`: helpers shared by `Kfn8UITests` (visionOS) and `Kfn8iOSUITests` (iPhone/iPad).
 - `Packages/Kfn8M0ProbeCore/`: pure probe control state (attachment policy, release resolver, manipulation lifecycle, lighting/occlusion/export state, frame-time statistics, evidence log). Swift Testing, runs on the macOS host.
 - `Kfn8M0Probe/`: the nonshipping Mixed Immersive Space probe app. Window with all controls (non-gesture path for every action), immersive space with fixtures for the four affinities, a lamp, and an occlusion object.
 
@@ -26,7 +38,7 @@ The script never runs the app, never runs Git and never changes the global `xcod
 python3 ../tools/make_app_icon.py --preview /tmp/icon-preview.png   # needs Pillow
 ```
 
-The generator uses only the Showroom palette (bone/paper, walnut/clay, brass, ink). visionOS adds the circular mask, depth and specular itself; the preview sheet is a flat approximation. When the shipping app target exists it should reference the same catalog.
+The generator uses only the Showroom palette (bone/paper, walnut/clay, brass, ink). visionOS adds the circular mask, depth and specular itself; the preview sheet is a flat approximation. The `Kfn8` app target references the same catalog. The same run also writes `Kfn8/iOS/Assets.xcassets/AppIcon.appiconset`: the three layers flattened into one opaque 1024 px icon for iPhone/iPad.
 
 ## Commands (Xcode 27 toolchain, explicit DEVELOPER_DIR)
 

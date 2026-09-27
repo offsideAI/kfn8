@@ -133,6 +133,7 @@ Shipped separately, "furnish your backyard in January" is a press-worthy, screen
 | D4 | Apple Vision Pro only (M2, M5); no iPad or iPhone editor | Sept 2026 | Accepted | Revisit at v2 |
 | D5 | Proceed with M1–M7 implementation before the M0 device gate closes; the agent implements and tests on the visionOS 27 simulator. Device-only acceptance (occlusion, manipulation, performance, export, capture) stays open and is never marked ✅/🟢 from simulator results | 2026-09-23 | Accepted by founder | A later headset run records a blocking failure that the founder does not accept |
 | D6 | Invalid release keeps the item where it was dropped, translucent and unsaved, with “There isn't enough space here”; the user re-pinches or taps Cancel. No continuation without re-grab (visionOS delivers no transform updates after release, observed in every M2 run) and no automatic snap-back | 2026-09-23 | Accepted by founder | A future visionOS exposes post-release input, or testers find re-grab confusing |
+| D7 | Build a separate iPhone + iPad (iOS/iPadOS 27) client of the same app in its own `Kfn8iOS` target and scheme, reusing Kfn8Kit and the shared app code. It is a parallel track (roadmap IE1–IE6), not MVP1 scope; visionOS MVP1 constraints and acceptance are unchanged | 2026-09-23 | Directed by founder | The founder re-scopes MVP1 or pauses the iOS track |
 
 
 ## Part D — Operational amendments, 2026-09-19

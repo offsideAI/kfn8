@@ -1,0 +1,79 @@
+{
+  "contract_version": "1.0.0",
+  "asset": {
+    "id": "a3e2177f-36c2-5149-a1a3-515113c97363",
+    "name": "Cube display shelves",
+    "sku": null,
+    "category": "storage",
+    "affinity": "floor",
+    "provenance": "licensed",
+    "delivery_mode": "public",
+    "style_tags": [
+      "modern",
+      "pine"
+    ],
+    "dominant_colour": "clay",
+    "weight_class": "medium",
+    "is_floor_covering": false
+  },
+  "revision": 1,
+  "front_axis": "-Z",
+  "dimension_spec": {
+    "width_m": 1.0778,
+    "depth_m": 0.3715,
+    "height_m": 1.5562,
+    "authority_kind": "operator",
+    "source": "Poly Haven wooden_display_shelves_01 1k glTF, conformed geometry measured after furniture-scale sanity check",
+    "approved_by": "measured by agent; founder sign-off is the visual_dimensions approval",
+    "approved_at": "2026-09-26T13:44:29Z",
+    "evidence_sha256": "2b05393a3fd54e86ca738dc5abc7f590fc0cae2a98ca83dd1b4595ef93c411ff"
+  },
+  "licence": {
+    "source_url": "https://polyhaven.com/a/wooden_display_shelves_01",
+    "author": "James Ray Cock",
+    "licence_id": "CC0-1.0",
+    "attribution_required": false,
+    "attribution_text": null,
+    "evidence_reference": "ledger/evidence/wooden_display_shelves_01.info.json + ledger/evidence/polyhaven-license.html",
+    "evidence_sha256": "2b05393a3fd54e86ca738dc5abc7f590fc0cae2a98ca83dd1b4595ef93c411ff",
+    "recorded_at": "2026-09-26T13:44:29Z"
+  },
+  "approvals": [],
+  "renditions": [
+    {
+      "lod": 0,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod0.glb",
+      "sha256": "e7bc5e9a55f70891c697029ea4e6e8717df8c3a8e47aeaf68c93b58fedf5380a",
+      "size_bytes": 470032,
+      "triangles": 3174
+    },
+    {
+      "lod": 1,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod1.glb",
+      "sha256": "ee219c5cce45a91473327cd282b6f65ee91e8a2a5df5238c92d76c4180a6b21b",
+      "size_bytes": 430332,
+      "triangles": 1428
+    },
+    {
+      "lod": 2,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod2.glb",
+      "sha256": "8ca5c931040ad561f6570d0cffe575f4c9ee25d982f3ba082065b5d974840d38",
+      "size_bytes": 423800,
+      "triangles": 1171
+    },
+    {
+      "lod": 0,
+      "format": "usdz",
+      "variant_key": "default",
+      "path": "lod0.usdz",
+      "sha256": "8f5dba4577b9709e32e9548ee917c09fb192cbea2560c41382435f1ff57ef8fa",
+      "size_bytes": 536523
+    }
+  ]
+}

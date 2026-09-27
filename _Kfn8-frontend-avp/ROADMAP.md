@@ -16,6 +16,10 @@
 
 The founder directed implementation of all Epics on the visionOS 27 simulator without further headset sessions for now. M0 status at that point: lighting recorded **passed** on the M2; occlusion recorded failed in the comparison mode (ambiguous); manipulation transcript shows no post-release transform updates (continuation without re-grab is not platform behaviour). Consequences: M1+ work proceeds; every acceptance criterion that needs a physical headset stays 🟡 or ⏸️ with the reason stated; nothing is marked 🟢 from simulator results; external dependencies (cloud credentials, launch-library budget, App Review) remain blockers where reached.
 
+## Founder decision D7 (2026-09-23): iPhone + iPad track
+
+The founder directed a second client, an iPhone + iPad (iOS/iPadOS 27) version of the same app, reusing as much of the visionOS code as possible. It is a **separate track (IE1–IE6)** with its own target and scheme (`Kfn8iOS`), its own task counts and its own evidence. It does not add scope to, or change the acceptance of, the seven MVP1 Epics below; the visionOS MVP1 constraints (no iOS target *inside MVP1*, Mixed Immersive Space only) still govern E0–E7. Shared code: `Kfn8Kit` (Domain, Persistence, Catalogue) unchanged, plus the app model, catalogue loaders, Showroom theme, panels and room/placement logic. Platform code: visionOS keeps ImmersiveSpace/ManipulationComponent/visionOS ARKit providers; iOS uses `ARView` with `ARWorldTrackingConfiguration` (plane classification, LiDAR scene mesh where present), touch gestures and a camera permission. 🟢 stays reserved for physical-headset verification; iPhone/iPad device verification is recorded in the task text with device/build, never as 🟢.
+
 ## Tracking rules
 
 Exactly seven Epics map one-to-one to M0, M1, M2, M3, M4, M6, M7. M5 and v1.1 work are excluded, not hidden in future tasks. IDs: E{milestone}.S{story}.T{task}. Assign a status to every Epic, Story and Task. Mark ✅ only when its acceptance evidence exists; reserve 🟢 for completed acceptance verified on a physical headset, with device/build and evidence linked in the milestone report. Record actual commands/results, build/commit IDs and demo evidence in `reports/M{n}-FINDINGS.md`. Mark ⏸️ when a concrete blocker or deliberate deferral prevents progress, and name the dependency. Future work awaiting the normal milestone sequence stays ⬜; dependency order alone does not mean work has started. Use 🟡 for partially implemented work that is still progressing. An Epic or Story is complete only when every required child and its acceptance criteria are complete; device-dependent acceptance cannot close on tooling tests alone. Update task statuses, Story/Epic rollups, the status table and progress snapshot in the same change as implementation or new verification evidence. Preserve evidence links and record blockers when they change. Estimates are effort, not deadlines.
@@ -24,7 +28,7 @@ Global constraints apply to every task: visionOS 27 only, Swift 6 strict concurr
 
 ## Progress snapshot
 
-Last updated: 2026-09-23 (D5 implementation session). **71 tasks: 0 ⬜ not started · 18 🟡 in progress · 35 ✅ done · 18 ⏸️ blocked/deferred · 0 🟢 verified on-device.** Counts cover Tasks only, not Story/Epic rollups.
+Last updated: 2026-09-23 (D5 implementation session). **71 tasks: 0 ⬜ not started · 18 🟡 in progress · 35 ✅ done · 18 ⏸️ blocked/deferred · 0 🟢 verified on-device.** Counts cover Tasks only, not Story/Epic rollups. The separate iPhone + iPad track (D7) is counted in its own section: 23 tasks, 11 ✅ · 9 🟡 · 1 ⏸️ · 2 ⬜.
 
 Completed: repository/toolchain inspection and readiness tooling (8 tests passed). Partial work: readiness findings report and remaining M0 setup. Xcode 27 licence accepted; readiness exits 0 (`toolchain_ready_device_unverified`). The nonshipping M0 probe target exists in `_Kfn8-frontend-avp-src` (Swift 6 strict concurrency, warnings as errors), builds for the visionOS 27 device and simulator SDKs, and its 41 Swift Testing tests pass on the host and on the visionOS 27 simulator. SDK API evidence for all five probes is recorded. The splat attempt is spent and recorded as not ingestible. Simulator smoke run on visionOS 27.0 passed (window, immersive space, fixtures, frame sampling) and exposed three defects that are fixed; simulator results are not device evidence. Blocked: the founder signed into Xcode 27, but the stored account's team is neither G4Y5TXVX4P nor G7Y435RZV6, which turned out to be OffsideAI Inc. (9L38FSU6M7, read from Xcode's stored team list); a signed build now succeeds and is installed on the M2 (visionOS 27.0, paired, developer disk image compatible). E0.S1 is complete. No headset tests have run; the founder runs the protocol next. Evidence: [M0 findings](reports/M0-FINDINGS.md), [SDK API evidence](reports/M0-SDK-API-EVIDENCE.md), [readiness 2026-09-22](reports/M0-READINESS-2026-09-22.json), [readiness 2026-09-19 blocked](reports/M0-READINESS.json). Earlier nested-repository commit IDs are historical only; that metadata was removed at the founder’s request. They are not revisions in the parent monorepo.
 
@@ -88,6 +92,19 @@ Exit: E0.S1/S2 accepted by evidence, S3 findings recorded. No routine sign-off p
 Acceptance: exactly four functional engineering models cover all affinities with traceable evidence and validator reports.
 Demo: inspect each item's source/licence, dimensions and variant/rendition manifest; deliberately corrupt a copy and observe rejection.
 
+**Founder request 2026-09-26: fixtures batch 2 (outside E1.S1's four-model gate, not the launch library).**
+- **Items:** five generic CC0 floor pieces from Poly Haven, added to the bundled default set:
+  - Tufted leather sofa (`sofa_02`)
+  - Stone-top coffee table (`modern_coffee_table_01`)
+  - Oak side table (`side_table_01`)
+  - Cube display shelves (`wooden_display_shelves_01`)
+  - Leather ottoman (`Ottoman_01`)
+- **Excluded:** "Mid Century Lounge Chair", as a likely copy of a named design.
+- **Fetch:** `tools/fetch_polyhaven.py` saves the API info/files JSON as evidence and MD5-checks every file.
+- **Conform:** Blender 5.2.1. The coffee table and shelves needed a 90° turn so their long side and cubbies face −Z; the others 180°.
+- **Checks:** 9/9 manifests pass contract v1 and the bundle byte check. `testBatchTwoFurniturePlaces` passes on the visionOS, iPhone 18 Pro and iPad Pro 11-inch simulators.
+- **Pending:** founder provenance and visual/dimension approvals against `_Kfn8-backend-fastapi/ledger/review-sheet-batch2-2026-09-26.png`. `--require-approvals` currently passes the original 4 and fails these 5.
+
 ### ✅ E1.S2 — Durable domain and local files
 
 - ✅ E1.S2.T1 Add Sendable domain values, repository protocols and explicit persistence actor/ModelContext isolation. Swift Testing verifies completed-edit counter, immutable revision references and rigid transforms. **Done 2026-09-23:** `Kfn8Domain` + `DesignRepository` protocol; `LocalStore` is a `ModelActor` and returns only domain values; tests in `_Kfn8-frontend-avp-src/Packages/Kfn8Kit` (edits/inverses/version counter, duplication, rigid transforms, room frames).
@@ -112,7 +129,7 @@ Demo: save in a room, return/relocalize, force missing alignment and exercise bo
 - ✅ E1.S4.T1 Implement Window/Volume/Mixed scene ownership, Showroom tokens/fonts/licences and deterministic preview fit; pure tests cover oversized and 1:1 previews. **Done 2026-09-23:** main window, volumetric preview (uniform downscale with real W×D×H), Mixed Immersive Space; Showroom palette; Fraunces + Hanken Grotesk with OFL files; `PreviewFit` tests.
 - 🟡 E1.S4.T2 Implement one attachment policy system, mounting metadata separate from pivot, permanent placement scale 1; verify real wall asset, pendant, chair and vase on device. **Implemented + unit-tested:** one `Attachment` policy by affinity, gravity drop, mount points for wall/ceiling, scale gestures disabled. Simulator E2E `Kfn8UITests` passes on visionOS 27.0 (labelled simulated room); device acceptance pending.
 - 🟡 E1.S4.T3 Implement hard real collision / soft virtual overlap / rug exemption, continuous cue, validated ≤25cm release resolution and unsaved invalid preview. Test multi-obstacle/ceiling constraints; device-test the M0-proven input path. **Implemented + tested:** SAT oriented-box checks, mesh convex-cast on device, ≤25 cm push-out, held unsaved translucent preview with the quiet copy, overlap cue, rug exemption. Device input path depends on M0 manipulation outcome (post-release updates never arrive; re-grab required).
-- 🟡 E1.S4.T4 Add non-gesture placement/move/rotate/cancel controls; check VoiceOver reachability, Dynamic Type clipping and reduced-motion alternatives in the same demo. **Implemented:** add, move ±10 cm, raise/lower (wall), rotate ±15°, cancel, remove, undo/redo, flip, all as buttons; every control has a text label; the UI tests drive the whole flow through accessibility. Device VoiceOver/Dynamic Type/Reduce Motion demo pending.
+- 🟡 E1.S4.T4 Add non-gesture placement/move/rotate/cancel controls; check VoiceOver reachability, Dynamic Type clipping and reduced-motion alternatives in the same demo. **Implemented:** add, move ±10 cm, raise/lower (wall), rotate ±15°, cancel, remove, undo/redo, flip, all as buttons; new items face the user when added, and each floor/table/ceiling item has an in-room 45° turn button (verified drawn in simulator captures; headset check pending); every control has a text label; the UI tests drive the whole flow through accessibility. Device VoiceOver/Dynamic Type/Reduce Motion demo pending.
 - 🟡 E1.S4.T5 Record M1 report and component build IDs and contract hash. Demonstrate one actual asset per affinity persisted across a session; no cube-only acceptance. **Simulator:** `testScanPlaceEditRelaunchDelete` places the four real fixtures, relaunches and finds all four. Report: `reports/IMPLEMENTATION-2026-09-23.md`. Device demo pending.
 
 Exit/demo: scan → place all four → move/cancel → save/relaunch → lose alignment/recover → delete, with no older-OS branch or geometry upload.
@@ -228,3 +245,61 @@ Exit: a single operator can build the library reproducibly, with recorded approv
 - ⏸️ E7.S2.T4 Address blocking TestFlight findings, submit launch build and record actual external review/distribution outcome. Submission is not approval; roadmap stays open until launch outcome exists. **Waits for TestFlight.**
 
 Exit: all prior Epic evidence exists, release is actually distributed, limitations and privacy match shipped behavior. No item is marked ✅ or 🟢 on “should work”.
+
+---
+
+## Track IE — iPhone + iPad client (D7)
+
+> Status legend: ⬜ not started · 🟡 in progress · ✅ done · ⏸️ blocked/deferred · 🟢 verified on-device
+
+Counted separately from the 71 MVP1 tasks. **23 tasks: 2 ⬜ not started · 9 🟡 in progress · 11 ✅ done · 1 ⏸️ blocked/deferred.** Last updated: 2026-09-23 (simulator + host evidence only; no physical iPhone/iPad run yet).
+
+| Epic | Scope | Status |
+|---|---|---|
+| IE1 | Shared foundation, target and scheme | ✅ |
+| IE2 | AR room capture and recovery | 🟡 |
+| IE3 | Placement and touch manipulation | 🟡 |
+| IE4 | Adaptive iPhone/iPad interface | 🟡 |
+| IE5 | Catalogue parity | 🟡 |
+| IE6 | Device evidence and distribution | 🟡 |
+
+### ✅ Epic IE1 — Shared foundation, target and scheme
+
+- ✅ IE1.T1 Add iOS 27 to `Kfn8Kit` platforms; Domain/Persistence/Catalogue compile for iOS unchanged; host tests still pass. **Done 2026-09-23:** `.iOS("27.0")` added; 65/65 package tests pass on the host (new: `poseInFrontFacesTheViewer`, `scanDataReadsBackTheCurrentScanAndRejectsTampering`).
+- ✅ IE1.T2 Split app sources into shared (`Kfn8/Shared`) and platform (`Kfn8/visionOS`, `Kfn8/iOS`) folders; move reusable room/placement logic (scan snapshot, frame derivation, room-local surfaces, simulated room, placement entity sync, pose in front of the viewer) out of visionOS-only files. visionOS behaviour unchanged: device + simulator builds and all three visionOS UI tests pass. **Done 2026-09-23:** `Kfn8/Shared` (app model + launch, catalogue, theme, main window + panels, `PlacementScene`, `CapturedPlanes`, `SimulatedRoom`, `TurnHandle`), `Kfn8/visionOS`, `Kfn8/iOS`; `RoomFrame.poseInFront` moved into Kfn8Domain. visionOS device + simulator builds and all three visionOS UI tests pass after the split.
+- ✅ IE1.T3 `Kfn8iOS` target and scheme in `project.yml`: iOS 27.0, iPhone + iPad, bundle `com.appliaison.kfn8.ios`, Swift 6 strict concurrency, warnings as errors, camera usage text, fonts, bundled catalogue, app icon. Builds for iOS device and simulator SDKs. **Done 2026-09-23:** `Kfn8iOS` + `Kfn8iOSUITests` targets and scheme; flattened 1024 px icon generated by `tools/make_app_icon.py`; unsigned device and simulator builds pass with warnings as errors.
+- ✅ IE1.T4 `tools/ci.sh` builds the iOS app (device + simulator SDK) and, with `--with-ui`, runs the iOS UI tests. **Done 2026-09-23:** CI now 15 steps; `ci.sh --with-ui` passed end to end (visionOS 3 tests, iPhone 18 Pro, iPad Pro 11-inch). [report](reports/IMPLEMENTATION-2026-09-23.md#addendum-d7-iphone--ipad-client)
+
+### 🟡 Epic IE2 — AR room capture and recovery
+
+- 🟡 IE2.T1 `ARRoomSession`: world tracking with horizontal + vertical plane detection and classification (floor, wall, ceiling, table, seat); room frame derived from floor + largest wall with the shared rules; camera permission with a plain-language denial message. **Implemented:** `ARRoomSession` (plane classification → `CapturedPlanes`, frame on floor + widest wall, room anchor), camera-permission copy for denied/restricted. Needs a physical iPhone/iPad (IE6.T2).
+- 🟡 IE2.T2 Real-geometry collisions: LiDAR scene-reconstruction mesh when supported; on non-LiDAR devices, classified plane boxes only, stated in the UI. No silent fallback. **Implemented:** LiDAR `sceneReconstruction = .mesh` + RealityKit scene-understanding collision (convex cast against `.sceneUnderstanding`); non-LiDAR devices show “No depth sensor: only floors, walls, tables and seats are checked for collisions.” Device check pending.
+- 🟡 IE2.T3 Return visits: save an `ARWorldMap` with the scan (local only, excluded from backup), relocalize with bounded guided attempts, keep content hidden until verified; rescan into the same Room or review contents. **Implemented:** world map archived inside the room's scan file (removed with the room; excluded from backup); new `DesignRepository.scanData(for:)` with checksum; relocalization in bounded 8 s attempts; fresh map saved on leaving. Device check pending.
+- 🟡 IE2.T4 Coaching: `ARCoachingOverlayView` plus the shared status text while scanning. **Implemented:** `ARCoachingOverlayView` (tracking goal) plus the shared status line. Device check pending.
+- ✅ IE2.T5 Labelled simulated room on the iOS simulator (ARKit is unavailable there), shared with visionOS. **Done 2026-09-23:** shared `SimulatedRoom`; the iOS simulator draws its floor/wall faintly and labels “simulated room (simulator only)”; iPhone and iPad E2E pass.
+
+### 🟡 Epic IE3 — Placement and touch manipulation
+
+- ✅ IE3.T1 Shared placement-scene sync renders committed Designs + previews in `ARView` (model cache, grounding shadows, translucent held-invalid preview, overlap cue). **Done 2026-09-23 (simulator):** shared `PlacementScene` renders all four fixtures in `ARView`; iPhone and iPad E2E pass.
+- 🟡 IE3.T2 Touch: one-finger drag and two-finger rotate (no scaling) feed the shared release pipeline (attach → real collision → ≤25 cm resolution → commit, or held unsaved with Cancel). **Implemented:** pan on the item's support plane (wall plane for wall items) and two-finger twist about +Y feed `dragUpdated`/`release`/`cancel`; tap selects, double-tap flips. Not exercised by the UI tests; device touch check pending.
+- 🟡 IE3.T3 On-screen turn button beside each placed item (screen-projected), plus the shared non-gesture move/rotate/cancel/remove controls. **Implemented:** screen-projected 48 pt turn button per item (45° clockwise, Undo-able), VoiceOver label “Turn <item> 45 degrees”; its presence is asserted in the iPhone/iPad E2E, a tap is not yet.
+- 🟡 IE3.T4 Occlusion: scene-depth occlusion on LiDAR devices and people occlusion where supported. **Implemented:** scene-understanding occlusion on LiDAR devices, `personSegmentationWithDepth` where supported. Device-only.
+- ✅ IE3.T5 New items placed in front of the camera, facing the viewer, at a distance suited to a handheld screen. **Done 2026-09-23:** 1.5 m ahead of the camera, facing the viewer (shared `RoomFrame.poseInFront`, unit-tested).
+
+### 🟡 Epic IE4 — Adaptive iPhone/iPad interface
+
+- ✅ IE4.T1 Reuse the shared sidebar, Design, Inventory and Catalogue panels in a `NavigationSplitView` (iPad: sidebar + detail; iPhone: stack). **Done 2026-09-23:** shared `MainWindow` with `RoomViewActions`; iPhone collapses to one column and opens the room detail on selection; iPhone and iPad E2E pass.
+- ✅ IE4.T2 Full-screen AR room screen with a resizable bottom sheet holding the same panels; Leave button; banners for recovery and errors. **Done 2026-09-23 (simulator):** full-screen AR room with status bar, Leave and panel toggle; panel is an inspector (iPad column / iPhone sheet capped at 78% so the bar stays reachable, drops to half height after adding).
+- 🟡 IE4.T3 Item preview sheet (orbitable 3D, real W×D×H) replacing the visionOS volume. **Implemented:** `PreviewSheet` (same `PreviewFit`, orbit camera, real dimensions). Not yet covered by a UI test.
+- 🟡 IE4.T4 Accessibility: VoiceOver labels on every control and in-scene button, Dynamic Type up to accessibility sizes without clipping, Reduce Motion respected. **Partly:** every control and in-scene turn button has a text/VoiceOver label; Dynamic Type layouts use the shared single-column rule. VoiceOver/Dynamic Type/Reduce Motion device check pending.
+
+### 🟡 Epic IE5 — Catalogue parity
+
+- ✅ IE5.T1 Bundled catalogue (four approved fixtures) loads and places on iOS. **Done 2026-09-23 (simulator):** all four bundled approved fixtures load and place on iPhone and iPad.
+- ⏸️ IE5.T2 Remote catalogue (same `RemoteCatalogue`, cache, revocation) configured via `Kfn8APIBaseURL` / `--api`; verified once the backend is deployed (E2.S2 dependency). **Blocked:** same code path as visionOS; waits for the backend deployment (E2.S2 provisioning).
+
+### 🟡 Epic IE6 — Device evidence and distribution
+
+- ✅ IE6.T1 iOS simulator end-to-end UI tests: create space/room → simulated scan → place all four → move/rotate/undo → relaunch → delete. **Done 2026-09-23:** `Kfn8iOSEndToEndTests.testScanPlaceEditRelaunchDelete` passes on iPhone 18 Pro and iPad Pro 11-inch (iOS 27.0 simulators). Simulator evidence only. [report](reports/IMPLEMENTATION-2026-09-23.md#addendum-d7-iphone--ipad-client)
+- ⬜ IE6.T2 Physical iPhone (LiDAR and non-LiDAR if available) and iPad run: scan, place, occlusion, relocalization; screenshots and findings in `reports/`.
+- ⬜ IE6.T3 Signed archive and TestFlight for iOS; privacy declarations match the shipped behaviour (camera, no upload). Needs founder approval.

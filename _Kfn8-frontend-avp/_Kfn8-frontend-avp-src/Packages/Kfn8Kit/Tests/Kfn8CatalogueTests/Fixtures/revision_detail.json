@@ -1,6 +1,6 @@
 {
   "body": {
-    "asset_id": "44b6881a-7206-4397-a5be-548301c37baa",
+    "asset_id": "4f957f55-a04b-4ecd-a950-a6c9d0ea33d6",
     "attachment": null,
     "contract_version": "1.0.0",
     "dimensions_m": {
@@ -15,7 +15,7 @@
         "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
         "size_bytes": 1000,
         "triangles": 100,
-        "url": "https://cdn.example.test/a/44b6881a-7206-4397-a5be-548301c37baa/r1/lod0.glb",
+        "url": "https://cdn.example.test/a/4f957f55-a04b-4ecd-a950-a6c9d0ea33d6/r1/lod0.glb",
         "variant_key": "default"
       },
       {
@@ -24,12 +24,12 @@
         "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
         "size_bytes": 1000,
         "triangles": 100,
-        "url": "https://cdn.example.test/a/44b6881a-7206-4397-a5be-548301c37baa/r1/lod0.usdz",
+        "url": "https://cdn.example.test/a/4f957f55-a04b-4ecd-a950-a6c9d0ea33d6/r1/lod0.usdz",
         "variant_key": "default"
       }
     ],
     "revision": 1,
-    "revision_id": "757a56a4-28bb-4b99-a1f1-0771bf78012d",
+    "revision_id": "a0689cfa-a23f-40b2-a618-daeb34f33304",
     "variants": [
       {
         "id": "default",

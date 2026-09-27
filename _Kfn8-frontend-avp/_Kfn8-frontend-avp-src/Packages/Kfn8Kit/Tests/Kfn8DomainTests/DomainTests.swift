@@ -22,6 +22,22 @@ private func ref() -> AssetReference { AssetReference(assetID: AssetID(), revisi
 }
 
 @Suite struct RoomFrameTests {
+    @Test func poseInFrontFacesTheViewer() throws {
+        // Viewer looking down −Z (slightly downward, as a handheld camera often is): the item lands ahead on the
+        // horizontal and its front (−Z) is turned to point back at the viewer.
+        let frame = RoomFrame(sessionFromRoom: RigidTransform(translation: SIMD3(0, 0, -3.2)))
+        let viewer = RigidTransform(translation: SIMD3(0, 1.4, 0), rotation: simd_quatf(angle: -0.3, axis: SIMD3(1, 0, 0)))
+        let pose = frame.poseInFront(of: viewer, distance: 2)
+        #expect(simd_length(pose.translation - SIMD3(0, 1.4, 1.2)) < 1e-4)
+        let front = pose.rotation.act(SIMD3<Float>(0, 0, -1))
+        #expect(simd_length(front - SIMD3(0, 0, 1)) < 1e-4)
+        // Viewer turned 90° left (looking down −X): front faces +X, back toward them.
+        let left = RigidTransform(translation: .zero, rotation: simd_quatf(angle: .pi / 2, axis: SIMD3(0, 1, 0)))
+        let side = RoomFrame(sessionFromRoom: .identity).poseInFront(of: left, distance: 1)
+        #expect(simd_length(side.translation - SIMD3(-1, 0, 0)) < 1e-4)
+        #expect(simd_length(side.rotation.act(SIMD3<Float>(0, 0, -1)) - SIMD3(1, 0, 0)) < 1e-4)
+    }
+
     @Test func deriveFromFloorAndWall() throws {
         // Wall at z = -3 facing +Z (into the room), floor at y = -1.6 (session origin at head height).
         let frame = try RoomFrame.derive(floorHeight: -1.6, wallPoint: SIMD3(0.4, 0.2, -3), wallNormal: SIMD3(0, 0, 1))

@@ -57,3 +57,63 @@ M0 occlusion and manipulation outcomes; capture coverage and relocalization on r
 ## Addendum: orientation defect caught by the founder review sheet
 
 The first conform run left the chair and sconce facing +Z (backwards): Blender's glTF importer uses quaternion rotation mode, so the Euler 180° turn was ignored, and the contract validator cannot see which way an object faces. The review renders exposed it before any approval. Fixed by rotating mesh data directly and measuring bounds from vertices; all four fixtures re-conformed, re-validated (4/4) and re-bundled (4/4). A raw-coordinate check confirms the chair's backrest now sits at +Z (front −Z). Review sheet: `_Kfn8-backend-fastapi/ledger/review-sheet-2026-09-23.png`.
+
+## Addendum: D7 iPhone + iPad client
+
+Founder decision D7 (2026-09-23) added a separate iPhone + iPad (iOS/iPadOS 27) client of the same app. Roadmap track IE1–IE6; MVP1 Epics unchanged.
+
+**Reuse.**
+- Unchanged: `Kfn8Kit` (Domain, Persistence, Catalogue), with iOS 27 added to its platforms.
+- Shared app code (`Kfn8/Shared`): the app model and launch, bundled and remote catalogue, Showroom theme, the main window with its Design, Inventory and Catalogue panels, `PlacementScene` (entity projection, model cache, previews, overlap cue), `CapturedPlanes` (floor + widest-wall frame rule, room-local surfaces), `SimulatedRoom` and `TurnHandle`.
+- Moved into Kfn8Domain with a unit test: `RoomFrame.poseInFront` (new items ahead of the viewer, facing them).
+
+**Platform code.**
+- visionOS (`Kfn8/visionOS`): app entry, Mixed Immersive Space, visionOS ARKit providers, ManipulationComponent, in-room turn attachments, preview volume.
+- iOS (`Kfn8/iOS`):
+  - app entry and full-screen `ARView` room screen;
+  - `ARRoomSession`: plane classification, LiDAR mesh collisions and occlusion, person segmentation, coaching overlay, camera-permission copy;
+  - ARWorldMap stored inside the room's local scan, relocalization in bounded attempts, map refreshed on leave;
+  - touch drag and two-finger twist on the shared release pipeline;
+  - screen-projected turn buttons;
+  - inspector panel (iPad column, iPhone sheet capped below the top bar);
+  - preview sheet and a flattened app icon.
+
+**New shared persistence API.** `DesignRepository.scanData(for:)` reads the current scan back, checked against its SHA-256. Covered by `scanDataReadsBackTheCurrentScanAndRejectsTampering`.
+
+**Results, `tools/ci.sh --with-ui`: 15/15 PASS.**
+- readiness, backend and contract steps unchanged;
+- Kfn8Kit 65 tests;
+- visionOS device and simulator builds, and all three visionOS UI tests after the refactor;
+- iOS device and simulator builds;
+- `Kfn8iOSEndToEndTests` on the iPhone 18 Pro and iPad Pro 11-inch (M5) iOS 27.0 simulators.
+
+**Defects found while testing and fixed.**
+- iPhone never showed a room's detail: the collapsed split view had no navigation. It now moves to the detail when a room is chosen.
+- The iPhone panel at full height hid Leave and the room status. It is now capped at 78% and drops to half height after adding an item.
+- UI-test helpers aimed at copies of controls in the main window underneath the room view. The panel now has its own identifier, and the helpers search it, including lazily drawn controls.
+- The iOS simulated room had no visible floor or wall. They are now drawn faintly, simulator only.
+
+**Not yet evidence.** No physical iPhone or iPad run:
+- ARKit capture, relocalization, LiDAR collisions and occlusion;
+- touch drag and twist;
+- VoiceOver, Dynamic Type and Reduce Motion on a device.
+
+Remote catalogue on iOS waits for the backend deployment. The in-room turn buttons on visionOS are confirmed drawn in simulator captures; XCUITest cannot see into the immersive space there.
+
+## Addendum: fixtures batch 2 (2026-09-26)
+
+- **Request:** the founder asked for five more furniture objects in the default set.
+- **Added:** sofa, coffee table, side table, cube display shelves and ottoman (Poly Haven, CC0).
+- **Excluded:** anything that reads as a named, purchasable design.
+- **Pipeline:**
+  1. `tools/fetch_polyhaven.py`: API evidence plus MD5-verified 1k glTF.
+  2. `tools/blender_inspect.py`: facing check.
+  3. `tools/blender_conform.py`: turn 180° for sofa, side table and ottoman; 90° for coffee table and shelves.
+  4. `tools/blender_review_render.py` and the review sheet.
+  5. `tools/make_manifests.py`: now leaves existing, approved manifests untouched unless `--force`.
+  6. `kfn8-validate`, then bundle.
+- **Results:**
+  - Contract v1: 9/9.
+  - Bundle: 9/9.
+  - `ci.sh --with-ui`: all steps PASS, including the new `testBatchTwoFurniturePlaces` on visionOS, iPhone and iPad simulators.
+- **Open:** founder approvals for the five (`tools/approve_manifest.py`). Until then `--require-approvals` fails for them. Device placement not yet seen.

@@ -1,7 +1,10 @@
-"""Write contract-v1 manifests for the four engineering fixtures from conformed files and licence evidence.
+"""Write contract-v1 manifests for the bundled fixtures from conformed files and licence evidence.
 
 Approvals are intentionally empty: provenance and visual/dimension approvals belong to the founder and are added with
-`kfn8-ingest approve`. Dimension spec authority is operator: source geometry measured after the scale sanity check.
+`tools/approve_manifest.py`. Dimension spec authority is operator: source geometry measured after the scale sanity check.
+Existing manifests are left untouched (they may carry approvals) unless `--force` is given.
+
+Usage: venv/bin/python tools/make_manifests.py [--force]
 """
 import datetime, json, uuid
 from pathlib import Path
@@ -18,10 +21,20 @@ FIXTURES = {
     "industrial_wall_sconce": dict(name="Industrial wall sconce", category="lighting", affinity="wall", tags=["industrial", "brass"], colour="brass", weight="light"),
     "hanging_industrial_lamp": dict(name="Hanging industrial lamp", category="lighting", affinity="ceiling", tags=["industrial"], colour="olive", weight="light"),
     "ceramic_vase_02": dict(name="Ceramic vase", category="decor", affinity="tabletop", tags=["ceramic"], colour="bone", weight="light"),
+    # Batch 2 (2026-09-26): five generic floor pieces, conform turn noted per item in the batch-2 review sheet.
+    "sofa_02": dict(name="Tufted leather sofa", category="seating", affinity="floor", tags=["vintage", "leather"], colour="ink", weight="heavy"),
+    "modern_coffee_table_01": dict(name="Stone-top coffee table", category="table", affinity="floor", tags=["modern", "stone", "walnut"], colour="walnut", weight="medium"),
+    "side_table_01": dict(name="Oak side table", category="table", affinity="floor", tags=["minimalist", "oak"], colour="walnut", weight="light"),
+    "wooden_display_shelves_01": dict(name="Cube display shelves", category="storage", affinity="floor", tags=["modern", "pine"], colour="clay", weight="medium"),
+    "Ottoman_01": dict(name="Leather ottoman", category="seating", affinity="floor", tags=["leather", "tufted"], colour="walnut", weight="medium"),
 }
 now = datetime.datetime.now(datetime.UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+force = "--force" in sys.argv
 for slug, meta in FIXTURES.items():
     d = ROOT / "assets-conformed" / slug
+    if (d / "manifest.json").exists() and not force:
+        print(slug, "manifest exists; left unchanged")
+        continue
     info_path = ROOT / "ledger" / "evidence" / f"{slug}.info.json"
     info = json.loads(info_path.read_text())
     lod0 = measure_glb(d / "lod0.glb")

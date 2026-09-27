@@ -3,64 +3,9 @@ import XCTest
 /// End-to-end on the visionOS 27 simulator with the labelled simulated room. Covers M1's demo path:
 /// create space/room → scan → place items by affinity → move/rotate/undo via non-gesture controls → invalid release →
 /// relaunch and recover committed state → counted permanent delete. Not device evidence.
-@MainActor
-final class Kfn8EndToEndTests: XCTestCase {
-    var storePath: String!
-
-    override func setUp() async throws {
-        continueAfterFailure = false
-        storePath = NSTemporaryDirectory() + "kfn8-e2e-\(UUID().uuidString)"
-    }
-
-    private func launch(_ extra: [String] = []) -> XCUIApplication {
-        let app = XCUIApplication()
-        app.launchArguments = ["--store-path", storePath] + extra
-        app.launch()
-        return app
-    }
-
-    private func tap(_ app: XCUIApplication, _ label: String, timeout: TimeInterval = 10, file: StaticString = #filePath, line: UInt = #line) {
-        let button = app.buttons[label].firstMatch
-        XCTAssertTrue(button.waitForExistence(timeout: timeout), "button '\(label)' not found", file: file, line: line)
-        // Scroll it into view like a person would, let the scroll settle, then tap (never mid-scroll).
-        var swipes = 0
-        while !button.isHittable && swipes < 6 {
-            let scroller = app.scrollViews["catalogue-scroll"]
-            if scroller.exists { scroller.swipeUp(velocity: .slow) } else { break }
-            swipes += 1
-        }
-        let hittable = expectation(for: NSPredicate(format: "isHittable == true"), evaluatedWith: button)
-        wait(for: [hittable], timeout: timeout)
-        Thread.sleep(forTimeInterval: 0.6)
-        button.tap()
-    }
-
-    /// Placement rows are labelled "<name>, <dimensions>"; match by prefix.
-    private func tapRow(_ app: XCUIApplication, _ name: String, file: StaticString = #filePath, line: UInt = #line) {
-        let row = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", name + ",")).firstMatch
-        XCTAssertTrue(row.waitForExistence(timeout: 10), "row '\(name)' not found", file: file, line: line)
-        if !row.isSelected { row.tap() } // rows toggle; a newly added item is already selected
-    }
-
-    /// Captures both the main window and the whole app (on visionOS the latter shows the immersive layer).
-    private func snapshot(_ app: XCUIApplication, _ name: String) {
-        let window = app.windows.firstMatch
-        if window.exists {
-            let w = XCTAttachment(screenshot: window.screenshot())
-            w.name = name + "-window"
-            w.lifetime = .keepAlways
-            add(w)
-        }
-        let a = XCTAttachment(screenshot: app.screenshot())
-        a.name = name + "-scene"
-        a.lifetime = .keepAlways
-        add(a)
-    }
-
-    private func waitForText(_ app: XCUIApplication, containing text: String, timeout: TimeInterval = 15, file: StaticString = #filePath, line: UInt = #line) {
-        let predicate = NSPredicate(format: "label CONTAINS %@", text)
-        let element = app.descendants(matching: .any).matching(predicate).firstMatch
-        XCTAssertTrue(element.waitForExistence(timeout: timeout), "text containing '\(text)' not found", file: file, line: line)
+final class Kfn8EndToEndTests: Kfn8UITestCase {
+    func testBatchTwoFurniturePlaces() throws {
+        placeBatchTwoFurniture(launch())
     }
 
     func testScanPlaceEditRelaunchDelete() throws {
@@ -88,6 +33,9 @@ final class Kfn8EndToEndTests: XCTestCase {
         tap(app, "Undo")
         let redoEnabled = expectation(for: NSPredicate(format: "isEnabled == true"), evaluatedWith: app.buttons["Redo"].firstMatch)
         wait(for: [redoEnabled], timeout: 10)
+
+        // The in-room turn buttons live in the immersive space, which XCUITest's element tree does not include on the
+        // simulator; they call the same `rotate` as "Rotate left/right" above and are checked from simulator captures.
 
         // Pushing the chair into the simulated table (a real obstacle) is held, unsaved, with the quiet message.
         for _ in 0..<4 { tap(app, "Right") }

@@ -1,0 +1,79 @@
+{
+  "contract_version": "1.0.0",
+  "asset": {
+    "id": "55959ac2-53ad-590f-884f-e17458d41393",
+    "name": "Oak side table",
+    "sku": null,
+    "category": "table",
+    "affinity": "floor",
+    "provenance": "licensed",
+    "delivery_mode": "public",
+    "style_tags": [
+      "minimalist",
+      "oak"
+    ],
+    "dominant_colour": "walnut",
+    "weight_class": "light",
+    "is_floor_covering": false
+  },
+  "revision": 1,
+  "front_axis": "-Z",
+  "dimension_spec": {
+    "width_m": 0.55,
+    "depth_m": 0.45,
+    "height_m": 0.5507,
+    "authority_kind": "operator",
+    "source": "Poly Haven side_table_01 1k glTF, conformed geometry measured after furniture-scale sanity check",
+    "approved_by": "measured by agent; founder sign-off is the visual_dimensions approval",
+    "approved_at": "2026-09-26T13:44:29Z",
+    "evidence_sha256": "0aecf7a33fdbc8dad35de9a3a0619d9809101e0b93b4aa5aa2e07faf004cce3e"
+  },
+  "licence": {
+    "source_url": "https://polyhaven.com/a/side_table_01",
+    "author": "James Ray Cock",
+    "licence_id": "CC0-1.0",
+    "attribution_required": false,
+    "attribution_text": null,
+    "evidence_reference": "ledger/evidence/side_table_01.info.json + ledger/evidence/polyhaven-license.html",
+    "evidence_sha256": "0aecf7a33fdbc8dad35de9a3a0619d9809101e0b93b4aa5aa2e07faf004cce3e",
+    "recorded_at": "2026-09-26T13:44:29Z"
+  },
+  "approvals": [],
+  "renditions": [
+    {
+      "lod": 0,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod0.glb",
+      "sha256": "f1d11166cd56494203698908ffec0623c86f313232583a06e1d69b130b3a90fb",
+      "size_bytes": 506992,
+      "triangles": 2756
+    },
+    {
+      "lod": 1,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod1.glb",
+      "sha256": "6c0f2d3385258a1640cc13f4186f5ff949602faffeed044de9b8628647cee4ad",
+      "size_bytes": 454824,
+      "triangles": 1240
+    },
+    {
+      "lod": 2,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod2.glb",
+      "sha256": "a777d34c7469471348c2989c5d4bc2c802f962d8a4c70ea4255b11e3a2685bed",
+      "size_bytes": 416484,
+      "triangles": 413
+    },
+    {
+      "lod": 0,
+      "format": "usdz",
+      "variant_key": "default",
+      "path": "lod0.usdz",
+      "sha256": "61053ea02929dfaeb7f26800f246140fb2f9ed1b6ba160a101ca0539f5502ba1",
+      "size_bytes": 556939
+    }
+  ]
+}

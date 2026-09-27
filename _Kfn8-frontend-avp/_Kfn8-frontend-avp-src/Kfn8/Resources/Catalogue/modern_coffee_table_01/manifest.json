@@ -1,0 +1,80 @@
+{
+  "contract_version": "1.0.0",
+  "asset": {
+    "id": "a7491fe1-5867-59cf-9e85-d0386d7ae7a3",
+    "name": "Stone-top coffee table",
+    "sku": null,
+    "category": "table",
+    "affinity": "floor",
+    "provenance": "licensed",
+    "delivery_mode": "public",
+    "style_tags": [
+      "modern",
+      "stone",
+      "walnut"
+    ],
+    "dominant_colour": "walnut",
+    "weight_class": "medium",
+    "is_floor_covering": false
+  },
+  "revision": 1,
+  "front_axis": "-Z",
+  "dimension_spec": {
+    "width_m": 1.2018,
+    "depth_m": 0.6,
+    "height_m": 0.39,
+    "authority_kind": "operator",
+    "source": "Poly Haven modern_coffee_table_01 1k glTF, conformed geometry measured after furniture-scale sanity check",
+    "approved_by": "measured by agent; founder sign-off is the visual_dimensions approval",
+    "approved_at": "2026-09-26T13:44:29Z",
+    "evidence_sha256": "9cb6277edf648bd953e7a8b45e730f9135f4ccdc2c83e658aa7b0ca6be7f2f14"
+  },
+  "licence": {
+    "source_url": "https://polyhaven.com/a/modern_coffee_table_01",
+    "author": "Amin",
+    "licence_id": "CC0-1.0",
+    "attribution_required": false,
+    "attribution_text": null,
+    "evidence_reference": "ledger/evidence/modern_coffee_table_01.info.json + ledger/evidence/polyhaven-license.html",
+    "evidence_sha256": "9cb6277edf648bd953e7a8b45e730f9135f4ccdc2c83e658aa7b0ca6be7f2f14",
+    "recorded_at": "2026-09-26T13:44:29Z"
+  },
+  "approvals": [],
+  "renditions": [
+    {
+      "lod": 0,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod0.glb",
+      "sha256": "a98112b3fe04fc94c968ad4066a20790655c74e43693934fb29b625be09407de",
+      "size_bytes": 1330752,
+      "triangles": 4504
+    },
+    {
+      "lod": 1,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod1.glb",
+      "sha256": "c62cf34d832c3a1084beca9e276a5d854ecc8f2494c093f037c4a220c03f7cce",
+      "size_bytes": 1258976,
+      "triangles": 2026
+    },
+    {
+      "lod": 2,
+      "format": "glb",
+      "variant_key": "default",
+      "path": "lod2.glb",
+      "sha256": "80a4dbd351fb969e6266820093d3c88a7311b05c4e0bc92441efb4a41638e39a",
+      "size_bytes": 1209772,
+      "triangles": 674
+    },
+    {
+      "lod": 0,
+      "format": "usdz",
+      "variant_key": "default",
+      "path": "lod0.usdz",
+      "sha256": "b24218ff99b5ea8aa387528658b373f7cc5c118fd573a8c52bcc22dcbfcc8bc9",
+      "size_bytes": 1431712
+    }
+  ]
+}
