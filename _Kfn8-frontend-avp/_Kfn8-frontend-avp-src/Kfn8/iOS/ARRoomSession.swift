@@ -66,9 +66,11 @@ final class ARRoomSession: NSObject, ARSessionDelegate {
         running = true
         model.realGeometryIntersects = hasSceneMesh ? { [weak roomRoot] box in
             guard let root = roomRoot, let scene = root.scene else { return false }
-            let shape = ShapeResource.generateBox(size: box.halfSize * 2)
-            let hits = scene.convexCast(convexShape: shape, fromPosition: box.pose.translation, fromOrientation: box.pose.rotation,
-                                        toPosition: box.pose.translation + SIMD3(0, 0.001, 0), toOrientation: box.pose.rotation,
+            // Shrunk for scan-mesh noise, so resting on the supporting floor/wall/table/ceiling is not a collision.
+            let test = box.realWorldContactTest
+            let shape = ShapeResource.generateBox(size: test.halfSize * 2)
+            let hits = scene.convexCast(convexShape: shape, fromPosition: test.pose.translation, fromOrientation: test.pose.rotation,
+                                        toPosition: test.pose.translation + SIMD3(0, 0.001, 0), toOrientation: test.pose.rotation,
                                         query: .any, mask: .sceneUnderstanding, relativeTo: root)
             return !hits.isEmpty
         } : nil

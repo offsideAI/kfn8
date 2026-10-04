@@ -135,6 +135,19 @@ public struct OrientedBox: Sendable, Equatable {
         }
         return true
     }
+
+    /// The box to sweep against scanned real-world geometry: 4 cm in from each side and the top, 6 cm up from the base.
+    /// The scan mesh has thickness and centimetre noise, so a full-size box resting on its floor, wall, table or ceiling
+    /// always touches it; on the M2 (M0 run 1) a floor-standing fixture was judged to intersect the floor on every release.
+    /// Real obstacles are far larger than this tolerance.
+    public var realWorldContactTest: OrientedBox {
+        let inset = OrientedBox.realWorldInset, lift = OrientedBox.realWorldBaseLift
+        let bottom = -halfSize.y + lift, top = halfSize.y - inset
+        let half = SIMD3(max(halfSize.x - inset, 0.01), max((top - bottom) / 2, 0.01), max(halfSize.z - inset, 0.01))
+        return OrientedBox(centrePose: pose * RigidTransform(translation: SIMD3(0, (bottom + top) / 2, 0)), halfSize: half)
+    }
+    public static let realWorldInset: Float = 0.04
+    public static let realWorldBaseLift: Float = 0.06
 }
 
 public struct PlacementCheck: Sendable, Equatable {

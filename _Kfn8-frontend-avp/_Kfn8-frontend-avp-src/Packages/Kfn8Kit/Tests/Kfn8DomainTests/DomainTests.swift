@@ -242,6 +242,30 @@ private func ref() -> AssetReference { AssetReference(assetID: AssetID(), revisi
         #expect(a.intersects(near))
         #expect(!a.intersects(far))
     }
+
+    /// Scan meshes are slabs with centimetre noise. An item resting on its support must not collide with it,
+    /// while a real obstacle inside its footprint still does.
+    @Test func realWorldContactTestIgnoresSupportNoiseButNotObstacles() {
+        let table = OrientedBox(basePivot: RigidTransform(translation: SIMD3(0, 0, 2)), size: SIMD3(0.5, 0.55, 0.5))
+        let test = table.realWorldContactTest
+        // Floor slab whose top reads 2 cm above the true floor; wall slab 2 cm proud of the item's back face.
+        let noisyFloor = OrientedBox(centrePose: RigidTransform(translation: SIMD3(0, 0.01, 2)), halfSize: SIMD3(3, 0.01, 3))
+        let noisyWall = OrientedBox(centrePose: RigidTransform(translation: SIMD3(0, 1, 2.26)), halfSize: SIMD3(3, 1.5, 0.03))
+        let noisyCeiling = OrientedBox(centrePose: RigidTransform(translation: SIMD3(0, 0.55, 2)), halfSize: SIMD3(3, 0.02, 3))
+        #expect(table.intersects(noisyFloor, tolerance: 0), "the full-size box touches the floor mesh: the device bug")
+        #expect(!test.intersects(noisyFloor, tolerance: 0))
+        #expect(!test.intersects(noisyWall, tolerance: 0))
+        #expect(!test.intersects(noisyCeiling, tolerance: 0))
+        let sofaArm = OrientedBox(basePivot: RigidTransform(translation: SIMD3(0.3, 0, 2)), size: SIMD3(0.2, 0.6, 0.9))
+        #expect(test.intersects(sofaArm, tolerance: 0))
+    }
+
+    @Test func realWorldContactTestKeepsSmallItemsTestable() {
+        let vase = OrientedBox(basePivot: RigidTransform(translation: SIMD3(0, 0.74, 0), yaw: .pi / 3), size: SIMD3(0.06, 0.08, 0.06))
+        let test = vase.realWorldContactTest
+        #expect(test.halfSize.x > 0 && test.halfSize.y > 0 && test.halfSize.z > 0)
+        #expect(test.pose.rotation == vase.pose.rotation)
+    }
 }
 
 @Suite struct ReleaseTests {

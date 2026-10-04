@@ -49,6 +49,8 @@ final class AppModel {
     var heldInvalid: Set<PlacementID> = []
     var overlapCues: Set<PlacementID> = []
     var statusMessage: String?
+    /// The catalogue item whose last "Add" found no valid spot, so the message shows beside the button that was pressed.
+    var addFailedItem: AssetID?
     var errorMessage: String?
 
     // A/B flip: the shown composition only changes once the next Design is ready.
@@ -251,6 +253,7 @@ final class AppModel {
     /// surface. Wall items then face out of the wall regardless of the seed's yaw.
     func add(_ item: CatalogueItem, near seed: RigidTransform) async {
         guard let design = currentDesign, item.affinity.isPlaceableInMVP1 else { return }
+        addFailedItem = nil
         let roomLocal = seed.translation
         var seeds = [seed]
         if let policy = AttachmentPolicy.forAffinity(item.affinity) {
@@ -283,6 +286,7 @@ final class AppModel {
             }
         }
         statusMessage = ReleaseOutcome.message
+        addFailedItem = item.id
     }
 
     /// Transform updates during a drag are previews only; nothing is persisted per frame.

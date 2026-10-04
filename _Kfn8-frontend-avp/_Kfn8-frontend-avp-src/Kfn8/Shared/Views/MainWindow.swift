@@ -319,6 +319,9 @@ struct CataloguePanel: View {
                             .disabled(!model.alignment.showsSpatialContent)
                             Button("Preview") { openPreview(item) }
                         }
+                        if model.addFailedItem == item.id {
+                            Text(ReleaseOutcome.message).foregroundStyle(Showroom.quiet).accessibilityLabel(ReleaseOutcome.message)
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(16)

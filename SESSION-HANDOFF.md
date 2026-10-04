@@ -177,3 +177,11 @@ Built and tested on the Mac host and visionOS 27.0 simulator (not device evidenc
 - **Next.** Physical iPhone/iPad run (IE6.T2): LiDAR and non-LiDAR capture, relocalization, touch, occlusion, accessibility. Also add UI coverage for the turn-button tap and the preview sheet.
 - **Other visionOS changes this session.** New items face the user when added. The main window title is plain text. There is an in-room 45° turn button per item.
 - No Git operations were run.
+
+## 2026-10-04
+
+- Founder deferred the M0 export probe (E0.S3.T1 now ⏸️). E3.S3 export stays blocked until the device run or an export re-scope decision.
+- ROADMAP progress snapshot corrected to match the task records (it still said no headset tests had run). MVP1 counts: 0 ⬜ · 17 🟡 · 35 ✅ · 19 ⏸️ · 0 🟢. Track IE is unchanged.
+- The headset is now on visionOS 27.0.1 (24M372); earlier M0 evidence was on 27.0 (24M362). Record the version with each new result.
+- Device defect: “Add <item>” did nothing on the M2. The app's real-world collision check had no scan-mesh tolerance (the probe's M0 run 1 fix was never carried over). Fixed in shared `OrientedBox.realWorldContactTest`, used by visionOS and iOS. A failed add now shows its message beside the pressed button. Needs a device re-test.
+- No Git operations were run.
