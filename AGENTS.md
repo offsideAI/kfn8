@@ -23,7 +23,7 @@ Update Tasks, Story/Epic rollups, summary counts and evidence links together. On
 ## Hard product constraints
 
 - Apple Vision Pro, visionOS 27 minimum, Swift 6 strict concurrency; no older-OS checks, shims or degraded renderer.
-- Indoor, live passthrough, Mixed Immersive Space only. No iOS target, capture companion, Full Immersive Space or offsite scaffold in MVP1. The founder-directed iPhone + iPad client (decision D7, 2026-09-23) is a separate track with its own `Kfn8iOS` target; it does not change MVP1.
+- Indoor, live passthrough, Mixed Immersive Space only. No iOS target, capture companion, Full Immersive Space or offsite scaffold in MVP1. The founder-directed iPhone + iPad app (decision D8, 2026-10-05, superseding D7) is a separate, independent codebase in `_Kfn8-frontend-avp/_Kfn8-frontend-ios-src` with its own Kfn8Kit copy, tracked in `_Kfn8-frontend-avp/ROADMAP-IOS.md`; it does not change MVP1.
 - Anonymous consumer app; device-local Spaces/Rooms/Designs/scans; no accounts, sync, CloudKit, subscriptions, commercial limits, watermark or client analytics.
 - Asset contract enforced: metres, base-centre pivot, +Y up, front −Z, PBR metallic-roughness, approved dimension authority, ±1% across representations. Never generate/approximate a named purchasable SKU.
 - Showroom palette: bone/paper, walnut/clay, brass, ink; no purple/indigo/cyan UI. Fraunces display and Hanken Grotesk UI.

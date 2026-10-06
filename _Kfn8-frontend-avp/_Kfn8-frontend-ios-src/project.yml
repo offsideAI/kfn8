@@ -1,0 +1,160 @@
+# xcodegen spec for the Kfn8 iPhone + iPad app (decision D8). Run `./setup.sh` (or `xcodegen generate`) from this
+# directory with the Xcode 27 toolchain. The generated Kfn8iOS.xcodeproj is disposable; this file is the source of truth.
+name: Kfn8iOS
+options:
+  bundleIdPrefix: com.appliaison.kfn8
+  deploymentTarget:
+    iOS: "27.0"
+  xcodeVersion: "27.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: false
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY: YES
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: YES
+    GCC_TREAT_WARNINGS_AS_ERRORS: YES
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    CODE_SIGN_STYLE: Automatic
+    # OffsideAI Inc. developer team (the account signed into Xcode 27).
+    DEVELOPMENT_TEAM: 9L38FSU6M7
+packages:
+  Kfn8Kit:
+    path: Packages/Kfn8Kit
+  Kfn8iOSProbeCore:
+    path: Packages/Kfn8iOSProbeCore
+targets:
+  Kfn8iOS:
+    type: application
+    platform: iOS
+    deploymentTarget: "27.0"
+    sources:
+      - path: Kfn8iOS
+        excludes: ["Resources/**", "Info.plist"]
+      - path: Kfn8iOS/Resources/Catalogue
+        type: folder
+        buildPhase: resources
+      - path: Kfn8iOS/Resources/Fonts
+        buildPhase: resources
+    dependencies:
+      - package: Kfn8Kit
+        product: Kfn8Domain
+      - package: Kfn8Kit
+        product: Kfn8Persistence
+      - package: Kfn8Kit
+        product: Kfn8Catalogue
+    # xcodegen GENERATES this plist from `properties`; do not hand-edit Kfn8iOS/Info.plist.
+    info:
+      path: Kfn8iOS/Info.plist
+      properties:
+        CFBundleDisplayName: Kfn8
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UIRequiredDeviceCapabilities: [arkit]
+        NSCameraUsageDescription: Kfn8 uses the camera to find your floor, walls and furniture so pieces sit at true scale in your room. Nothing you scan leaves this device.
+        NSPhotoLibraryAddUsageDescription: Kfn8 saves the room photo you take to Photos. It can't see your other photos.
+        UIAppFonts: [Fraunces.ttf, HankenGrotesk.ttf]
+        ITSAppUsesNonExemptEncryption: false
+        # Empty until the catalogue API is deployed (DigitalOcean provisioning is a founder action).
+        Kfn8APIBaseURL: ""
+    settings:
+      base:
+        # Working ID until decision ID-1 (separate app vs universal purchase) is made before TestFlight.
+        PRODUCT_BUNDLE_IDENTIFIER: com.appliaison.kfn8.ios
+        PRODUCT_NAME: Kfn8
+        MARKETING_VERSION: 0.1.0
+        CURRENT_PROJECT_VERSION: 1
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  Kfn8iOSUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "27.0"
+    sources: [Kfn8iOSUITests]
+    dependencies:
+      - target: Kfn8iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.appliaison.kfn8.ios.uitests
+        TEST_TARGET_NAME: Kfn8iOS
+        TARGETED_DEVICE_FAMILY: "1,2"
+  # Nonshipping I0.S2 feasibility probe: no App Store, no analytics, no accounts.
+  Kfn8iOSProbe:
+    type: application
+    platform: iOS
+    deploymentTarget: "27.0"
+    sources:
+      - path: Kfn8iOSProbe
+        excludes: ["Info.plist"]
+    dependencies:
+      - package: Kfn8Kit
+        product: Kfn8Domain
+      - package: Kfn8iOSProbeCore
+        product: Kfn8iOSProbeCore
+    info:
+      path: Kfn8iOSProbe/Info.plist
+      properties:
+        CFBundleDisplayName: Kfn8 Probe
+        CFBundleShortVersionString: "0.0.1"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UIRequiredDeviceCapabilities: [arkit]
+        NSCameraUsageDescription: The Kfn8 probe uses the camera to find floors, walls and furniture. Nothing leaves this device.
+        NSPhotoLibraryAddUsageDescription: The Kfn8 probe saves the room photo you capture to Photos. It cannot see your other photos.
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.appliaison.kfn8.ios.probe
+        PRODUCT_NAME: Kfn8iOSProbe
+        MARKETING_VERSION: 0.0.1
+        CURRENT_PROJECT_VERSION: 1
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+  Kfn8iOSProbeUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "27.0"
+    sources: [Kfn8iOSProbeUITests]
+    dependencies:
+      - target: Kfn8iOSProbe
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.appliaison.kfn8.ios.probe.uitests
+        TEST_TARGET_NAME: Kfn8iOSProbe
+        TARGETED_DEVICE_FAMILY: "1,2"
+schemes:
+  Kfn8iOS:
+    build:
+      targets:
+        Kfn8iOS: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - Kfn8iOSUITests
+        - package: Kfn8Kit/Kfn8DomainTests
+        - package: Kfn8Kit/Kfn8PersistenceTests
+        - package: Kfn8Kit/Kfn8CatalogueTests
+  Kfn8iOSProbe:
+    build:
+      targets:
+        Kfn8iOSProbe: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - Kfn8iOSProbeUITests
+        - package: Kfn8iOSProbeCore/Kfn8iOSProbeCoreTests

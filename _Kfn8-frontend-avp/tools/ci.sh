@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Kfn8 monorepo checks. Short-lived only: no servers are started (tests use a throwaway Postgres cluster and in-process
-# ASGI clients). Usage: _Kfn8-frontend-avp/tools/ci.sh [--with-ui]   (UI tests need the visionOS 27 and iOS 27 simulators)
+# ASGI clients). Usage: _Kfn8-frontend-avp/tools/ci.sh [--with-ui]   (UI tests need the visionOS 27 simulator)
 set -u
 ROOT="${0:A:h:h}"
 export DEVELOPER_DIR="${DEVELOPER_DIR:-/Users/coder/Developer/Xcode/Xcode_27_0_0/Xcode_27_0_0.app/Contents/Developer}"
@@ -19,15 +19,9 @@ step "M0 probe core tests" zsh -c "cd '$CLIENT/Packages/Kfn8M0ProbeCore' && xcru
 step "project generation" zsh -c "cd '$CLIENT' && ./setup.sh --no-open >/dev/null"
 step "app build (device SDK, unsigned)" xcodebuild -quiet -project "$CLIENT/Kfn8.xcodeproj" -scheme Kfn8 -destination 'generic/platform=visionOS' CODE_SIGNING_ALLOWED=NO build
 step "app build (simulator SDK)" xcodebuild -quiet -project "$CLIENT/Kfn8.xcodeproj" -scheme Kfn8 -destination 'generic/platform=visionOS Simulator' CODE_SIGNING_ALLOWED=NO build
-step "iPhone/iPad app build (device SDK, unsigned)" xcodebuild -quiet -project "$CLIENT/Kfn8.xcodeproj" -scheme Kfn8iOS -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO build
-step "iPhone/iPad app build (simulator SDK)" xcodebuild -quiet -project "$CLIENT/Kfn8.xcodeproj" -scheme Kfn8iOS -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
 if [[ "${1:-}" == "--with-ui" ]]; then
   step "end-to-end UI tests (visionOS 27 simulator)" xcodebuild -quiet -project "$CLIENT/Kfn8.xcodeproj" -scheme Kfn8 \
     -destination 'platform=visionOS Simulator,name=Apple Vision Pro,OS=27.0' CODE_SIGNING_ALLOWED=NO test -only-testing:Kfn8UITests
-  step "end-to-end UI tests (iPhone 18 Pro, iOS 27 simulator)" xcodebuild -quiet -project "$CLIENT/Kfn8.xcodeproj" -scheme Kfn8iOS \
-    -destination 'platform=iOS Simulator,name=iPhone 18 Pro,OS=27.0' CODE_SIGNING_ALLOWED=NO test -only-testing:Kfn8iOSUITests
-  step "end-to-end UI tests (iPad Pro 11-inch, iOS 27 simulator)" xcodebuild -quiet -project "$CLIENT/Kfn8.xcodeproj" -scheme Kfn8iOS \
-    -destination 'platform=iOS Simulator,name=iPad Pro 11-inch (M5),OS=27.0' CODE_SIGNING_ALLOWED=NO test -only-testing:Kfn8iOSUITests
 fi
 printf '\n'
 if (( ${#failures} )); then echo "CI FAILED: ${failures[*]}"; exit 1; fi

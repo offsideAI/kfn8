@@ -5,7 +5,6 @@ options:
   bundleIdPrefix: com.appliaison.kfn8
   deploymentTarget:
     visionOS: "27.0"
-    iOS: "27.0"
   xcodeVersion: "27.0"
   createIntermediateGroups: true
   generateEmptyDirectories: false
@@ -33,7 +32,7 @@ targets:
     deploymentTarget: "27.0"
     sources:
       - path: Kfn8
-        excludes: ["Resources/**", "iOS/**"]
+        excludes: ["Resources/**"]
       - path: Kfn8/Resources/Catalogue
         type: folder
         buildPhase: resources
@@ -70,67 +69,6 @@ targets:
         TARGETED_DEVICE_FAMILY: "7"
         SUPPORTED_PLATFORMS: "xros xrsimulator"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-  # iPhone + iPad client (founder decision D7). Same sources as Kfn8 except the platform folders: Kfn8/Shared plus
-  # Kfn8/iOS (ARView, touch input, inspector panels). Kfn8Kit and the bundled catalogue are shared unchanged.
-  Kfn8iOS:
-    type: application
-    platform: iOS
-    deploymentTarget: "27.0"
-    sources:
-      - path: Kfn8
-        excludes: ["Resources/**", "visionOS/**", "Info.plist", "iOS/Info.plist"]
-      - path: Kfn8/Resources/Catalogue
-        type: folder
-        buildPhase: resources
-      - path: Kfn8/Resources/Fonts
-        buildPhase: resources
-    dependencies:
-      - package: Kfn8Kit
-        product: Kfn8Domain
-      - package: Kfn8Kit
-        product: Kfn8Persistence
-      - package: Kfn8Kit
-        product: Kfn8Catalogue
-    # xcodegen GENERATES this plist from `properties`; do not hand-edit Kfn8/iOS/Info.plist.
-    info:
-      path: Kfn8/iOS/Info.plist
-      properties:
-        CFBundleDisplayName: Kfn8
-        CFBundleShortVersionString: "0.1.0"
-        CFBundleVersion: "1"
-        UILaunchScreen: {}
-        UIApplicationSceneManifest:
-          UIApplicationSupportsMultipleScenes: false
-        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
-        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
-        UIRequiredDeviceCapabilities: [arkit]
-        NSCameraUsageDescription: Kfn8 uses the camera to find your floor, walls and furniture so pieces sit at true scale in your room. Nothing you scan leaves this device.
-        UIAppFonts: [Fraunces.ttf, HankenGrotesk.ttf]
-        ITSAppUsesNonExemptEncryption: false
-        # Empty until the catalogue API is deployed (M2 provisioning is a founder action).
-        Kfn8APIBaseURL: ""
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.appliaison.kfn8.ios
-        PRODUCT_NAME: Kfn8
-        MARKETING_VERSION: 0.1.0
-        CURRENT_PROJECT_VERSION: 1
-        TARGETED_DEVICE_FAMILY: "1,2"
-        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
-        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-  Kfn8iOSUITests:
-    type: bundle.ui-testing
-    platform: iOS
-    deploymentTarget: "27.0"
-    sources: [Kfn8iOSUITests, UITestSupport]
-    dependencies:
-      - target: Kfn8iOS
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.appliaison.kfn8.ios.uitests
-        TEST_TARGET_NAME: Kfn8iOS
-        TARGETED_DEVICE_FAMILY: "1,2"
-        SWIFT_TREAT_WARNINGS_AS_ERRORS: NO
   Kfn8UITests:
     type: bundle.ui-testing
     platform: visionOS
@@ -187,18 +125,6 @@ schemes:
       config: Debug
       targets:
         - Kfn8UITests
-        - package: Kfn8Kit/Kfn8DomainTests
-        - package: Kfn8Kit/Kfn8PersistenceTests
-  Kfn8iOS:
-    build:
-      targets:
-        Kfn8iOS: all
-    run:
-      config: Debug
-    test:
-      config: Debug
-      targets:
-        - Kfn8iOSUITests
         - package: Kfn8Kit/Kfn8DomainTests
         - package: Kfn8Kit/Kfn8PersistenceTests
   Kfn8M0Probe:

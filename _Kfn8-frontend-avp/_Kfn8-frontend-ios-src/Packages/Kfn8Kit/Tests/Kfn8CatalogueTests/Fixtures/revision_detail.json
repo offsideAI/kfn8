@@ -1,0 +1,41 @@
+{
+  "body": {
+    "asset_id": "4f957f55-a04b-4ecd-a950-a6c9d0ea33d6",
+    "attachment": null,
+    "contract_version": "1.0.0",
+    "dimensions_m": {
+      "depth": 0.9,
+      "height": 1.0,
+      "width": 0.8
+    },
+    "renditions": [
+      {
+        "format": "glb",
+        "lod": 0,
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "size_bytes": 1000,
+        "triangles": 100,
+        "url": "https://cdn.example.test/a/4f957f55-a04b-4ecd-a950-a6c9d0ea33d6/r1/lod0.glb",
+        "variant_key": "default"
+      },
+      {
+        "format": "usdz",
+        "lod": 0,
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "size_bytes": 1000,
+        "triangles": 100,
+        "url": "https://cdn.example.test/a/4f957f55-a04b-4ecd-a950-a6c9d0ea33d6/r1/lod0.usdz",
+        "variant_key": "default"
+      }
+    ],
+    "revision": 1,
+    "revision_id": "a0689cfa-a23f-40b2-a618-daeb34f33304",
+    "variants": [
+      {
+        "id": "default",
+        "label": "Default"
+      }
+    ]
+  },
+  "status": 200
+}

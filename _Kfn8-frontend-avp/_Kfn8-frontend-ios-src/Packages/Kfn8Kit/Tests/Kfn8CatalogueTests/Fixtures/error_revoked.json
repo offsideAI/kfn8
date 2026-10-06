@@ -1,0 +1,8 @@
+{
+  "body": {
+    "code": "revoked",
+    "message": "This revision is no longer available",
+    "request_id": "4445bda5-7f36-41fb-a8ae-839eae1b1896"
+  },
+  "status": 410
+}

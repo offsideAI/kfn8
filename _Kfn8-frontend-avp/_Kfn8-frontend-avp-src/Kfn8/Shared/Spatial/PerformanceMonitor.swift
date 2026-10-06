@@ -7,11 +7,7 @@ import RealityKit
 @MainActor
 final class PerformanceMonitor {
     static let shared = PerformanceMonitor()
-    #if os(visionOS)
     private(set) var stats = FrameTimeStatistics(targetFrameRate: 90)
-    #else
-    private(set) var stats = FrameTimeStatistics(targetFrameRate: 60) // iPhone/iPad ARKit camera feed
-    #endif
     private var worst: [Double] = []
     private var memory: [PerformanceTrace.MemorySample] = []
     private var loads: [PerformanceTrace.LoadSample] = []

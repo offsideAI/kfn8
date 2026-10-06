@@ -182,14 +182,15 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     default_catalog = Path(__file__).resolve().parents[1] / "_Kfn8-frontend-avp-src/Kfn8M0Probe/Assets.xcassets"
     parser.add_argument("--catalog", type=Path, default=default_catalog)
-    parser.add_argument("--ios-catalog", type=Path, default=default_catalog.parents[1] / "Kfn8/iOS/Assets.xcassets")
+    parser.add_argument("--ios-catalog", type=Path, default=None, help="also write the flattened iPhone/iPad icon here")
     parser.add_argument("--preview", type=Path, default=None)
     args = parser.parse_args()
     layers = {"Back": finish(back_layer()), "Middle": finish(middle_layer()), "Front": finish(front_layer())}
     write_catalog(args.catalog, layers)
     print(f"wrote {args.catalog}")
-    write_ios_catalog(args.ios_catalog, layers)
-    print(f"wrote {args.ios_catalog}")
+    if args.ios_catalog is not None:
+        write_ios_catalog(args.ios_catalog, layers)
+        print(f"wrote {args.ios_catalog}")
     if args.preview:
         preview(layers, args.preview)
         print(f"wrote {args.preview}")

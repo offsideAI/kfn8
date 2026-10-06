@@ -1,0 +1,14 @@
+{
+  "body": {
+    "has_more": false,
+    "items": [
+      {
+        "reason": "rights",
+        "revision_id": "316a443f-85b7-4a0c-87fe-0b651895ab54",
+        "sequence": 1
+      }
+    ],
+    "next_cursor": "eyJrIjpbMV0sImYiOiJjMTFmMTdiZmJjZTM3MWU2In1Kl0bM2qEA6meDhN4"
+  },
+  "status": 200
+}

@@ -50,7 +50,9 @@ def camel(name: str) -> str:
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--check", action="store_true")
+    p.add_argument("--out", type=Path, default=OUT, help="output file (default: the Vision Pro Kfn8Kit; the iPhone/iPad copy passes its own)")
     a = p.parse_args()
+    out = a.out
     spec_text = SPEC.read_text()
     spec = json.loads(spec_text)
     lines = [
@@ -101,16 +103,16 @@ def main():
         lines.append("    enum CodingKeys: String, CodingKey { " + "; ".join(keys) + " }")
         lines.append("}")
         lines.append("")
-    OUT.parent.mkdir(parents=True, exist_ok=True)
+    out.parent.mkdir(parents=True, exist_ok=True)
     text = "\n".join(lines) + "\n"
     if a.check:
-        if not OUT.exists() or OUT.read_text() != text:
+        if not out.exists() or out.read_text() != text:
             print("Swift transport models are out of date; run tools/generate_swift_client.py", file=sys.stderr)
             sys.exit(1)
         print("Swift transport models up to date")
     else:
-        OUT.write_text(text)
-        print("wrote", OUT)
+        out.write_text(text)
+        print("wrote", out)
 
 
 if __name__ == "__main__":

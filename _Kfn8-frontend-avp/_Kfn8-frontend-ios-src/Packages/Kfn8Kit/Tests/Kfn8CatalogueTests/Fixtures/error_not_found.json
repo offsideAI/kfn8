@@ -1,0 +1,8 @@
+{
+  "body": {
+    "code": "not_found",
+    "message": "No such asset",
+    "request_id": "34e2a877-2153-4595-8e3c-ee91ca40a5ea"
+  },
+  "status": 404
+}

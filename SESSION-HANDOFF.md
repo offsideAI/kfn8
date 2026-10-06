@@ -185,3 +185,46 @@ Built and tested on the Mac host and visionOS 27.0 simulator (not device evidenc
 - The headset is now on visionOS 27.0.1 (24M372); earlier M0 evidence was on 27.0 (24M362). Record the version with each new result.
 - Device defect: “Add <item>” did nothing on the M2. The app's real-world collision check had no scan-mesh tolerance (the probe's M0 run 1 fix was never carried over). Fixed in shared `OrientedBox.realWorldContactTest`, used by visionOS and iOS. A failed add now shows its message beside the pressed button. Needs a device re-test.
 - No Git operations were run.
+
+## 2026-10-05 D8 iPhone + iPad app (supersedes the D7 notes above)
+
+- **Decision D8.** The iPhone + iPad app is a fresh, independent codebase in `_Kfn8-frontend-avp/_Kfn8-frontend-ios-src`, at feature parity with the Vision Pro app (room photo export, online catalogue, realism/performance, TestFlight + App Store), on all iOS 27 devices. It starts from a copy of Kfn8Kit that may diverge.
+- **Roadmap.** `_Kfn8-frontend-avp/ROADMAP-IOS.md`: Epics I0–I4 and I7, 56 tasks (1 ✅, 55 ⬜). Open founder decisions ID-1 to ID-4; the App Store relationship (separate vs universal purchase) is deferred until before TestFlight.
+- **Removed.** The D7 `Kfn8iOS` target, `Kfn8/iOS`, `Kfn8iOSUITests`, the iOS CI steps and `.iOS` from the Vision Pro Kfn8Kit. The code is in Git history (parent commit `0db5593`). The Vision Pro app still regenerates, builds and passes Kfn8Kit 67/67.
+- **Next.** I0.S1.T2–T6 (project, Kfn8Kit copy, bundle, CI, simulated room), then the I0.S2 device probes on the iPhone 13 Pro Max (iOS 27.0, LiDAR). The iPhone 16 Pro Max is on iOS 18.5 and must be updated before use. No iPad or non-LiDAR iPhone is paired.
+- **I0.S1 (later on 2026-10-05).** T2–T5 done and T6 partial; see `reports/IOS-I0-FOUNDATION-2026-10-05.md`.
+  - Project: `_Kfn8-frontend-ios-src` (xcodegen `Kfn8iOS`, `setup.sh`).
+  - Kfn8Kit copy: 72/72 host tests, including the new checksum-verified `BundledCatalogue`.
+  - Bundle: nine fixtures (9/9 `kfn8-validate --bundle`), fonts and icon.
+  - CI: `tools/ci-ios.sh --with-ui` PASSED, UI test 1/1 on iPhone 18 Pro and on iPad Pro 11-inch (M5). The backend's `generate_swift_client.py` gained `--out` for the iOS drift check.
+  - Vision Pro after the D7 removal: visionOS UI tests 4/4.
+  - Next: I0.S2, starting with the iOS 27 SDK API evidence (T1).
+- **I0.S2 (2026-10-05).** T1 and T2 done; T3–T6 have the probe ready and wait for the founder's run on the iPhone 13 Pro Max (`00008110-001E55660E8B801E`).
+  - **Stack:** ARKit `ARSession` + RealityKit `ARView`, because `SpatialTrackingSession` has no world maps (`reports/IOS-SDK-API-EVIDENCE.md`).
+  - **ID-3:** `SurroundingsLight` is iOS-unavailable; the candidate is LiDAR mesh `receivesLighting`.
+  - **Probe:** nonshipping `Kfn8iOSProbe` (`com.appliaison.kfn8.ios.probe`), core tests 10/10, simulator smoke test 1/1; `ci-ios.sh --with-ui` PASSED, 11 steps. Install steps and protocol are in `_Kfn8-frontend-ios-src/README.md`. Pull `Documents/IOS-PROBE-EVIDENCE.json` after the run and record it in `reports/IOS-I0-FINDINGS.md`.
+  - **Roadmap:** iOS counts 44 ⬜ · 5 🟡 · 7 ✅.
+
+## 2026-10-06 iPhone + iPad app: I1–I7 implemented on the simulators
+
+- **Status:** `ROADMAP-IOS.md` reads 56 tasks: 30 ✅ · 18 🟡 · 8 ⏸️ · 0 ⬜ · 0 🟢.
+  - 🟡 means device-only acceptance pending.
+  - ⏸️ means a founder decision or external dependency: ID-1, DigitalOcean, the launch library, TestFlight.
+  - Details: `_Kfn8-frontend-avp/reports/IOS-IMPLEMENTATION-2026-10-06.md`.
+- **Tests:** `tools/ci-ios.sh --with-ui` PASSED, with 6/6 UI tests on iPhone 18 Pro and 6/6 on iPad Pro 11-inch (M5), the probe smoke test, and 84 Kfn8Kit + 10 probe-core host tests. UI tests run serially (`-parallel-testing-enabled NO`) because parallel clones were killed under load. The repo-wide `tools/ci.sh` also passes.
+- **Defects found and fixed while testing:**
+  - a Photos save crash (Swift 6 isolation) that also affected the probe: the founder must install a fresh probe build before the I0.S2 run;
+  - dark-mode text;
+  - presentations blocked behind the iPhone panel sheet;
+  - largest-text layouts;
+  - the inventory label for withdrawn items;
+  - missing search/filter/paging;
+  - the panel dismissing on swipe-down.
+- **Debug-only test hooks:** `--catalogue-fixtures <dir>` and `--force-revocation-sync`, compiled out of Release (Release build verified).
+- **Release drafts:** `_Kfn8-frontend-avp/release/IOS-LIMITATIONS-AND-PRIVACY.md` and `IOS-RELEASE-CHECKLIST.md`.
+- **Next, founder:**
+  - run the probe protocol (README) and the app demo on the iPhone 13 Pro Max;
+  - decide ID-1 to ID-4;
+  - DigitalOcean;
+  - the launch-library budget.
+- No Git operations were run.
